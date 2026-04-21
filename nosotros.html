@@ -180,12 +180,14 @@
   </div>
 </div>
 
+<div id="nav-strip"></div>
 <div id="footer"></div>
 
 <script src="js/ui.js"></script>
 <script>
   document.getElementById('header').innerHTML = DinterUI.header('');
   document.getElementById('footer').innerHTML = DinterUI.footer('');
+  document.getElementById('nav-strip').innerHTML = DinterUI.navStrip('', 'nosotros');
   DinterUI.init();
 
   // Años en el mercado
