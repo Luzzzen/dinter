@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Productos – Dinter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .products-index { padding: 64px 48px; background: var(--gray-1); }
+
+    .products-intro {
+      max-width: 600px;
+      margin-bottom: 56px;
+    }
+    .products-intro .section-label {
+      font-size: .75rem; font-weight: 700; letter-spacing: .16em;
+      text-transform: uppercase; color: var(--teal); margin-bottom: 8px;
+    }
+    .products-intro h2 {
+      font-family: var(--font-head);
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 700; color: var(--dark); margin-bottom: 14px;
+    }
+    .products-intro h2 span { color: var(--teal); }
+    .products-intro p {
+      font-size: .95rem; color: var(--gray-3); line-height: 1.7;
+    }
+
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .cat-card {
+      background: var(--white);
+      border: 1px solid var(--teal-border);
+      border-radius: 12px;
+      padding: 28px;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      transition: box-shadow .25s, transform .25s;
+    }
+    .cat-card:hover {
+      box-shadow: 0 6px 28px rgba(26,122,110,.13);
+      transform: translateY(-3px);
+    }
+    .cat-card.soon { opacity: .65; }
+    .cat-card.soon:hover { transform: none; box-shadow: none; }
+
+    .cat-icon {
+      width: 48px; height: 48px; flex-shrink: 0;
+      background: var(--teal-muted);
+      border: 1px solid var(--teal-border);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--teal);
+    }
+
+    .cat-info { flex: 1; }
+    .cat-info h3 {
+      font-family: var(--font-head);
+      font-size: 1.15rem; font-weight: 700;
+      color: var(--dark); margin-bottom: 5px;
+    }
+    .cat-info p {
+      font-size: .82rem; color: var(--gray-3); line-height: 1.5;
+    }
+    .cat-badge {
+      font-size: .68rem; font-weight: 700;
+      letter-spacing: .1em; text-transform: uppercase;
+      padding: 3px 10px; border-radius: 20px;
+      margin-top: 10px; display: inline-block;
+    }
+    .cat-badge.available { background: var(--teal-muted); color: var(--teal-dark); border: 1px solid var(--teal-border); }
+    .cat-badge.soon { background: var(--gray-2); color: var(--gray-3); border: 1px solid var(--gray-2); }
+
+    .cat-arrow {
+      font-size: .8rem; font-weight: 600; color: var(--teal);
+      margin-top: 12px; display: flex; align-items: center; gap: 4px;
+    }
+    .cat-arrow::after { content: '→'; transition: transform .2s; }
+    .cat-card:hover .cat-arrow::after { transform: translateX(4px); }
+
+    @media (max-width: 900px) {
+      .products-index { padding: 48px 20px; }
+    }
+    @media (max-width: 600px) {
+      .cat-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div id="header"></div>
+
+<div class="page-hero">
+  <p class="page-hero-label">Catálogo completo</p>
+  <h1>Nuestros <span>productos</span></h1>
+  <div class="breadcrumb">
+    <a href="index.html">Inicio</a><span>›</span>
+    Productos
+  </div>
+</div>
+
+<div id="nav-strip"></div>
+
+<section class="products-index">
+  <div class="products-intro">
+    <p class="section-label">Catálogo</p>
+    <h2>Instrumentos de <span>medición y control</span></h2>
+    <p>Todos nuestros equipos son diseñados y fabricados en Argentina. Hacé clic en cada categoría para ver los modelos disponibles con sus fichas técnicas completas.</p>
+  </div>
+
+  <div class="cat-grid">
+
+    <a href="productos/controladores-temperatura.html" class="cat-card">
+      <div class="cat-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 14.76V3.5a2.5 2.5 0 00-5 0v11.26a4.5 4.5 0 105 0z"/></svg>
+      </div>
+      <div class="cat-info">
+        <h3>Controladores de temperatura</h3>
+        <p>PID con autosintonía, sensores J-K y RTD. 9 modelos disponibles.</p>
+        <span class="cat-badge available">9 modelos</span>
+        <div class="cat-arrow">Ver modelos</div>
+      </div>
+    </a>
+
+    <a href="productos/contadores.html" class="cat-card">
+      <div class="cat-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      </div>
+      <div class="cat-info">
+        <h3>Contadores</h3>
+        <p>Contadores programables por microprocesador, rango 0–9999. 3 modelos.</p>
+        <span class="cat-badge available">3 modelos</span>
+        <div class="cat-arrow">Ver modelos</div>
+      </div>
+    </a>
+
+    <a href="productos/temporizadores.html" class="cat-card">
+      <div class="cat-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </div>
+      <div class="cat-info">
+        <h3>Temporizadores</h3>
+        <p>Temporizadores configurables, 0 seg a 9999 hs. 4 modelos disponibles.</p>
+        <span class="cat-badge available">4 modelos</span>
+        <div class="cat-arrow">Ver modelos</div>
+      </div>
+    </a>
+
+    <a href="productos/dosificadores-agua.html" class="cat-card">
+      <div class="cat-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
+      </div>
+      <div class="cat-info">
+        <h3>Dosificadores de agua</h3>
+        <p>Dosificación volumétrica hasta 999,9 lts con control de temperatura.</p>
+        <span class="cat-badge available">1 modelo</span>
+        <div class="cat-arrow">Ver modelos</div>
+      </div>
+    </a>
+
+    <a href="productos/colada-caliente.html" class="cat-card">
+      <div class="cat-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg>
+      </div>
+      <div class="cat-info">
+        <h3>Colada caliente</h3>
+        <p>Controlador PID especializado para colada caliente con SSR y Soft-Start.</p>
+        <span class="cat-badge available">1 modelo</span>
+        <div class="cat-arrow">Ver modelos</div>
+      </div>
+    </a>
+
+    <a href="productos/amperimetros.html" class="cat-card soon">
+      <div class="cat-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      </div>
+      <div class="cat-info">
+        <h3>Amperímetros</h3>
+        <p>Indicadores de corriente para paneles industriales.</p>
+        <span class="cat-badge soon">Próximamente</span>
+      </div>
+    </a>
+
+    <a href="productos/sensores.html" class="cat-card soon">
+      <div class="cat-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      </div>
+      <div class="cat-info">
+        <h3>Sensores</h3>
+        <p>Sensores industriales para diversas aplicaciones de medición.</p>
+        <span class="cat-badge soon">Próximamente</span>
+      </div>
+    </a>
+
+    <a href="productos/humedad.html" class="cat-card soon">
+      <div class="cat-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      </div>
+      <div class="cat-info">
+        <h3>Humedad</h3>
+        <p>Controladores e indicadores de humedad para procesos industriales.</p>
+        <span class="cat-badge soon">Próximamente</span>
+      </div>
+    </a>
+
+    <a href="productos/variador-velocidad.html" class="cat-card soon">
+      <div class="cat-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      </div>
+      <div class="cat-info">
+        <h3>Variador de velocidad</h3>
+        <p>Variadores de frecuencia para control de motores industriales.</p>
+        <span class="cat-badge soon">Próximamente</span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<div id="footer"></div>
+<script src="js/ui.js"></script>
+<script>
+  document.getElementById('header').innerHTML = DinterUI.header('');
+  document.getElementById('footer').innerHTML = DinterUI.footer('');
+  document.getElementById('nav-strip').innerHTML = DinterUI.navStrip('', '');
+  DinterUI.init();
+</script>
+</body></html>
