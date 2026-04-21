@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <title>Dosificadores de agua – Dinter</title>
+  <style>
+    .models-section{padding:64px 48px;background:var(--gray-1)}
+    .models-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px;margin-top:40px}
+    .model-card{background:var(--white);border:1px solid var(--teal-border);border-radius:12px;overflow:hidden;text-decoration:none;color:inherit;display:flex;flex-direction:column;transition:box-shadow .25s,transform .25s}
+    .model-card:hover{box-shadow:0 8px 32px rgba(26,122,110,.15);transform:translateY(-4px)}
+    .model-img{height:200px;background:var(--teal-muted);display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
+    .model-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+    .model-card:hover .model-img img{transform:scale(1.04)}
+    .model-dims{position:absolute;bottom:10px;right:10px;background:rgba(15,82,73,.85);color:var(--white);font-size:.72rem;font-weight:600;padding:4px 10px;border-radius:20px}
+    .model-body{padding:22px 24px;flex:1;display:flex;flex-direction:column;gap:6px}
+    .model-tag{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal)}
+    .model-name{font-family:var(--font-head);font-size:1.6rem;font-weight:700;color:var(--dark);line-height:1}
+    .model-desc{font-size:.85rem;color:var(--gray-3);line-height:1.55;margin-top:4px}
+    .model-specs{margin-top:12px;display:flex;flex-wrap:wrap;gap:6px}
+    .spec-pill{background:var(--teal-muted);color:var(--teal-dark);font-size:.72rem;font-weight:600;padding:3px 10px;border-radius:20px;border:1px solid var(--teal-border)}
+    .model-cta{margin-top:auto;padding-top:16px;font-size:.82rem;font-weight:600;color:var(--teal);display:flex;align-items:center;gap:6px}
+    .model-cta::after{content:'→';transition:transform .2s}
+    .model-card:hover .model-cta::after{transform:translateX(4px)}
+    .section-label{font-size:.75rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);margin-bottom:8px}
+    .section-title{font-family:var(--font-head);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;color:var(--dark)}
+    .section-title span{color:var(--teal)}
+    @media(max-width:900px){.models-section{padding:48px 20px}}
+    @media(max-width:600px){.models-grid{grid-template-columns:1fr}}
+  </style>
+</head><body>
+<div id="header"></div>
+<div class="page-hero">
+  <p class="page-hero-label">Catálogo</p>
+  <h1><span>Dosificadores de agua</span></h1>
+  <div class="breadcrumb">
+    <a href="../index.html">Inicio</a><span>›</span>
+    <a href="../productos.html">Productos</a><span>›</span>
+    Dosificadores de agua
+  </div>
+</div>
+<section class="models-section">
+  <p class="section-label">Dosificadores</p>
+  <h2 class="section-title">Modelos <span>disponibles</span></h2>
+  <div class="models-grid">
+    <a href="lf19.html" class="model-card">
+      <div class="model-img">
+        <img src="../imagenes/dosificadores-agua/lf19.jpg" alt="LF-19" onerror="this.style.display='none'" />
+        <span class="model-dims">—</span>
+      </div>
+      <div class="model-body">
+        <span class="model-tag">Dosificadores</span>
+        <span class="model-name">LF-19</span>
+        <span class="model-desc">Dosificador de agua volumétrico hasta 999,9 lts, con control de temperatura y sensor inductivo.</span>
+        <div class="model-specs"><span class="spec-pill">Hasta 999,9 lts</span><span class="spec-pill">Temp. agua 0–65 °C</span><span class="spec-pill">220 V</span></div>
+        <span class="model-cta">Ver ficha técnica</span>
+      </div>
+    </a></div>
+</section>
+<div id="nav-strip"></div>
+<div id="footer"></div>
+<script src="../js/ui.js"></script>
+<script>
+  document.getElementById('header').innerHTML = DinterUI.header('../');
+  document.getElementById('footer').innerHTML = DinterUI.footer('../');
+  document.getElementById('nav-strip').innerHTML = DinterUI.navStrip('../', 'dosificadores');
+  DinterUI.init();
+</script>
+</body></html>

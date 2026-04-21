@@ -25,7 +25,6 @@ const DinterUI = {
         <a href="${base}productos/humedad.html">Humedad</a>
         <a href="${base}productos/sensores.html">Sensores</a>
         <a href="${base}productos/temporizadores.html">Temporizadores</a>
-        <a href="${base}productos/termometro.html">Termómetro</a>
         <a href="${base}productos/variador-velocidad.html">Variador de velocidad</a>
       </div>
     </div>
@@ -60,7 +59,6 @@ const DinterUI = {
     <a href="${base}productos/humedad.html">Humedad</a>
     <a href="${base}productos/sensores.html">Sensores</a>
     <a href="${base}productos/temporizadores.html">Temporizadores</a>
-    <a href="${base}productos/termometro.html">Termómetro</a>
     <a href="${base}productos/variador-velocidad.html">Variador de velocidad</a>
   </div>
   <div class="drawer-cta">
@@ -85,7 +83,6 @@ const DinterUI = {
   <a href="${base}productos/amperimetros.html" ${active === 'amperimetros' ? 'class="active"' : ''}>Amperímetros</a>
   <a href="${base}productos/sensores.html" ${active === 'sensores' ? 'class="active"' : ''}>Sensores</a>
   <a href="${base}productos/humedad.html" ${active === 'humedad' ? 'class="active"' : ''}>Humedad</a>
-  <a href="${base}productos/termometro.html" ${active === 'termometro' ? 'class="active"' : ''}>Termómetro</a>
   <a href="${base}productos/variador-velocidad.html" ${active === 'variador' ? 'class="active"' : ''}>Variador veloc.</a>
   <div class="nav-strip-sep"></div>
   <a href="${base}contacto.html" ${active === 'contacto' ? 'class="active"' : ''}>Contacto</a>
