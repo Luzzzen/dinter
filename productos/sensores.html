@@ -4,42 +4,44 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sensores – Dinter</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet" />
-    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
   <link rel="manifest" href="../site.webmanifest" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../style.css" />
   <style>
-    .sensors-section { padding: 64px 48px; background: var(--gray-1); }
-    .section-label { font-size: .75rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--teal); margin-bottom: 8px; }
-    .section-title { font-family: var(--font-head); font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 700; color: var(--dark); margin-bottom: 48px; }
-    .section-title span { color: var(--teal); }
-    .sensor-group { margin-bottom: 56px; }
-    .sensor-group-header { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 2px solid var(--teal-border); }
-    .sensor-group-badge { background: var(--teal-dark); color: var(--white); font-family: var(--font-head); font-size: 1.3rem; font-weight: 700; padding: 6px 18px; border-radius: 8px; }
-    .sensor-group-title { font-family: var(--font-head); font-size: 1.4rem; font-weight: 700; color: var(--dark); }
-    .sensor-group-desc { font-size: .88rem; color: var(--gray-3); margin-left: auto; }
-    .variants-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
-    .variant-card { background: var(--white); border: 1px solid var(--teal-border); border-radius: 10px; padding: 22px 24px; }
-    .variant-name { font-family: var(--font-head); font-size: 1.05rem; font-weight: 700; color: var(--teal-dark); margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px solid var(--teal-border); }
-    .variant-specs { list-style: none; }
-    .variant-specs li { font-size: .84rem; color: var(--dark); padding: 4px 0; border-bottom: 1px solid var(--gray-2); display: flex; align-items: flex-start; gap: 8px; }
-    .variant-specs li:last-child { border-bottom: none; }
-    .variant-specs li::before { content: '·'; color: var(--teal); font-weight: 700; flex-shrink: 0; }
-    .variant-actions { display: flex; gap: 8px; margin-top: 16px; }
-    .btn-small { display: inline-flex; align-items: center; gap: 6px; font-size: .78rem; font-weight: 600; text-decoration: none; padding: 7px 14px; border-radius: 6px; transition: background .2s; }
-    .btn-small.wa { background: #25d366; color: var(--white); }
-    .btn-small.wa:hover { background: #1da851; }
-    .btn-small.mail { background: var(--teal-muted); color: var(--teal-dark); border: 1px solid var(--teal-border); }
-    .btn-small.mail:hover { background: var(--teal-border); }
-    @media (max-width: 900px) { .sensors-section { padding: 48px 20px; } .sensor-group-desc { display: none; } }
-    @media (max-width: 600px) { .variants-grid { grid-template-columns: 1fr; } }
-  </style>
-  <style>
-    .sensor-img { width: 100%; max-width: 260px; height: 160px; object-fit: contain; background: var(--white); border: 1px solid var(--teal-border); border-radius: 10px; padding: 16px; margin-bottom: 20px; display: block; }
+    .sensors-index { padding: 64px 48px; background: var(--gray-1); }
+    .sensors-intro { max-width: 600px; margin-bottom: 48px; }
+    .sensors-intro .section-label { font-size: .75rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--teal); margin-bottom: 8px; }
+    .sensors-intro h2 { font-family: var(--font-head); font-size: clamp(1.6rem,3vw,2.2rem); font-weight: 700; color: var(--dark); margin-bottom: 12px; }
+    .sensors-intro h2 span { color: var(--teal); }
+    .sensors-intro p { font-size: .95rem; color: var(--gray-3); line-height: 1.7; }
+    .sensors-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px,1fr)); gap: 24px; }
+    .sensor-card {
+      background: var(--white); border: 1px solid var(--teal-border);
+      border-radius: 12px; overflow: hidden; text-decoration: none;
+      color: inherit; display: flex; flex-direction: column;
+      transition: box-shadow .25s, transform .25s;
+    }
+    .sensor-card:hover { box-shadow: 0 8px 32px rgba(26,122,110,.15); transform: translateY(-4px); }
+    .sensor-card-img {
+      height: 200px; background: var(--teal-muted);
+      display: flex; align-items: center; justify-content: center; overflow: hidden;
+    }
+    .sensor-card-img img { max-width: 100%; max-height: 100%; object-fit: contain; padding: 20px; transition: transform .4s ease; }
+    .sensor-card:hover .sensor-card-img img { transform: scale(1.04); }
+    .sensor-card-body { padding: 22px 24px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+    .sensor-card-badge { font-size: .7rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--teal); }
+    .sensor-card-name { font-family: var(--font-head); font-size: 1.5rem; font-weight: 700; color: var(--dark); line-height: 1; }
+    .sensor-card-desc { font-size: .85rem; color: var(--gray-3); line-height: 1.55; margin-top: 4px; }
+    .sensor-card-cta { margin-top: auto; padding-top: 16px; font-size: .82rem; font-weight: 600; color: var(--teal); display: flex; align-items: center; gap: 6px; }
+    .sensor-card-cta::after { content: "→"; transition: transform .2s; }
+    .sensor-card:hover .sensor-card-cta::after { transform: translateX(4px); }
+    @media (max-width: 900px) { .sensors-index { padding: 48px 20px; } }
+    @media (max-width: 600px) { .sensors-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -54,151 +56,58 @@
   </div>
 </div>
 <div id="nav-strip"></div>
-
-<section class="sensors-section">
-  <p class="section-label">Catálogo</p>
-  <h2 class="section-title">Tipos <span>disponibles</span></h2>
-
-  <!-- TIPO K -->
-  <div class="sensor-group">
-    <div class="sensor-group-header">
-      <span class="sensor-group-badge">Tipo K</span>
-      <span class="sensor-group-title">Termocupla tipo K</span>
-      <span class="sensor-group-desc">Rango 0 – 1.200 °C</span>
-    </div>
-    <div class="variants-grid">
-      <div class="variant-card">
-        <p class="variant-name">Termocupla tipo K</p>
-        <ul class="variant-specs">
-          <li>Para hornos de mufla, 0 – 1.200 °C</li>
-          <li>Alambre de diámetro 3 mm</li>
-          <li>Bornera de porcelana y aisladores cerámicos</li>
-          <li>Largo × 100 mm</li>
-          <li>Largo × 150 mm</li>
-          <li>Largo × 200 mm</li>
-        </ul>
-        <div class="variant-actions">
-          <a href="https://wa.me/541150021965?text=Consulta%20por%20Termocupla%20Tipo%20K%20desde%20la%20web%20de%20DINTER" target="_blank" class="btn-small wa">WhatsApp</a>
-          <a href="mailto:dinter111@hotmail.com?subject=Cotizar%20Termocupla%20Tipo%20K%20desde%20la%20web" class="btn-small mail">Mail</a>
-        </div>
-      </div>
-    </div>
-    <img src="../imagenes/tipok.jpg" alt="Termocupla Tipo K" class="sensor-img" onerror="this.style.display='none'" />
+<section class="sensors-index">
+  <div class="sensors-intro">
+    <p class="section-label">Catálogo</p>
+    <h2>Sensores de <span>temperatura</span></h2>
+    <p>Termocuplas tipo J, tipo K y termorresistencias Pt-100 para uso industrial. Fabricados con distintas configuraciones según la aplicación.</p>
   </div>
+  <div class="sensors-grid">
 
-  <!-- TIPO J -->
-  <div class="sensor-group">
-    <div class="sensor-group-header">
-      <span class="sensor-group-badge">Tipo J</span>
-      <span class="sensor-group-title">Termocupla tipo J</span>
-      <span class="sensor-group-desc">4 variantes disponibles</span>
-    </div>
-    <div class="variants-grid">
-      <div class="variant-card">
-        <p class="variant-name">Tipo J – Variante 1</p>
-        <ul class="variant-specs">
-          <li>Rosca Ø 3/8"</li>
-          <li>Cable × 1 m de largo</li>
-          <li>Cable × 1,5 m de largo</li>
-          <li>Cable × 2 m de largo</li>
-        </ul>
-        <div class="variant-actions">
-          <a href="https://wa.me/541150021965?text=Consulta%20por%20Termocupla%20Tipo%20J1%20desde%20la%20web%20de%20DINTER" target="_blank" class="btn-small wa">WhatsApp</a>
-          <a href="mailto:dinter111@hotmail.com?subject=Cotizar%20Termocupla%20Tipo%20J1%20desde%20la%20web" class="btn-small mail">Mail</a>
-        </div>
+    <a href="sensores/tipoj.html" class="sensor-card">
+      <div class="sensor-card-img">
+        <img src="../imagenes/tipoj.jpg" alt="Termocupla Tipo J" onerror="this.style.display='none'" />
       </div>
-      <div class="variant-card">
-        <p class="variant-name">Tipo J – Variante 2</p>
-        <ul class="variant-specs">
-          <li>Vaina Ø 1/4" × 150 mm</li>
-          <li>Con cable compensado J × 3,5 m</li>
-        </ul>
-        <div class="variant-actions">
-          <a href="https://wa.me/541150021965?text=Consulta%20por%20Termocupla%20Tipo%20J2%20desde%20la%20web%20de%20DINTER" target="_blank" class="btn-small wa">WhatsApp</a>
-          <a href="mailto:dinter111@hotmail.com?subject=Cotizar%20Termocupla%20Tipo%20J2%20desde%20la%20web" class="btn-small mail">Mail</a>
-        </div>
+      <div class="sensor-card-body">
+        <span class="sensor-card-badge">Termocupla</span>
+        <span class="sensor-card-name">Tipo J</span>
+        <span class="sensor-card-desc">Fe/Co · Rango 0 a +750 °C · 4 variantes disponibles</span>
+        <span class="sensor-card-cta">Ver variantes</span>
       </div>
-      <div class="variant-card">
-        <p class="variant-name">Tipo J – Variante 3</p>
-        <ul class="variant-specs">
-          <li>Terminal arandela Ø 5/32" W</li>
-          <li>Cable × 2 m de largo</li>
-        </ul>
-        <div class="variant-actions">
-          <a href="https://wa.me/541150021965?text=Consulta%20por%20Termocupla%20Tipo%20J3%20desde%20la%20web%20de%20DINTER" target="_blank" class="btn-small wa">WhatsApp</a>
-          <a href="mailto:dinter111@hotmail.com?subject=Cotizar%20Termocupla%20Tipo%20J3%20desde%20la%20web" class="btn-small mail">Mail</a>
-        </div>
+    </a>
+
+    <a href="sensores/tipok.html" class="sensor-card">
+      <div class="sensor-card-img">
+        <img src="../imagenes/tipok.jpg" alt="Termocupla Tipo K" onerror="this.style.display='none'" />
       </div>
-      <div class="variant-card">
-        <p class="variant-name">Tipo J – Variante 4</p>
-        <ul class="variant-specs">
-          <li>Vaina Ø 1/4" × 100 mm</li>
-          <li>Vaina Ø 1/4" × 150 mm</li>
-          <li>Vaina Ø 1/4" × 200 mm</li>
-          <li>Vaina Ø 1/4" × 250 mm</li>
-          <li>Rosca 1/2" BSP</li>
-          <li>Cabezal DIN C</li>
-        </ul>
-        <div class="variant-actions">
-          <a href="https://wa.me/541150021965?text=Consulta%20por%20Termocupla%20Tipo%20J4%20desde%20la%20web%20de%20DINTER" target="_blank" class="btn-small wa">WhatsApp</a>
-          <a href="mailto:dinter111@hotmail.com?subject=Cotizar%20Termocupla%20Tipo%20J4%20desde%20la%20web" class="btn-small mail">Mail</a>
-        </div>
+      <div class="sensor-card-body">
+        <span class="sensor-card-badge">Termocupla</span>
+        <span class="sensor-card-name">Tipo K</span>
+        <span class="sensor-card-desc">Ni/Cr–Ni/Al · Rango 0 a +1.200 °C · Para hornos de mufla</span>
+        <span class="sensor-card-cta">Ver variantes</span>
       </div>
-    </div>
-    <img src="../imagenes/tipoj.jpg" alt="Termocupla Tipo J" class="sensor-img" onerror="this.style.display='none'" />
+    </a>
+
+    <a href="sensores/pt100.html" class="sensor-card">
+      <div class="sensor-card-img">
+        <img src="../imagenes/pt100.jpg" alt="Termorresistencia Pt-100" onerror="this.style.display='none'" />
+      </div>
+      <div class="sensor-card-body">
+        <span class="sensor-card-badge">Termorresistencia</span>
+        <span class="sensor-card-name">Pt-100</span>
+        <span class="sensor-card-desc">Platino 100 Ω · Rango –50 a +650 °C · 2 variantes disponibles</span>
+        <span class="sensor-card-cta">Ver variantes</span>
+      </div>
+    </a>
+
   </div>
-
-  <!-- PT-100 -->
-  <div class="sensor-group">
-    <div class="sensor-group-header">
-      <span class="sensor-group-badge">Pt-100</span>
-      <span class="sensor-group-title">Termorresistencia Pt-100</span>
-      <span class="sensor-group-desc">2 variantes disponibles</span>
-    </div>
-    <img src="../imagenes/pt100.jpg" alt="Termorresistencia Pt-100" class="sensor-img" onerror="this.style.display='none'" />
-    <div class="variants-grid">
-      <div class="variant-card">
-        <p class="variant-name">Pt-100 – Variante 1</p>
-        <ul class="variant-specs">
-          <li>Termorresistencia Pt-100 Ω</li>
-          <li>Vaina Ø 1/4" × 50 mm</li>
-          <li>Vaina Ø 1/4" × 100 mm</li>
-          <li>Vaina Ø 1/4" × 150 mm</li>
-          <li>Con cable siliconado × 1 m</li>
-          <li>Con cable siliconado × 2 m</li>
-        </ul>
-        <div class="variant-actions">
-          <a href="https://wa.me/541150021965?text=Consulta%20por%20Pt-100%20Variante%201%20desde%20la%20web%20de%20DINTER" target="_blank" class="btn-small wa">WhatsApp</a>
-          <a href="mailto:dinter111@hotmail.com?subject=Cotizar%20Pt-100%20Variante%201%20desde%20la%20web" class="btn-small mail">Mail</a>
-        </div>
-      </div>
-      <div class="variant-card">
-        <p class="variant-name">Pt-100 – Variante 2</p>
-        <ul class="variant-specs">
-          <li>Termorresistencia Pt-100 Ω</li>
-          <li>Vaina Ø 1/4" × 100 mm</li>
-          <li>Vaina Ø 1/4" × 150 mm</li>
-          <li>Vaina Ø 1/4" × 200 mm</li>
-          <li>Vaina Ø 1/4" × 250 mm</li>
-          <li>Rosca 1/2" BSP</li>
-          <li>Cabezal DIN C</li>
-        </ul>
-        <div class="variant-actions">
-          <a href="https://wa.me/541150021965?text=Consulta%20por%20Pt-100%20Variante%202%20desde%20la%20web%20de%20DINTER" target="_blank" class="btn-small wa">WhatsApp</a>
-          <a href="mailto:dinter111@hotmail.com?subject=Cotizar%20Pt-100%20Variante%202%20desde%20la%20web" class="btn-small mail">Mail</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
 </section>
-
 <div id="footer"></div>
 <script src="../js/ui.js"></script>
 <script>
-  document.getElementById('header').innerHTML = DinterUI.header('../');
-  document.getElementById('footer').innerHTML = DinterUI.footer('../');
-  document.getElementById('nav-strip').innerHTML = DinterUI.navStrip('../', 'sensores');
+  document.getElementById("header").innerHTML = DinterUI.header("../");
+  document.getElementById("footer").innerHTML = DinterUI.footer("../");
+  document.getElementById("nav-strip").innerHTML = DinterUI.navStrip("../", "sensores");
   DinterUI.init();
 </script>
 </body>
