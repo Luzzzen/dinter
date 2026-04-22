@@ -4,6 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dinter – Instrumentos de Medición y Control</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet" />
@@ -133,18 +137,21 @@
     /* ── HERO SLIDER ── */
     .hero {
       position: relative;
-      height: calc(100vh - 72px);
-      min-height: 480px;
-      max-height: 700px;
+      height: 560px;
       overflow: hidden;
       background: var(--teal-dark);
+    }
+
+    .slides-track {
+      position: absolute;
+      inset: 0;
     }
 
     .slide {
       position: absolute;
       inset: 0;
       opacity: 0;
-      transition: opacity .8s ease;
+      transition: opacity .9s cubic-bezier(.4,0,.2,1);
       display: flex;
       align-items: center;
     }
@@ -158,111 +165,190 @@
       height: 100%;
       object-fit: cover;
       object-position: center;
+      transform: scale(1.04);
+      transition: transform 6s ease;
     }
+
+    .slide.active img { transform: scale(1); }
 
     .slide-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(90deg, rgba(10,40,35,.72) 0%, rgba(10,40,35,.1) 65%);
+      background:
+        linear-gradient(90deg, rgba(10,40,35,.82) 0%, rgba(10,40,35,.3) 55%, transparent 80%),
+        linear-gradient(0deg, rgba(10,40,35,.4) 0%, transparent 50%);
     }
 
     .slide-content {
       position: relative;
       z-index: 2;
-      padding: 0 64px;
-      max-width: 560px;
-      animation: fadeUp .6s ease both;
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
+      padding: 0 72px;
+      max-width: 600px;
     }
 
     .slide-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
       font-family: var(--font-body);
-      font-size: .78rem;
-      font-weight: 600;
-      letter-spacing: .14em;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .2em;
       text-transform: uppercase;
       color: var(--teal-light);
-      margin-bottom: 10px;
+      margin-bottom: 16px;
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity .5s ease .1s, transform .5s ease .1s;
+    }
+
+    .slide-label::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--teal-light);
+      border-radius: 2px;
     }
 
     .slide-title {
       font-family: var(--font-head);
-      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-size: clamp(2.2rem, 4.5vw, 3.6rem);
       font-weight: 700;
       color: var(--white);
-      line-height: 1.1;
-      margin-bottom: 20px;
+      line-height: 1.05;
+      margin-bottom: 28px;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity .5s ease .22s, transform .5s ease .22s;
     }
 
     .slide-title span { color: var(--teal-light); }
 
     .slide-btn {
-      display: inline-block;
-      background: var(--teal-light);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: transparent;
       color: var(--white);
       font-family: var(--font-body);
       font-weight: 600;
       font-size: .88rem;
-      letter-spacing: .06em;
+      letter-spacing: .08em;
       text-transform: uppercase;
       text-decoration: none;
-      padding: 12px 28px;
+      padding: 13px 28px;
       border-radius: 6px;
-      transition: background .2s, transform .2s;
+      border: 1.5px solid rgba(255,255,255,.5);
+      transition: background .25s, border-color .25s, gap .2s;
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity .5s ease .34s, transform .5s ease .34s, background .2s, border-color .2s, gap .2s;
     }
 
-    .slide-btn:hover { background: var(--teal); transform: translateY(-2px); }
+    .slide-btn::after { content: '→'; }
+    .slide-btn:hover { background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.8); gap: 14px; }
 
-    /* slider controls */
+    .slide.active .slide-label,
+    .slide.active .slide-title,
+    .slide.active .slide-btn {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Barra de progreso */
+    .slider-progress {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 3px;
+      background: var(--teal-light);
+      width: 0%;
+      z-index: 10;
+      transition: width linear;
+    }
+
+    /* Contador de slides */
+    .slide-counter {
+      position: absolute;
+      bottom: 28px;
+      right: 72px;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: rgba(255,255,255,.6);
+      font-family: var(--font-head);
+      font-size: .85rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+    }
+
+    .slide-counter .current { color: var(--white); font-size: 1.1rem; }
+    .slide-counter .sep { width: 32px; height: 1px; background: rgba(255,255,255,.3); }
+
+    /* Dots */
     .slider-dots {
       position: absolute;
-      bottom: 24px;
-      left: 50%;
-      transform: translateX(-50%);
+      bottom: 32px;
+      left: 72px;
       display: flex;
-      gap: 8px;
+      gap: 6px;
       z-index: 10;
     }
 
     .dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: rgba(255,255,255,.4);
+      width: 24px;
+      height: 3px;
+      border-radius: 2px;
+      background: rgba(255,255,255,.3);
       cursor: pointer;
       border: none;
-      transition: background .3s, transform .3s;
+      padding: 0;
+      transition: background .3s, width .3s;
     }
 
-    .dot.active { background: var(--white); transform: scale(1.3); }
+    .dot.active { background: var(--white); width: 40px; }
 
+    /* Flechas */
     .slider-arrow {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
       z-index: 10;
-      background: rgba(255,255,255,.15);
-      border: 1px solid rgba(255,255,255,.3);
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.2);
       color: var(--white);
-      width: 44px;
-      height: 44px;
+      width: 48px;
+      height: 48px;
       border-radius: 50%;
-      font-size: 1.1rem;
+      font-size: 1rem;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: background .2s;
-      backdrop-filter: blur(4px);
+      transition: background .2s, border-color .2s;
+      backdrop-filter: blur(8px);
     }
 
-    .slider-arrow:hover { background: rgba(255,255,255,.3); }
-    .slider-arrow.prev { left: 20px; }
-    .slider-arrow.next { right: 20px; }
+    .slider-arrow:hover { background: rgba(255,255,255,.2); border-color: rgba(255,255,255,.4); }
+    .slider-arrow.prev { left: 24px; }
+    .slider-arrow.next { right: 24px; }
+
+    @media (max-width: 900px) {
+      .hero { height: 460px; }
+      .slide-content { padding: 0 32px; }
+      .slider-dots { left: 32px; bottom: 24px; }
+      .slide-counter { right: 32px; bottom: 20px; }
+    }
+
+    @media (max-width: 600px) {
+      .hero { height: 400px; }
+      .slide-content { padding: 0 20px; max-width: 100%; }
+      .slider-dots { left: 20px; }
+      .slide-counter { display: none; }
+      .slider-arrow { display: none; }
+    }
 
     /* ── CATEGORÍAS ── */
     .section-label {
@@ -633,6 +719,71 @@
       footer { grid-template-columns: 1fr; }
       .stats { gap: 24px; }
     }
+
+    /* ── HAMBURGER ── */
+    .hamburger {
+      display: none; flex-direction: column; justify-content: center;
+      gap: 5px; width: 40px; height: 40px;
+      background: none; border: none; cursor: pointer; padding: 4px;
+      border-radius: 6px; transition: background .2s;
+    }
+    .hamburger:hover { background: var(--teal-muted); }
+    .hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--dark); border-radius: 2px;
+      transition: transform .3s, opacity .3s;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .drawer-overlay {
+      display: none; position: fixed; inset: 0;
+      background: rgba(0,0,0,.45); z-index: 150; backdrop-filter: blur(2px);
+    }
+    .drawer-overlay.open { display: block; }
+    .drawer {
+      position: fixed; top: 0; left: 0; bottom: 0; width: 280px;
+      background: var(--white); z-index: 200;
+      transform: translateX(-100%);
+      transition: transform .3s cubic-bezier(.4,0,.2,1);
+      display: flex; flex-direction: column; overflow-y: auto;
+      box-shadow: 4px 0 32px rgba(15,82,73,.15);
+    }
+    .drawer.open { transform: translateX(0); }
+    .drawer-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 20px; border-bottom: 1px solid var(--teal-border);
+    }
+    .drawer-header img { height: 40px; }
+    .drawer-close {
+      background: none; border: none; cursor: pointer;
+      color: var(--gray-3); font-size: 1.4rem; line-height: 1;
+      padding: 4px 8px; border-radius: 4px; transition: background .2s, color .2s;
+    }
+    .drawer-close:hover { background: var(--teal-muted); color: var(--teal-dark); }
+    .drawer-section { padding: 16px 0; border-bottom: 1px solid var(--teal-border); }
+    .drawer-section-label {
+      font-size: .68rem; font-weight: 700; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--teal); padding: 0 20px 8px;
+    }
+    .drawer-section a {
+      display: block; font-size: .92rem; font-weight: 500;
+      color: var(--dark); text-decoration: none;
+      padding: 10px 20px; transition: background .2s, color .2s;
+    }
+    .drawer-section a:hover { background: var(--teal-muted); color: var(--teal-dark); }
+    .drawer-cta { padding: 20px; margin-top: auto; }
+    .drawer-cta a {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      background: var(--teal); color: var(--white);
+      font-weight: 700; font-size: .9rem; text-decoration: none;
+      padding: 13px; border-radius: 8px; transition: background .2s;
+    }
+    .drawer-cta a:hover { background: var(--teal-dark); }
+    @media (max-width: 768px) {
+      .hamburger { display: flex; }
+      nav { display: none; }
+    }
   </style>
 </head>
 <body>
@@ -667,44 +818,82 @@
     </div>
     <a href="contacto.html" class="nav-cta">Contacto</a>
   </nav>
+  <button class="hamburger" id="hamburger-btn" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
 </header>
+
+<div class="drawer-overlay" id="drawer-overlay"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-header">
+    <a href="index.html"><img src="Dinter_Logo.png" alt="Dinter" /></a>
+    <button class="drawer-close" id="drawer-close">✕</button>
+  </div>
+  <div class="drawer-section">
+    <p class="drawer-section-label">La empresa</p>
+    <a href="index.html">Inicio</a>
+    <a href="nosotros.html">Acerca de nosotros</a>
+    <a href="como-llegar.html">Cómo llegar</a>
+  </div>
+  <div class="drawer-section">
+    <p class="drawer-section-label">Productos</p>
+    <a href="productos/amperimetros.html">Amperímetros</a>
+    <a href="productos/colada-caliente.html">Colada caliente</a>
+    <a href="productos/contadores.html">Contadores</a>
+    <a href="productos/controladores-temperatura.html">Controladores de temperatura</a>
+    <a href="productos/dosificadores-agua.html">Dosificadores de agua</a>
+    <a href="productos/humedad.html">Humedad</a>
+    <a href="productos/sensores.html">Sensores</a>
+    <a href="productos/temporizadores.html">Temporizadores</a>
+    <a href="productos/termometro.html">Termómetro</a>
+    <a href="productos/variador-velocidad.html">Variador de velocidad</a>
+  </div>
+  <div class="drawer-cta">
+    <a href="https://wa.me/541150021965" target="_blank">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Contactar por WhatsApp
+    </a>
+  </div>
+</div>
 
 <!-- HERO SLIDER -->
 <section class="hero" style="padding:0;">
-  <div class="slide active">
-    <img src="banner1_618.jpg" alt="Controladores de temperatura Línea N" />
-    <div class="slide-overlay"></div>
-    <div class="slide-content">
-      <p class="slide-label">Línea N</p>
-      <h1 class="slide-title">Controladores de <span>Temperatura</span></h1>
-      <a href="productos/controladores-temperatura.html" class="slide-btn">Ver productos</a>
+  <div class="slides-track">
+    <div class="slide active">
+      <img src="banner1_618.jpg" alt="Controladores de temperatura Línea N" />
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <p class="slide-label">Línea N</p>
+        <h1 class="slide-title">Controladores de <span>Temperatura</span></h1>
+        <a href="productos/controladores-temperatura.html" class="slide-btn">Ver productos</a>
+      </div>
     </div>
-  </div>
-  <div class="slide">
-    <img src="banner2_618.jpg" alt="Contadores Línea C" />
-    <div class="slide-overlay"></div>
-    <div class="slide-content">
-      <p class="slide-label">Línea C</p>
-      <h1 class="slide-title"><span>Contadores</span> programables</h1>
-      <a href="productos/contadores.html" class="slide-btn">Ver productos</a>
+    <div class="slide">
+      <img src="banner2_618.jpg" alt="Contadores Línea C" />
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <p class="slide-label">Línea C</p>
+        <h1 class="slide-title"><span>Contadores</span> programables</h1>
+        <a href="productos/contadores.html" class="slide-btn">Ver productos</a>
+      </div>
     </div>
-  </div>
-  <div class="slide">
-    <img src="banner3_618.jpg" alt="Temporizadores Línea T" />
-    <div class="slide-overlay"></div>
-    <div class="slide-content">
-      <p class="slide-label">Línea T</p>
-      <h1 class="slide-title"><span>Temporizadores</span> digitales</h1>
-      <a href="productos/temporizadores.html" class="slide-btn">Ver productos</a>
+    <div class="slide">
+      <img src="banner3_618.jpg" alt="Temporizadores Línea T" />
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <p class="slide-label">Línea T</p>
+        <h1 class="slide-title"><span>Temporizadores</span> digitales</h1>
+        <a href="productos/temporizadores.html" class="slide-btn">Ver productos</a>
+      </div>
     </div>
-  </div>
-  <div class="slide">
-    <img src="banner4_618.jpg" alt="Dosificadores de agua" />
-    <div class="slide-overlay"></div>
-    <div class="slide-content">
-      <p class="slide-label">Dosificadores de agua</p>
-      <h1 class="slide-title">Dosificadores <span>de agua</span></h1>
-      <a href="productos/dosificadores-agua.html" class="slide-btn">Ver productos</a>
+    <div class="slide">
+      <img src="banner4_618.jpg" alt="Dosificadores de agua" />
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <p class="slide-label">Dosificadores de agua</p>
+        <h1 class="slide-title">Dosificadores <span>de agua</span></h1>
+        <a href="productos/dosificadores-agua.html" class="slide-btn">Ver productos</a>
+      </div>
     </div>
   </div>
 
@@ -717,6 +906,14 @@
     <button class="dot" aria-label="Slide 3"></button>
     <button class="dot" aria-label="Slide 4"></button>
   </div>
+
+  <div class="slide-counter">
+    <span class="current" id="slide-current">01</span>
+    <span class="sep"></span>
+    <span>04</span>
+  </div>
+
+  <div class="slider-progress" id="slider-progress"></div>
 </section>
 
 <!-- PRODUCTOS -->
@@ -885,7 +1082,7 @@
   // Año dinámico
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // Años en el mercado — reemplazar FOUNDING_YEAR con el año real
+  // Años en el mercado
   const FOUNDING_YEAR = 1996;
   if (FOUNDING_YEAR) {
     const years = new Date().getFullYear() - FOUNDING_YEAR;
@@ -894,10 +1091,26 @@
   }
 
   // Slider
-  const slides = document.querySelectorAll('.slide');
-  const dots   = document.querySelectorAll('.dot');
-  let current  = 0;
-  let timer;
+  const slides   = document.querySelectorAll('.slide');
+  const dots     = document.querySelectorAll('.dot');
+  const progress = document.getElementById('slider-progress');
+  const counter  = document.getElementById('slide-current');
+  const DURATION = 4500;
+  let current = 0;
+  let timer, progressTimer;
+
+  function pad(n) { return n < 10 ? '0' + n : '' + n; }
+
+  function startProgress() {
+    progress.style.transition = 'none';
+    progress.style.width = '0%';
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        progress.style.transition = `width ${DURATION}ms linear`;
+        progress.style.width = '100%';
+      });
+    });
+  }
 
   function goTo(n) {
     slides[current].classList.remove('active');
@@ -905,10 +1118,12 @@
     current = (n + slides.length) % slides.length;
     slides[current].classList.add('active');
     dots[current].classList.add('active');
+    counter.textContent = pad(current + 1);
+    startProgress();
   }
 
   function autoPlay() {
-    timer = setInterval(() => goTo(current + 1), 4500);
+    timer = setInterval(() => goTo(current + 1), DURATION);
   }
 
   function resetTimer() {
@@ -920,7 +1135,22 @@
   document.querySelector('.slider-arrow.next').addEventListener('click', () => { goTo(current + 1); resetTimer(); });
   dots.forEach((dot, i) => dot.addEventListener('click', () => { goTo(i); resetTimer(); }));
 
+  startProgress();
   autoPlay();
+
+  // Drawer mobile
+  const btn     = document.getElementById('hamburger-btn');
+  const overlay = document.getElementById('drawer-overlay');
+  const drawer  = document.getElementById('drawer');
+  const close   = document.getElementById('drawer-close');
+
+  function openDrawer()  { btn.classList.add('open'); overlay.classList.add('open'); drawer.classList.add('open'); document.body.style.overflow = 'hidden'; }
+  function closeDrawer() { btn.classList.remove('open'); overlay.classList.remove('open'); drawer.classList.remove('open'); document.body.style.overflow = ''; }
+
+  btn.addEventListener('click', openDrawer);
+  close.addEventListener('click', closeDrawer);
+  overlay.addEventListener('click', closeDrawer);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
 </script>
 
 </body>
