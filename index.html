@@ -287,7 +287,7 @@
 
     section { padding: 80px 48px; }
 
-    .products-section { background: var(--gray-1); }
+    .products-section { background: var(--gray-1); padding: 80px 48px; }
 
     .products-header {
       display: flex;
@@ -400,6 +400,7 @@
       grid-template-columns: 1fr 1fr;
       gap: 80px;
       align-items: center;
+      padding: 80px 48px;
     }
 
     .empresa-text { max-width: 500px; }
@@ -729,7 +730,9 @@
   </div>
   <div class="categories-grid">
     <a href="productos/contadores.html" class="cat-card">
-      <div class="cat-img"><img src="banner2_618.jpg" alt="Contadores" /></div>
+      <div class="cat-img" style="background:var(--teal-muted);display:flex;align-items:center;justify-content:center;">
+        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      </div>
       <div class="cat-body">
         <span class="cat-tag">Línea C</span>
         <span class="cat-name">Contadores</span>
@@ -738,7 +741,9 @@
       </div>
     </a>
     <a href="productos/controladores-temperatura.html" class="cat-card">
-      <div class="cat-img"><img src="banner1_618.jpg" alt="Controladores de temperatura" /></div>
+      <div class="cat-img" style="background:var(--teal-muted);display:flex;align-items:center;justify-content:center;">
+        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1"><path d="M14 14.76V3.5a2.5 2.5 0 00-5 0v11.26a4.5 4.5 0 105 0z"/></svg>
+      </div>
       <div class="cat-body">
         <span class="cat-tag">Línea N</span>
         <span class="cat-name">Controladores de temperatura</span>
@@ -747,7 +752,9 @@
       </div>
     </a>
     <a href="productos/temporizadores.html" class="cat-card">
-      <div class="cat-img"><img src="banner3_618.jpg" alt="Temporizadores" /></div>
+      <div class="cat-img" style="background:var(--teal-muted);display:flex;align-items:center;justify-content:center;">
+        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </div>
       <div class="cat-body">
         <span class="cat-tag">Línea T</span>
         <span class="cat-name">Temporizadores</span>
@@ -756,7 +763,9 @@
       </div>
     </a>
     <a href="productos/dosificadores-agua.html" class="cat-card">
-      <div class="cat-img"><img src="banner4_618.jpg" alt="Dosificadores de agua" /></div>
+      <div class="cat-img" style="background:var(--teal-muted);display:flex;align-items:center;justify-content:center;">
+        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
+      </div>
       <div class="cat-body">
         <span class="cat-tag">Dosificadores de agua</span>
         <span class="cat-name">Dosificadores de agua</span>
@@ -786,6 +795,9 @@
         <span class="cat-arrow">Ver modelos</span>
       </div>
     </a>
+  </div>
+</section>
+
 <section class="empresa-section">
   <div class="empresa-text">
     <p class="section-label">Nosotros</p>
@@ -810,7 +822,7 @@
   <div class="empresa-visual">
     <div class="empresa-bg-card"></div>
     <div class="empresa-inner-content">
-      <p>Instrumentos de<br/>Medición y Control<br/>— fabricados en Argentina</p>
+      <img src="Dinter_Logo.png" alt="Dinter" style="max-width:180px;opacity:.7;" />
     </div>
     <div class="empresa-highlight">
       <strong id="years-badge">—</strong>
