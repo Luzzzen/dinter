@@ -197,14 +197,14 @@ footer {
 
 /* ── DRAWER ── */
 .drawer {
-  position: fixed; top: 0; left: 0; bottom: 0;
+  position: fixed; top: 0; right: 0; bottom: 0;
   width: 280px; background: var(--white);
   z-index: 200;
-  transform: translateX(-100%);
+  transform: translateX(100%);
   transition: transform .3s cubic-bezier(.4,0,.2,1);
   display: flex; flex-direction: column;
   overflow-y: auto;
-  box-shadow: 4px 0 32px rgba(15,82,73,.15);
+  box-shadow: -4px 0 32px rgba(15,82,73,.15);
 }
 .drawer.open { transform: translateX(0); }
 .drawer-header {
@@ -247,6 +247,15 @@ footer {
   footer { grid-template-columns: 1fr 1fr; padding: 40px 20px; }
   .footer-bottom { padding: 16px 20px; flex-direction: column; gap: 6px; text-align: center; }
   .contact-strip { flex-direction: column; align-items: flex-start; padding: 48px 20px; }
+  .empresa-visual { height: 220px; }
+  .empresa-highlight {
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 40px);
+    text-align: center;
+    align-items: center;
+  }
 }
 @media (max-width: 768px) {
   .hamburger { display: flex; }
@@ -254,4 +263,9 @@ footer {
 }
 @media (max-width: 600px) {
   footer { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 960px) {
+  .product-layout { display: flex !important; flex-direction: column; }
+  .product-main { order: -1; }
 }
