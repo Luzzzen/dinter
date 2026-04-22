@@ -350,6 +350,24 @@
       .slider-arrow { display: none; }
     }
 
+
+    /* ── MINI SLIDER EN CATEGORÍAS ── */
+    .cat-img { position: relative; }
+    .cat-slider { position: absolute; inset: 0; }
+    .cat-slide { position: absolute; inset: 0; opacity: 0; transition: opacity .6s ease; }
+    .cat-slide.active { opacity: 1; }
+    .cat-slide img { width: 100%; height: 100%; object-fit: cover; }
+    .cat-slider-dots {
+      position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%);
+      display: flex; gap: 4px; z-index: 5;
+    }
+    .cat-slider-dot {
+      width: 5px; height: 5px; border-radius: 50%;
+      background: rgba(255,255,255,.5); border: none; padding: 0; cursor: pointer;
+      transition: background .2s;
+    }
+    .cat-slider-dot.active { background: var(--white); }
+
     /* ── CATEGORÍAS ── */
     .section-label {
       font-family: var(--font-body);
@@ -478,6 +496,40 @@
 
     .cat-arrow::after { content: '→'; transition: transform .2s; }
     .cat-card:hover .cat-arrow::after { transform: translateX(4px); }
+
+
+    .empresa-map-link {
+      display: block;
+      text-decoration: none;
+      position: absolute;
+      inset: 0;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .empresa-map-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .4s ease;
+    }
+    .empresa-map-link:hover .empresa-map-img { transform: scale(1.03); }
+    .empresa-map-overlay {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(0deg, rgba(15,82,73,.85) 0%, transparent 100%);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 20px 20px 16px;
+      font-size: .82rem;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      opacity: 0;
+      transition: opacity .3s;
+    }
+    .empresa-map-link:hover .empresa-map-overlay { opacity: 1; }
 
     /* ── EMPRESA ── */
     .empresa-section {
@@ -812,7 +864,6 @@
         <a href="productos/humedad.html">Humedad</a>
         <a href="productos/sensores.html">Sensores</a>
         <a href="productos/temporizadores.html">Temporizadores</a>
-        <a href="productos/termometro.html">Termómetro</a>
         <a href="productos/variador-velocidad.html">Variador de velocidad</a>
       </div>
     </div>
@@ -927,8 +978,15 @@
   </div>
   <div class="categories-grid">
     <a href="productos/contadores.html" class="cat-card">
-      <div class="cat-img" style="background:var(--teal-muted);display:flex;align-items:center;justify-content:center;">
-        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      <div class="cat-img">
+        <div class="cat-slider" data-autoplay>
+          <div class="cat-slide active"><img src="imagenes/ch2.jpg" alt="Contadores" onerror="this.parentElement.parentElement.style.display='none'" /></div>
+        <div class="cat-slide"><img src="imagenes/cl2.jpg" alt="Contadores" onerror="this.parentElement.parentElement.style.display='none'" /></div>
+        <div class="cat-slide"><img src="imagenes/cg2.jpg" alt="Contadores" onerror="this.parentElement.parentElement.style.display='none'" /></div>
+        </div>
+        <div class="cat-slider-dots"><button class="cat-slider-dot active" data-idx="0"></button>
+          <button class="cat-slider-dot" data-idx="1"></button>
+          <button class="cat-slider-dot" data-idx="2"></button></div>
       </div>
       <div class="cat-body">
         <span class="cat-tag">Línea C</span>
@@ -938,8 +996,27 @@
       </div>
     </a>
     <a href="productos/controladores-temperatura.html" class="cat-card">
-      <div class="cat-img" style="background:var(--teal-muted);display:flex;align-items:center;justify-content:center;">
-        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1"><path d="M14 14.76V3.5a2.5 2.5 0 00-5 0v11.26a4.5 4.5 0 105 0z"/></svg>
+      <div class="cat-img">
+        <div class="cat-slider" data-autoplay>
+          <div class="cat-slide active"><img src="imagenes/nl2.jpg" alt="Controladores de temperatura" onerror="this.parentElement.parentElement.style.display='none'" /></div>
+        <div class="cat-slide"><img src="imagenes/nl-eco.jpg" alt="Controladores de temperatura" onerror="this.parentElement.parentElement.style.display='none'" /></div>
+        <div class="cat-slide"><img src="imagenes/ng2.jpg" alt="Controladores de temperatura" onerror="this.parentElement.parentElement.style.display='none'" /></div>
+        <div class="cat-slide"><img src="imagenes/ng-eco.jpg" alt="Controladores de temperatura" onerror="this.parentElement.parentElement.style.display='none'" /></div>
+        <div class="cat-slide"><img src="imagenes/nh2.jpg" alt="Controladores de temperatura" onerror="this.parentElement.parentElement.style.display='none'" /></div>
+        <div class="cat-slide"><img src="imagenes/np2.jpg" alt="Controladores de temperatura" onerror="this.parentElement.parentElement.style.display='none'" /></div>
+        <div class="cat-slide"><img src="imagenes/nf2.jpg" alt="Controladores de temperatura" onerror="this.parentElement.parentElement.style.display='none'" /></div>
+        <div class="cat-slide"><img src="imagenes/nw2.jpg" alt="Controladores de temperatura" onerror="this.parentElement.parentElement.style.display='none'" /></div>
+        <div class="cat-slide"><img src="imagenes/ntt2.jpg" alt="Controladores de temperatura" onerror="this.parentElement.parentElement.style.display='none'" /></div>
+        </div>
+        <div class="cat-slider-dots"><button class="cat-slider-dot active" data-idx="0"></button>
+          <button class="cat-slider-dot" data-idx="1"></button>
+          <button class="cat-slider-dot" data-idx="2"></button>
+          <button class="cat-slider-dot" data-idx="3"></button>
+          <button class="cat-slider-dot" data-idx="4"></button>
+          <button class="cat-slider-dot" data-idx="5"></button>
+          <button class="cat-slider-dot" data-idx="6"></button>
+          <button class="cat-slider-dot" data-idx="7"></button>
+          <button class="cat-slider-dot" data-idx="8"></button></div>
       </div>
       <div class="cat-body">
         <span class="cat-tag">Línea N</span>
@@ -949,8 +1026,17 @@
       </div>
     </a>
     <a href="productos/temporizadores.html" class="cat-card">
-      <div class="cat-img" style="background:var(--teal-muted);display:flex;align-items:center;justify-content:center;">
-        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      <div class="cat-img">
+        <div class="cat-slider" data-autoplay>
+          <div class="cat-slide active"><img src="imagenes/tl2.jpg" alt="Temporizadores" onerror="this.parentElement.parentElement.style.display='none'" /></div>
+        <div class="cat-slide"><img src="imagenes/th2.jpg" alt="Temporizadores" onerror="this.parentElement.parentElement.style.display='none'" /></div>
+        <div class="cat-slide"><img src="imagenes/tg2.jpg" alt="Temporizadores" onerror="this.parentElement.parentElement.style.display='none'" /></div>
+        <div class="cat-slide"><img src="imagenes/tw2.jpg" alt="Temporizadores" onerror="this.parentElement.parentElement.style.display='none'" /></div>
+        </div>
+        <div class="cat-slider-dots"><button class="cat-slider-dot active" data-idx="0"></button>
+          <button class="cat-slider-dot" data-idx="1"></button>
+          <button class="cat-slider-dot" data-idx="2"></button>
+          <button class="cat-slider-dot" data-idx="3"></button></div>
       </div>
       <div class="cat-body">
         <span class="cat-tag">Línea T</span>
@@ -960,8 +1046,8 @@
       </div>
     </a>
     <a href="productos/dosificadores-agua.html" class="cat-card">
-      <div class="cat-img" style="background:var(--teal-muted);display:flex;align-items:center;justify-content:center;">
-        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
+      <div class="cat-img">
+        <img src="imagenes/lf19.jpg" alt="Dosificadores de agua" style="width:100%;height:100%;object-fit:cover;" onerror="this.parentElement.style.background='var(--teal-muted)'" />
       </div>
       <div class="cat-body">
         <span class="cat-tag">Dosificadores de agua</span>
@@ -971,8 +1057,15 @@
       </div>
     </a>
     <a href="productos/sensores.html" class="cat-card">
-      <div class="cat-img" style="background:var(--teal-muted);display:flex;align-items:center;justify-content:center;">
-        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2v-4M9 21H5a2 2 0 01-2-2v-4m0 0h18"/></svg>
+      <div class="cat-img">
+        <div class="cat-slider" data-autoplay>
+          <div class="cat-slide active"><img src="imagenes/tipoj.jpg" alt="Sensores" onerror="this.parentElement.parentElement.style.display='none'" /></div>
+        <div class="cat-slide"><img src="imagenes/tipok.jpg" alt="Sensores" onerror="this.parentElement.parentElement.style.display='none'" /></div>
+        <div class="cat-slide"><img src="imagenes/pt100.jpg" alt="Sensores" onerror="this.parentElement.parentElement.style.display='none'" /></div>
+        </div>
+        <div class="cat-slider-dots"><button class="cat-slider-dot active" data-idx="0"></button>
+          <button class="cat-slider-dot" data-idx="1"></button>
+          <button class="cat-slider-dot" data-idx="2"></button></div>
       </div>
       <div class="cat-body">
         <span class="cat-tag">Sensores</span>
@@ -982,8 +1075,8 @@
       </div>
     </a>
     <a href="productos/variador-velocidad.html" class="cat-card">
-      <div class="cat-img" style="background:var(--teal-muted);display:flex;align-items:center;justify-content:center;">
-        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14"/><path d="M4.93 4.93a10 10 0 000 14.14"/><path d="M15.54 8.46a5 5 0 010 7.07"/><path d="M8.46 8.46a5 5 0 000 7.07"/></svg>
+      <div class="cat-img">
+        <img src="imagenes/tl2pwm.png" alt="Variador de velocidad" style="width:100%;height:100%;object-fit:cover;" onerror="this.parentElement.style.background='var(--teal-muted)'" />
       </div>
       <div class="cat-body">
         <span class="cat-tag">Variador de velocidad</span>
@@ -1018,9 +1111,13 @@
   </div>
   <div class="empresa-visual">
     <div class="empresa-bg-card"></div>
-    <div class="empresa-inner-content">
-      <img src="Dinter_Logo.png" alt="Dinter" style="max-width:180px;opacity:.7;" />
-    </div>
+    <a href="como-llegar.html" class="empresa-inner-content empresa-map-link" title="Ver cómo llegar">
+      <img src="mapa_dinter.jpg" alt="Ubicación Dinter – París 1824, Isidro Casanova" class="empresa-map-img" />
+      <div class="empresa-map-overlay">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Ver cómo llegar
+      </div>
+    </a>
     <div class="empresa-highlight">
       <strong id="years-badge">—</strong>
       <span>años en el mercado argentino</span>
@@ -1151,6 +1248,23 @@
   close.addEventListener('click', closeDrawer);
   overlay.addEventListener('click', closeDrawer);
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
+
+  // Mini sliders en categorías
+  document.querySelectorAll('.cat-slider[data-autoplay]').forEach(slider => {
+    const slides = slider.querySelectorAll('.cat-slide');
+    const dots = slider.parentElement.querySelectorAll('.cat-slider-dot');
+    if (slides.length <= 1) return;
+    let cur = 0;
+    function goTo(n) {
+      slides[cur].classList.remove('active');
+      dots[cur].classList.remove('active');
+      cur = (n + slides.length) % slides.length;
+      slides[cur].classList.add('active');
+      dots[cur].classList.add('active');
+    }
+    dots.forEach((dot, i) => dot.addEventListener('click', e => { e.preventDefault(); goTo(i); }));
+    setInterval(() => goTo(cur + 1), 2800);
+  });
 </script>
 
 </body>

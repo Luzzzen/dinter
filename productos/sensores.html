@@ -38,6 +38,9 @@
     @media (max-width: 900px) { .sensors-section { padding: 48px 20px; } .sensor-group-desc { display: none; } }
     @media (max-width: 600px) { .variants-grid { grid-template-columns: 1fr; } }
   </style>
+  <style>
+    .sensor-img { width: 100%; max-width: 260px; height: 160px; object-fit: contain; background: var(--white); border: 1px solid var(--teal-border); border-radius: 10px; padding: 16px; margin-bottom: 20px; display: block; }
+  </style>
 </head>
 <body>
 <div id="header"></div>
@@ -80,6 +83,7 @@
         </div>
       </div>
     </div>
+    <img src="../imagenes/tipok.jpg" alt="Termocupla Tipo K" class="sensor-img" onerror="this.style.display='none'" />
   </div>
 
   <!-- TIPO J -->
@@ -141,6 +145,7 @@
         </div>
       </div>
     </div>
+    <img src="../imagenes/tipoj.jpg" alt="Termocupla Tipo J" class="sensor-img" onerror="this.style.display='none'" />
   </div>
 
   <!-- PT-100 -->
@@ -150,6 +155,7 @@
       <span class="sensor-group-title">Termorresistencia Pt-100</span>
       <span class="sensor-group-desc">2 variantes disponibles</span>
     </div>
+    <img src="../imagenes/pt100.jpg" alt="Termorresistencia Pt-100" class="sensor-img" onerror="this.style.display='none'" />
     <div class="variants-grid">
       <div class="variant-card">
         <p class="variant-name">Pt-100 – Variante 1</p>
