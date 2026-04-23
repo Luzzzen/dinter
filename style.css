@@ -269,3 +269,10 @@ footer {
   .product-layout { display: flex !important; flex-direction: column; }
   .product-main { order: -1; }
 }
+
+/* ── PRODUCT IMG AREA: más grande en desktop ── */
+@media (min-width: 961px) {
+  .product-img-area {
+    height: 420px !important;
+  }
+}
