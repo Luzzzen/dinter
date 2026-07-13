@@ -17,12 +17,10 @@ const DinterUI = {
     <div class="nav-dropdown">
       <a href="${base}productos.html">Productos</a>
       <div class="dropdown-menu">
-        <a href="${base}productos/amperimetros.html">Amperímetros</a>
         <a href="${base}productos/colada-caliente.html">Colada caliente</a>
         <a href="${base}productos/contadores.html">Contadores</a>
         <a href="${base}productos/controladores-temperatura.html">Controladores de temperatura</a>
         <a href="${base}productos/dosificadores-agua.html">Dosificadores de agua</a>
-        <a href="${base}productos/humedad.html">Humedad</a>
         <a href="${base}productos/sensores.html">Sensores</a>
         <a href="${base}productos/temporizadores.html">Temporizadores</a>
         <a href="${base}productos/variador-velocidad.html">Variador de velocidad</a>
@@ -51,12 +49,10 @@ const DinterUI = {
   </div>
   <div class="drawer-section">
     <p class="drawer-section-label">Productos</p>
-    <a href="${base}productos/amperimetros.html">Amperímetros</a>
     <a href="${base}productos/colada-caliente.html">Colada caliente</a>
     <a href="${base}productos/contadores.html">Contadores</a>
     <a href="${base}productos/controladores-temperatura.html">Controladores de temperatura</a>
     <a href="${base}productos/dosificadores-agua.html">Dosificadores de agua</a>
-    <a href="${base}productos/humedad.html">Humedad</a>
     <a href="${base}productos/sensores.html">Sensores</a>
     <a href="${base}productos/temporizadores.html">Temporizadores</a>
     <a href="${base}productos/variador-velocidad.html">Variador de velocidad</a>
@@ -80,9 +76,7 @@ const DinterUI = {
   <a href="${base}productos/controladores-temperatura.html" ${active === 'controladores' ? 'class="active"' : ''}>Control. temperatura</a>
   <a href="${base}productos/temporizadores.html" ${active === 'temporizadores' ? 'class="active"' : ''}>Temporizadores</a>
   <a href="${base}productos/dosificadores-agua.html" ${active === 'dosificadores' ? 'class="active"' : ''}>Dosificadores</a>
-  <a href="${base}productos/amperimetros.html" ${active === 'amperimetros' ? 'class="active"' : ''}>Amperímetros</a>
   <a href="${base}productos/sensores.html" ${active === 'sensores' ? 'class="active"' : ''}>Sensores</a>
-  <a href="${base}productos/humedad.html" ${active === 'humedad' ? 'class="active"' : ''}>Humedad</a>
   <a href="${base}productos/variador-velocidad.html" ${active === 'variador' ? 'class="active"' : ''}>Variador veloc.</a>
   <div class="nav-strip-sep"></div>
   <a href="${base}contacto.html" ${active === 'contacto' ? 'class="active"' : ''}>Contacto</a>
