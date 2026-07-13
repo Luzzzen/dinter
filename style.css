@@ -257,7 +257,7 @@ footer {
     align-items: center;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .hamburger { display: flex; }
   nav { display: none; }
 }

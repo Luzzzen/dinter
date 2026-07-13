@@ -335,20 +335,7 @@
     .slider-arrow.prev { left: 24px; }
     .slider-arrow.next { right: 24px; }
 
-    @media (max-width: 900px) {
-      .hero { height: 460px; }
-      .slide-content { padding: 0 32px; }
-      .slider-dots { left: 32px; bottom: 24px; }
-      .slide-counter { right: 32px; bottom: 20px; }
-    }
-
-    @media (max-width: 600px) {
-      .hero { height: 400px; }
-      .slide-content { padding: 0 20px; max-width: 100%; }
-      .slider-dots { left: 20px; }
-      .slide-counter { display: none; }
-      .slider-arrow { display: none; }
-    }
+    /* Responsive del hero: ver bloque unificado al final de la hoja */
 
 
     /* ── MINI SLIDER EN CATEGORÍAS ── */
@@ -358,12 +345,14 @@
     .cat-slide.active { opacity: 1; }
     .cat-slide img { width: 100%; height: 100%; object-fit: cover; }
     .cat-slider-dots {
-      position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%);
-      display: flex; gap: 4px; z-index: 5;
+      position: absolute; bottom: 2px; left: 50%; transform: translateX(-50%);
+      display: flex; gap: 0; z-index: 5;
     }
     .cat-slider-dot {
       width: 5px; height: 5px; border-radius: 50%;
-      background: rgba(255,255,255,.5); border: none; padding: 0; cursor: pointer;
+      background: rgba(255,255,255,.5); background-clip: content-box;
+      box-sizing: content-box;
+      border: none; padding: 9px; cursor: pointer;
       transition: background .2s;
     }
     .cat-slider-dot.active { background: var(--white); }
@@ -748,29 +737,7 @@
     .footer-bottom p { font-size: .78rem; color: rgba(255,255,255,.25); }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 900px) {
-      header { padding: 0 20px; }
-      section { padding: 56px 20px; }
-
-      nav a { padding: 8px 10px; font-size: .82rem; }
-
-      .empresa-section { grid-template-columns: 1fr; gap: 40px; }
-      .empresa-visual { height: 280px; }
-
-      footer { grid-template-columns: 1fr 1fr; padding: 40px 20px; }
-      .footer-bottom { padding: 16px 20px; flex-direction: column; gap: 6px; text-align: center; }
-
-      .contact-strip { flex-direction: column; align-items: flex-start; padding: 48px 20px; }
-
-      .slide-content { padding: 0 24px; }
-    }
-
-    @media (max-width: 600px) {
-      nav .nav-dropdown, nav a:not(.nav-cta) { display: none; }
-      .categories-grid { grid-template-columns: 1fr; }
-      footer { grid-template-columns: 1fr; }
-      .stats { gap: 24px; }
-    }
+    /* Responsive general: ver bloque unificado al final de la hoja */
 
     /* ── HAMBURGER ── */
     .hamburger {
@@ -794,12 +761,12 @@
     }
     .drawer-overlay.open { display: block; }
     .drawer {
-      position: fixed; top: 0; left: 0; bottom: 0; width: 280px;
+      position: fixed; top: 0; right: 0; bottom: 0; width: 280px;
       background: var(--white); z-index: 200;
-      transform: translateX(-100%);
+      transform: translateX(100%);
       transition: transform .3s cubic-bezier(.4,0,.2,1);
       display: flex; flex-direction: column; overflow-y: auto;
-      box-shadow: 4px 0 32px rgba(15,82,73,.15);
+      box-shadow: -4px 0 32px rgba(15,82,73,.15);
     }
     .drawer.open { transform: translateX(0); }
     .drawer-header {
@@ -832,9 +799,40 @@
       padding: 13px; border-radius: 8px; transition: background .2s;
     }
     .drawer-cta a:hover { background: var(--teal-dark); }
-    @media (max-width: 768px) {
-      .hamburger { display: flex; }
+    /* ══════════════════════════════════════
+       RESPONSIVE — bloque único, de mayor a menor ancho
+       ══════════════════════════════════════ */
+    @media (max-width: 900px) {
+      header { padding: 0 20px; }
+      section { padding: 56px 20px; }
+
       nav { display: none; }
+      .hamburger { display: flex; }
+
+      .hero { height: 460px; }
+      .slide-content { padding: 0 24px; }
+      .slider-dots { left: 24px; bottom: 24px; }
+      .slide-counter { right: 24px; bottom: 20px; }
+
+      .empresa-section { grid-template-columns: 1fr; gap: 40px; }
+      .empresa-visual { height: 280px; }
+
+      footer { grid-template-columns: 1fr 1fr; padding: 40px 20px; }
+      .footer-bottom { padding: 16px 20px; flex-direction: column; gap: 6px; text-align: center; }
+
+      .contact-strip { flex-direction: column; align-items: flex-start; padding: 48px 20px; }
+    }
+
+    @media (max-width: 600px) {
+      .hero { height: 400px; }
+      .slide-content { padding: 0 20px; max-width: 100%; }
+      .slider-dots { left: 20px; }
+      .slide-counter { display: none; }
+      .slider-arrow { display: none; }
+
+      .categories-grid { grid-template-columns: 1fr; }
+      footer { grid-template-columns: 1fr; }
+      .stats { gap: 24px; }
     }
   </style>
 </head>
@@ -915,7 +913,7 @@
       </div>
     </div>
     <div class="slide">
-      <img src="banner2_618.jpg" alt="Contadores Línea C" />
+      <img src="banner2_618.jpg" alt="Contadores Línea C" loading="lazy" />
       <div class="slide-overlay"></div>
       <div class="slide-content">
         <p class="slide-label">Línea C</p>
@@ -924,7 +922,7 @@
       </div>
     </div>
     <div class="slide">
-      <img src="banner3_618.jpg" alt="Temporizadores Línea T" />
+      <img src="banner3_618.jpg" alt="Temporizadores Línea T" loading="lazy" />
       <div class="slide-overlay"></div>
       <div class="slide-content">
         <p class="slide-label">Línea T</p>
@@ -933,7 +931,7 @@
       </div>
     </div>
     <div class="slide">
-      <img src="banner4_618.jpg" alt="Dosificadores de agua" />
+      <img src="banner4_618.jpg" alt="Dosificadores de agua" loading="lazy" />
       <div class="slide-overlay"></div>
       <div class="slide-content">
         <p class="slide-label">Dosificadores de agua</p>
@@ -975,8 +973,8 @@
     <a href="productos/contadores.html" class="cat-card">
       <div class="cat-img">
         <div class="cat-slider" data-autoplay>
-          <div class="cat-slide active"><img src="imagenes/ch2.jpg" alt="Contadores" onerror="this.parentElement.parentElement.style.display='none'" /></div>
-        <div class="cat-slide"><img src="imagenes/cg2.jpg" alt="Contadores" onerror="this.parentElement.parentElement.style.display='none'" /></div>
+          <div class="cat-slide active"><img src="imagenes/ch2.jpg" alt="Contadores" onerror="this.parentElement.parentElement.style.display='none'"  loading="lazy" /></div>
+        <div class="cat-slide"><img src="imagenes/cg2.jpg" alt="Contadores" onerror="this.parentElement.parentElement.style.display='none'"  loading="lazy" /></div>
         </div>
         <div class="cat-slider-dots"><button class="cat-slider-dot active" data-idx="0"></button>
           <button class="cat-slider-dot" data-idx="1"></button></div>
@@ -991,15 +989,15 @@
     <a href="productos/controladores-temperatura.html" class="cat-card">
       <div class="cat-img">
         <div class="cat-slider" data-autoplay>
-          <div class="cat-slide active"><img src="imagenes/nl2.jpg" alt="Controladores de temperatura" onerror="this.parentElement.parentElement.style.display='none'" /></div>
-        <div class="cat-slide"><img src="imagenes/nl-eco.jpg" alt="Controladores de temperatura" onerror="this.parentElement.parentElement.style.display='none'" /></div>
-        <div class="cat-slide"><img src="imagenes/ng2.jpg" alt="Controladores de temperatura" onerror="this.parentElement.parentElement.style.display='none'" /></div>
-        <div class="cat-slide"><img src="imagenes/ng-eco.jpg" alt="Controladores de temperatura" onerror="this.parentElement.parentElement.style.display='none'" /></div>
-        <div class="cat-slide"><img src="imagenes/nh2.jpg" alt="Controladores de temperatura" onerror="this.parentElement.parentElement.style.display='none'" /></div>
-        <div class="cat-slide"><img src="imagenes/np2.jpg" alt="Controladores de temperatura" onerror="this.parentElement.parentElement.style.display='none'" /></div>
-        <div class="cat-slide"><img src="imagenes/nf2.jpg" alt="Controladores de temperatura" onerror="this.parentElement.parentElement.style.display='none'" /></div>
-        <div class="cat-slide"><img src="imagenes/nw2.jpg" alt="Controladores de temperatura" onerror="this.parentElement.parentElement.style.display='none'" /></div>
-        <div class="cat-slide"><img src="imagenes/ntt2.jpg" alt="Controladores de temperatura" onerror="this.parentElement.parentElement.style.display='none'" /></div>
+          <div class="cat-slide active"><img src="imagenes/nl2.jpg" alt="Controladores de temperatura" onerror="this.parentElement.parentElement.style.display='none'"  loading="lazy" /></div>
+        <div class="cat-slide"><img src="imagenes/nl-eco.jpg" alt="Controladores de temperatura" onerror="this.parentElement.parentElement.style.display='none'"  loading="lazy" /></div>
+        <div class="cat-slide"><img src="imagenes/ng2.jpg" alt="Controladores de temperatura" onerror="this.parentElement.parentElement.style.display='none'"  loading="lazy" /></div>
+        <div class="cat-slide"><img src="imagenes/ng-eco.jpg" alt="Controladores de temperatura" onerror="this.parentElement.parentElement.style.display='none'"  loading="lazy" /></div>
+        <div class="cat-slide"><img src="imagenes/nh2.jpg" alt="Controladores de temperatura" onerror="this.parentElement.parentElement.style.display='none'"  loading="lazy" /></div>
+        <div class="cat-slide"><img src="imagenes/np2.jpg" alt="Controladores de temperatura" onerror="this.parentElement.parentElement.style.display='none'"  loading="lazy" /></div>
+        <div class="cat-slide"><img src="imagenes/nf2.jpg" alt="Controladores de temperatura" onerror="this.parentElement.parentElement.style.display='none'"  loading="lazy" /></div>
+        <div class="cat-slide"><img src="imagenes/nw2.jpg" alt="Controladores de temperatura" onerror="this.parentElement.parentElement.style.display='none'"  loading="lazy" /></div>
+        <div class="cat-slide"><img src="imagenes/ntt2.jpg" alt="Controladores de temperatura" onerror="this.parentElement.parentElement.style.display='none'"  loading="lazy" /></div>
         </div>
         <div class="cat-slider-dots"><button class="cat-slider-dot active" data-idx="0"></button>
           <button class="cat-slider-dot" data-idx="1"></button>
@@ -1021,10 +1019,10 @@
     <a href="productos/temporizadores.html" class="cat-card">
       <div class="cat-img">
         <div class="cat-slider" data-autoplay>
-          <div class="cat-slide active"><img src="imagenes/tl2.jpg" alt="Temporizadores" onerror="this.parentElement.parentElement.style.display='none'" /></div>
-        <div class="cat-slide"><img src="imagenes/th2.jpg" alt="Temporizadores" onerror="this.parentElement.parentElement.style.display='none'" /></div>
-        <div class="cat-slide"><img src="imagenes/tg2.jpg" alt="Temporizadores" onerror="this.parentElement.parentElement.style.display='none'" /></div>
-        <div class="cat-slide"><img src="imagenes/tw2.jpg" alt="Temporizadores" onerror="this.parentElement.parentElement.style.display='none'" /></div>
+          <div class="cat-slide active"><img src="imagenes/tl2.jpg" alt="Temporizadores" onerror="this.parentElement.parentElement.style.display='none'"  loading="lazy" /></div>
+        <div class="cat-slide"><img src="imagenes/th2.jpg" alt="Temporizadores" onerror="this.parentElement.parentElement.style.display='none'"  loading="lazy" /></div>
+        <div class="cat-slide"><img src="imagenes/tg2.jpg" alt="Temporizadores" onerror="this.parentElement.parentElement.style.display='none'"  loading="lazy" /></div>
+        <div class="cat-slide"><img src="imagenes/tw2.jpg" alt="Temporizadores" onerror="this.parentElement.parentElement.style.display='none'"  loading="lazy" /></div>
         </div>
         <div class="cat-slider-dots"><button class="cat-slider-dot active" data-idx="0"></button>
           <button class="cat-slider-dot" data-idx="1"></button>
@@ -1040,7 +1038,7 @@
     </a>
     <a href="productos/dosificadores-agua.html" class="cat-card">
       <div class="cat-img">
-        <img src="imagenes/lf19.jpg" alt="Dosificadores de agua" style="width:100%;height:100%;object-fit:cover;" onerror="this.parentElement.style.background='var(--teal-muted)'" />
+        <img src="imagenes/lf19.jpg" alt="Dosificadores de agua" style="width:100%;height:100%;object-fit:cover;" onerror="this.parentElement.style.background='var(--teal-muted)'"  loading="lazy" />
       </div>
       <div class="cat-body">
         <span class="cat-tag">Dosificadores de agua</span>
@@ -1052,9 +1050,9 @@
     <a href="productos/sensores.html" class="cat-card">
       <div class="cat-img">
         <div class="cat-slider" data-autoplay>
-          <div class="cat-slide active"><img src="imagenes/tipoj.jpg" alt="Sensores" onerror="this.parentElement.parentElement.style.display='none'" /></div>
-        <div class="cat-slide"><img src="imagenes/tipok.jpg" alt="Sensores" onerror="this.parentElement.parentElement.style.display='none'" /></div>
-        <div class="cat-slide"><img src="imagenes/pt100.jpg" alt="Sensores" onerror="this.parentElement.parentElement.style.display='none'" /></div>
+          <div class="cat-slide active"><img src="imagenes/tipoj.jpg" alt="Sensores" onerror="this.parentElement.parentElement.style.display='none'"  loading="lazy" /></div>
+        <div class="cat-slide"><img src="imagenes/tipok.jpg" alt="Sensores" onerror="this.parentElement.parentElement.style.display='none'"  loading="lazy" /></div>
+        <div class="cat-slide"><img src="imagenes/pt100.jpg" alt="Sensores" onerror="this.parentElement.parentElement.style.display='none'"  loading="lazy" /></div>
         </div>
         <div class="cat-slider-dots"><button class="cat-slider-dot active" data-idx="0"></button>
           <button class="cat-slider-dot" data-idx="1"></button>
@@ -1069,7 +1067,7 @@
     </a>
     <a href="productos/variador-velocidad.html" class="cat-card">
       <div class="cat-img">
-        <img src="imagenes/tl2pwm.jpg" alt="Variador de velocidad" style="width:100%;height:100%;object-fit:cover;" onerror="this.parentElement.style.background='var(--teal-muted)'" />
+        <img src="imagenes/tl2pwm.jpg" alt="Variador de velocidad" style="width:100%;height:100%;object-fit:cover;" onerror="this.parentElement.style.background='var(--teal-muted)'"  loading="lazy" />
       </div>
       <div class="cat-body">
         <span class="cat-tag">Variador de velocidad</span>
@@ -1105,7 +1103,7 @@
   <div class="empresa-visual">
     <div class="empresa-bg-card"></div>
     <a href="como-llegar.html" class="empresa-inner-content empresa-map-link" title="Ver cómo llegar">
-      <img src="mapa_dinter.jpg" alt="Ubicación Dinter – París 1824, Isidro Casanova" class="empresa-map-img" />
+      <img src="mapa_dinter.jpg" alt="Ubicación Dinter – París 1824, Isidro Casanova" class="empresa-map-img"  loading="lazy" />
       <div class="empresa-map-overlay">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
         Ver cómo llegar
