@@ -118,6 +118,7 @@
       border-radius: 0;
       font-size: .88rem;
       color: var(--dark);
+      text-transform: none;
       border-bottom: 1px solid var(--gray-2);
     }
 
@@ -344,18 +345,17 @@
     .cat-slide { position: absolute; inset: 0; opacity: 0; transition: opacity .6s ease; }
     .cat-slide.active { opacity: 1; }
     .cat-slide img { width: 100%; height: 100%; object-fit: cover; }
-    .cat-slider-dots {
-      position: absolute; bottom: 2px; left: 50%; transform: translateX(-50%);
-      display: flex; gap: 0; z-index: 5;
+    .cat-slider-arrow {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      width: 28px; height: 28px; border-radius: 50%;
+      background: rgba(0,0,0,.4); color: var(--white); border: none;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; z-index: 5; padding: 0;
+      opacity: .65; transition: opacity .2s, background .2s;
     }
-    .cat-slider-dot {
-      width: 5px; height: 5px; border-radius: 50%;
-      background: rgba(255,255,255,.5); background-clip: content-box;
-      box-sizing: content-box;
-      border: none; padding: 9px; cursor: pointer;
-      transition: background .2s;
-    }
-    .cat-slider-dot.active { background: var(--white); }
+    .cat-slider-arrow:hover, .cat-slider-arrow:focus-visible { opacity: 1; background: rgba(0,0,0,.6); }
+    .cat-slider-arrow.prev { left: 8px; }
+    .cat-slider-arrow.next { right: 8px; }
 
     /* ── CATEGORÍAS ── */
     .section-label {
@@ -488,37 +488,53 @@
 
 
     .empresa-map-link {
-      display: block;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      text-align: center;
       text-decoration: none;
       position: absolute;
       inset: 0;
       border-radius: 16px;
       overflow: hidden;
-    }
-    .empresa-map-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform .4s ease;
-    }
-    .empresa-map-link:hover .empresa-map-img { transform: scale(1.03); }
-    .empresa-map-overlay {
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      background: linear-gradient(0deg, rgba(15,82,73,.85) 0%, transparent 100%);
+      padding: 32px;
+      background: linear-gradient(135deg, var(--teal-dark) 0%, var(--teal) 100%);
       color: var(--white);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 20px 20px 16px;
+      transition: transform .3s ease;
+    }
+    .empresa-map-link:hover { transform: scale(1.015); }
+    .empresa-pin-icon {
+      width: 64px; height: 64px; border-radius: 50%;
+      background: rgba(255,255,255,.15);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .empresa-pin-address {
+      font-family: var(--font-head);
+      font-size: 1.15rem;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+    .empresa-pin-sub {
       font-size: .82rem;
-      font-weight: 600;
+      color: rgba(255,255,255,.7);
+      margin-top: -8px;
+    }
+    .empresa-pin-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: .78rem;
+      font-weight: 700;
       letter-spacing: .06em;
       text-transform: uppercase;
-      opacity: 0;
-      transition: opacity .3s;
+      padding: 10px 22px;
+      border: 1px solid rgba(255,255,255,.4);
+      border-radius: 30px;
+      transition: background .2s, border-color .2s;
     }
-    .empresa-map-link:hover .empresa-map-overlay { opacity: 1; }
+    .empresa-map-link:hover .empresa-pin-cta { background: rgba(255,255,255,.14); border-color: rgba(255,255,255,.75); }
 
     /* ── EMPRESA ── */
     .empresa-section {
@@ -695,7 +711,13 @@
       gap: 40px;
     }
 
-    .footer-brand img { height: 52px; margin-bottom: 14px; }
+    .footer-brand img { height: 52px; display: block; }
+    .footer-logo-wrap {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 78px; height: 78px; border-radius: 50%; margin-bottom: 14px;
+      background: radial-gradient(circle, rgba(255,255,255,.07) 0%, rgba(255,255,255,.02) 65%, transparent 100%);
+      box-shadow: 0 0 22px rgba(45,166,148,.28);
+    }
 
     .footer-brand p {
       font-size: .84rem;
@@ -917,7 +939,7 @@
       <div class="slide-content">
         <p class="slide-label">Línea N</p>
         <h1 class="slide-title">Controladores de <span>Temperatura</span></h1>
-        <a href="productos/controladores-temperatura.html" class="slide-btn">Ver productos</a>
+        <a href="productos.html" class="slide-btn">Ver productos</a>
       </div>
     </div>
     <div class="slide">
@@ -926,7 +948,7 @@
       <div class="slide-content">
         <p class="slide-label">Línea C</p>
         <h1 class="slide-title"><span>Contadores</span> programables</h1>
-        <a href="productos/contadores.html" class="slide-btn">Ver productos</a>
+        <a href="productos.html" class="slide-btn">Ver productos</a>
       </div>
     </div>
     <div class="slide">
@@ -935,7 +957,7 @@
       <div class="slide-content">
         <p class="slide-label">Línea T</p>
         <h1 class="slide-title"><span>Temporizadores</span> digitales</h1>
-        <a href="productos/temporizadores.html" class="slide-btn">Ver productos</a>
+        <a href="productos.html" class="slide-btn">Ver productos</a>
       </div>
     </div>
     <div class="slide">
@@ -944,7 +966,7 @@
       <div class="slide-content">
         <p class="slide-label">Dosificadores de agua</p>
         <h1 class="slide-title">Dosificadores <span>de agua</span></h1>
-        <a href="productos/dosificadores-agua.html" class="slide-btn">Ver productos</a>
+        <a href="productos.html" class="slide-btn">Ver productos</a>
       </div>
     </div>
   </div>
@@ -984,8 +1006,7 @@
           <div class="cat-slide active"><img src="imagenes/ch2.jpg" alt="Contadores" onerror="this.parentElement.parentElement.style.display='none'"  loading="lazy" /></div>
         <div class="cat-slide"><img src="imagenes/cg2.jpg" alt="Contadores" onerror="this.parentElement.parentElement.style.display='none'"  loading="lazy" /></div>
         </div>
-        <div class="cat-slider-dots"><button class="cat-slider-dot active" data-idx="0"></button>
-          <button class="cat-slider-dot" data-idx="1"></button></div>
+        <button class="cat-slider-arrow prev" aria-label="Anterior" data-dir="-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="15 18 9 12 15 6"/></svg></button><button class="cat-slider-arrow next" aria-label="Siguiente" data-dir="1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="9 18 15 12 9 6"/></svg></button>
       </div>
       <div class="cat-body">
         <span class="cat-tag">Línea C</span>
@@ -1007,15 +1028,7 @@
         <div class="cat-slide"><img src="imagenes/nw2.jpg" alt="Controladores de temperatura" onerror="this.parentElement.parentElement.style.display='none'"  loading="lazy" /></div>
         <div class="cat-slide"><img src="imagenes/ntt2.jpg" alt="Controladores de temperatura" onerror="this.parentElement.parentElement.style.display='none'"  loading="lazy" /></div>
         </div>
-        <div class="cat-slider-dots"><button class="cat-slider-dot active" data-idx="0"></button>
-          <button class="cat-slider-dot" data-idx="1"></button>
-          <button class="cat-slider-dot" data-idx="2"></button>
-          <button class="cat-slider-dot" data-idx="3"></button>
-          <button class="cat-slider-dot" data-idx="4"></button>
-          <button class="cat-slider-dot" data-idx="5"></button>
-          <button class="cat-slider-dot" data-idx="6"></button>
-          <button class="cat-slider-dot" data-idx="7"></button>
-          <button class="cat-slider-dot" data-idx="8"></button></div>
+        <button class="cat-slider-arrow prev" aria-label="Anterior" data-dir="-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="15 18 9 12 15 6"/></svg></button><button class="cat-slider-arrow next" aria-label="Siguiente" data-dir="1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="9 18 15 12 9 6"/></svg></button>
       </div>
       <div class="cat-body">
         <span class="cat-tag">Línea N</span>
@@ -1033,11 +1046,7 @@
         <div class="cat-slide"><img src="imagenes/tw2.jpg" alt="Temporizadores" onerror="this.parentElement.parentElement.style.display='none'"  loading="lazy" /></div>
         <div class="cat-slide"><img src="imagenes/tp2.jpg" alt="Temporizadores" onerror="this.parentElement.parentElement.style.display='none'"  loading="lazy" /></div>
         </div>
-        <div class="cat-slider-dots"><button class="cat-slider-dot active" data-idx="0"></button>
-          <button class="cat-slider-dot" data-idx="1"></button>
-          <button class="cat-slider-dot" data-idx="2"></button>
-          <button class="cat-slider-dot" data-idx="3"></button>
-          <button class="cat-slider-dot" data-idx="4"></button></div>
+        <button class="cat-slider-arrow prev" aria-label="Anterior" data-dir="-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="15 18 9 12 15 6"/></svg></button><button class="cat-slider-arrow next" aria-label="Siguiente" data-dir="1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="9 18 15 12 9 6"/></svg></button>
       </div>
       <div class="cat-body">
         <span class="cat-tag">Línea T</span>
@@ -1064,9 +1073,7 @@
         <div class="cat-slide"><img src="imagenes/tipok.jpg" alt="Sensores" onerror="this.parentElement.parentElement.style.display='none'"  loading="lazy" /></div>
         <div class="cat-slide"><img src="imagenes/pt100.jpg" alt="Sensores" onerror="this.parentElement.parentElement.style.display='none'"  loading="lazy" /></div>
         </div>
-        <div class="cat-slider-dots"><button class="cat-slider-dot active" data-idx="0"></button>
-          <button class="cat-slider-dot" data-idx="1"></button>
-          <button class="cat-slider-dot" data-idx="2"></button></div>
+        <button class="cat-slider-arrow prev" aria-label="Anterior" data-dir="-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="15 18 9 12 15 6"/></svg></button><button class="cat-slider-arrow next" aria-label="Siguiente" data-dir="1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="9 18 15 12 9 6"/></svg></button>
       </div>
       <div class="cat-body">
         <span class="cat-tag">Sensores</span>
@@ -1101,8 +1108,8 @@
         <div class="stat-label">Años en el mercado</div>
       </div>
       <div>
-        <div class="stat-num">10+</div>
-        <div class="stat-label">Líneas de productos</div>
+        <div class="stat-num">20+</div>
+        <div class="stat-label">Modelos de productos</div>
       </div>
       <div>
         <div class="stat-num">1</div>
@@ -1113,11 +1120,12 @@
   <div class="empresa-visual">
     <div class="empresa-bg-card"></div>
     <a href="como-llegar.html" class="empresa-inner-content empresa-map-link" title="Ver cómo llegar">
-      <img src="mapa_dinter.jpg" alt="Ubicación Dinter – París 1824, Isidro Casanova" class="empresa-map-img"  loading="lazy" />
-      <div class="empresa-map-overlay">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        Ver cómo llegar
+      <div class="empresa-pin-icon">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
       </div>
+      <p class="empresa-pin-address">París 1824<br/>Isidro Casanova</p>
+      <p class="empresa-pin-sub">Buenos Aires, Argentina</p>
+      <span class="empresa-pin-cta">Ver cómo llegar →</span>
     </a>
     <div class="empresa-highlight">
       <strong id="years-badge">—</strong>
@@ -1147,7 +1155,7 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-brand">
-    <img src="Dinter_Logo.png" alt="Dinter" />
+    <div class="footer-logo-wrap"><img src="Dinter_Logo.png" alt="Dinter" /></div>
     <p>Instrumentos de medición y control fabricados en Argentina.</p>
   </div>
   <div class="footer-col">
@@ -1253,18 +1261,27 @@
   // Mini sliders en categorías
   document.querySelectorAll('.cat-slider[data-autoplay]').forEach(slider => {
     const slides = slider.querySelectorAll('.cat-slide');
-    const dots = slider.parentElement.querySelectorAll('.cat-slider-dot');
+    const wrap = slider.closest('.cat-img');
+    const arrows = wrap.querySelectorAll('.cat-slider-arrow');
     if (slides.length <= 1) return;
     let cur = 0;
+    let timer;
     function goTo(n) {
       slides[cur].classList.remove('active');
-      dots[cur].classList.remove('active');
       cur = (n + slides.length) % slides.length;
       slides[cur].classList.add('active');
-      dots[cur].classList.add('active');
     }
-    dots.forEach((dot, i) => dot.addEventListener('click', e => { e.preventDefault(); goTo(i); }));
-    setInterval(() => goTo(cur + 1), 2800);
+    function restartAutoplay() {
+      clearInterval(timer);
+      timer = setInterval(() => goTo(cur + 1), 2800);
+    }
+    arrows.forEach(btn => btn.addEventListener('click', e => {
+      e.preventDefault();
+      e.stopPropagation();
+      goTo(cur + parseInt(btn.dataset.dir, 10));
+      restartAutoplay();
+    }));
+    restartAutoplay();
   });
 </script>
 

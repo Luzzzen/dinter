@@ -101,7 +101,7 @@ const DinterUI = {
 </div>
 <footer>
   <div class="footer-brand">
-    <img src="${base}Dinter_Logo.png" alt="Dinter" />
+    <div class="footer-logo-wrap"><img src="${base}Dinter_Logo.png" alt="Dinter" /></div>
     <p>Instrumentos de medición y control fabricados en Argentina.</p>
   </div>
   <div class="footer-col">

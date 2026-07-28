@@ -93,7 +93,13 @@ footer {
   background: var(--dark); padding: 48px;
   display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px;
 }
-.footer-brand img { height: 52px; margin-bottom: 14px; }
+.footer-brand img { height: 52px; display: block; }
+.footer-logo-wrap {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 78px; height: 78px; border-radius: 50%; margin-bottom: 14px;
+  background: radial-gradient(circle, rgba(255,255,255,.07) 0%, rgba(255,255,255,.02) 65%, transparent 100%);
+  box-shadow: 0 0 22px rgba(45,166,148,.28);
+}
 .footer-brand p { font-size: .84rem; color: rgba(255,255,255,.45); line-height: 1.65; max-width: 220px; }
 .footer-col h4 {
   font-size: .72rem; font-weight: 700; letter-spacing: .14em;
