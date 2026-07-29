@@ -583,29 +583,33 @@
 
     .empresa-highlight {
       position: absolute;
-      bottom: -20px;
-      left: -20px;
+      bottom: 16px;
+      left: 16px;
+      z-index: 400;
       background: var(--teal-dark);
       color: var(--white);
       border-radius: 12px;
-      padding: 20px 24px;
+      padding: 14px 18px;
       display: flex;
-      flex-direction: column;
-      gap: 4px;
+      align-items: center;
+      gap: 10px;
       box-shadow: 0 8px 24px rgba(15,82,73,.3);
+      max-width: calc(100% - 32px);
     }
+
+    .empresa-highlight svg { flex-shrink: 0; opacity: .85; }
 
     .empresa-highlight strong {
       font-family: var(--font-head);
-      font-size: 1.8rem;
+      font-size: .92rem;
       font-weight: 700;
+      display: block;
     }
 
     .empresa-highlight span {
-      font-size: .78rem;
-      opacity: .8;
-      letter-spacing: .06em;
-      text-transform: uppercase;
+      font-size: .74rem;
+      opacity: .75;
+      display: block;
     }
 
     /* ── CONTACTO STRIP ── */
@@ -1102,8 +1106,11 @@
     <div id="empresa-map" class="empresa-map-canvas"></div>
     <a href="como-llegar.html" class="empresa-map-cta">Ver cómo llegar →</a>
     <div class="empresa-highlight">
-      <strong id="years-badge">—</strong>
-      <span>años en el mercado argentino</span>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      <div>
+        <strong>París 1824</strong>
+        <span>Isidro Casanova, Buenos Aires</span>
+      </div>
     </div>
   </div>
 </section>
