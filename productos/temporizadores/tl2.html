@@ -33,7 +33,9 @@
   .back-link{display:inline-flex;align-items:center;gap:6px;font-size:.82rem;font-weight:600;color:var(--teal);text-decoration:none;margin-top:4px}
   .back-link:hover{gap:10px}
   .product-main{grid-area:main;padding:40px 48px;background:var(--gray-1)}
-  .product-img-area{background:var(--white);border:1px solid var(--teal-border);border-radius:12px;height:280px;display:flex;align-items:center;justify-content:center;overflow:hidden;margin-bottom:32px}
+  .product-img-area{background:var(--white);border:1px solid var(--teal-border);border-radius:12px;height:280px;display:flex;align-items:center;justify-content:center;overflow:hidden;margin-bottom:32px;position:relative}
+  .product-back-float{display:none;position:absolute;top:12px;left:12px;width:40px;height:40px;border-radius:50%;background:rgba(15,82,73,.85);color:#fff;align-items:center;justify-content:center;text-decoration:none;z-index:10;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+  @media(max-width:960px){.product-back-float{display:flex}}
   .product-img-area img{max-width:100%;max-height:100%;object-fit:contain;padding:20px}
   .product-highlight{background:var(--teal-dark);color:var(--white);border-radius:10px;padding:20px 24px;margin-bottom:32px}
   .product-highlight h3{font-family:var(--font-head);font-size:1.1rem;font-weight:700;margin-bottom:8px}
@@ -69,15 +71,16 @@
       <h4>Dimensiones</h4>
       <table class="dims-table"><tr><td>Alto frente</td><td>48 mm</td></tr><tr><td>Ancho frente</td><td>48 mm</td></tr><tr><td>Profundidad</td><td>126 mm</td></tr></table>
     </div>
-  </aside>
-  <main class="product-main">
-    <div class="product-img-area">
-  <img src="../../imagenes/tl2.jpg" alt="TL-2" onerror="this.style.display='none'" />
-</div>
-    <div class="product-highlight">
+      <div class="product-highlight">
       <h3>Temporizador / Ciclador por Microprocesador</h3>
       <p>Configurable como temporizador o ciclador. Unidades: segundos, minutos u horas. Rango 0 seg a 9999 horas.</p>
     </div>
+  </aside>
+  <main class="product-main">
+    <div class="product-img-area">
+  <a href="../temporizadores.html" class="product-back-float" aria-label="Volver"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg></a>
+  <img src="../../imagenes/tl2.jpg" alt="TL-2" onerror="this.style.display='none'" />
+</div>
     <h3 class="specs-title">Características técnicas</h3>
     <div class="specs-grid"><div class="spec-group"><h4>Display</h4><div class="spec-row"><span class="spec-key">Display</span><span class="spec-val">4 dígitos 9 mm, color rojo</span></div></div><div class="spec-group"><h4>Alimentación</h4><div class="spec-row"><span class="spec-key">Principal</span><span class="spec-val">220 Vca –20% +10%</span></div><div class="spec-row"><span class="spec-key">Opcional</span><span class="spec-val">24 Vca / 24 Vcc / 12 Vcc</span></div></div><div class="spec-group"><h4>Salidas</h4><div class="spec-row"><span class="spec-key">Salida 1</span><span class="spec-val">Relé inversor 1A – 250 Vca o SSR 24 Vcc</span></div><div class="spec-row"><span class="spec-key">Salida 2</span><span class="spec-val">Relé inversor 1A – 250 Vca</span></div></div><div class="spec-group"><h4>Rango</h4><div class="spec-row"><span class="spec-key">Rango</span><span class="spec-val">0 seg – 9999 horas</span></div><div class="spec-row"><span class="spec-key">Precisión</span><span class="spec-val">0,1 %</span></div><div class="spec-row"><span class="spec-key">Repetibilidad</span><span class="spec-val">0,1 %</span></div></div></div>
   </main>

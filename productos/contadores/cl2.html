@@ -35,7 +35,20 @@
     .back-link { display: inline-flex; align-items: center; gap: 6px; font-size: .82rem; font-weight: 600; color: var(--teal); text-decoration: none; margin-top: 4px; transition: gap .2s; }
     .back-link:hover { gap: 10px; }
     .product-main { padding: 40px 48px; background: var(--gray-1); }
-    .product-img-area { background: var(--white); border: 1px solid var(--teal-border); border-radius: 12px; height: 280px; display: flex; align-items: center; justify-content: center; overflow: hidden; margin-bottom: 32px; }
+    .product-img-area { background: var(--white); border: 1px solid var(--teal-border); border-radius: 12px; height: 280px; display: flex; align-items: center; justify-content: center; overflow: hidden; margin-bottom: 32px; position: relative;
+    }
+
+    .product-back-float {
+      display: none; position: absolute; top: 12px; left: 12px;
+      width: 40px; height: 40px; border-radius: 50%;
+      background: rgba(15,82,73,.85); color: #fff;
+      align-items: center; justify-content: center;
+      text-decoration: none; z-index: 10;
+      box-shadow: 0 2px 8px rgba(0,0,0,.25);
+    }
+    @media (max-width: 960px) {
+      .product-back-float { display: flex; }
+    }
     .product-img-area img { max-width: 100%; max-height: 100%; object-fit: contain; padding: 20px; }
     .product-highlight { background: var(--teal-dark); color: var(--white); border-radius: 10px; padding: 20px 24px; margin-bottom: 32px; }
     .product-highlight h3 { font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
@@ -120,18 +133,19 @@
         Conexionado
       </a>
     </div>
+      <div class="product-highlight">
+      <h3>Contador por Microprocesador</h3>
+      <p>Rango de 0 a 9999. Formato compacto 48×48 mm. Configurable para distintas aplicaciones industriales: alimentación, envasamiento, plástico, farmacéutico.</p>
+    </div>
   </aside>
 
   <main class="product-main">
     <div class="product-img-area">
+  <a href="../contadores.html" class="product-back-float" aria-label="Volver"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg></a>
       <img src="../../imagenes/cl2.jpg" alt="Contador CL-2"
            onerror="this.parentElement.innerHTML='<div style=\'display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--teal-border)\'><svg width=64 height=64 viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=1><rect x=2 y=3 width=20 height=14 rx=2/></svg><span style=\'font-size:.8rem;color:var(--gray-3)\'>Imagen del producto</span></div>'" />
     </div>
 
-    <div class="product-highlight">
-      <h3>Contador por Microprocesador</h3>
-      <p>Rango de 0 a 9999. Formato compacto 48×48 mm. Configurable para distintas aplicaciones industriales: alimentación, envasamiento, plástico, farmacéutico.</p>
-    </div>
 
     <h3 class="specs-title">Características técnicas</h3>
     <div class="specs-grid">
