@@ -686,9 +686,8 @@
     .footer-brand img { height: 52px; display: block; }
     .footer-logo-wrap {
       display: inline-flex; align-items: center; justify-content: center;
-      width: 78px; height: 78px; border-radius: 50%; margin-bottom: 14px;
-      background: radial-gradient(circle, rgba(255,255,255,.07) 0%, rgba(255,255,255,.02) 65%, transparent 100%);
-      box-shadow: 0 0 22px rgba(45,166,148,.28);
+      margin-bottom: 14px;
+      filter: drop-shadow(0 0 10px rgba(45,166,148,.25));
     }
 
     .footer-brand p {
@@ -813,6 +812,10 @@
 
       .empresa-section { grid-template-columns: 1fr; gap: 40px; }
       .empresa-visual { height: 280px; }
+      .empresa-highlight { padding: 8px 12px; gap: 6px; bottom: 26px; left: 10px; }
+      .empresa-highlight svg { width: 14px; height: 14px; }
+      .empresa-highlight strong { font-size: .76rem; }
+      .empresa-highlight span { font-size: .64rem; }
 
       footer { grid-template-columns: 1fr 1fr; padding: 40px 20px; }
       .footer-bottom { padding: 16px 20px; flex-direction: column; gap: 6px; text-align: center; }
