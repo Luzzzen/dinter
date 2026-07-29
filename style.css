@@ -86,6 +86,14 @@ nav a:hover { background: var(--teal-muted); color: var(--teal-dark); }
 }
 .breadcrumb a { color: rgba(255,255,255,.6); text-decoration: none; transition: color .2s; }
 .breadcrumb a:hover { color: var(--white); }
+.page-back-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: rgba(255,255,255,.8); text-decoration: none;
+  font-size: .82rem; font-weight: 600;
+  margin-bottom: 16px; transition: color .2s, transform .2s;
+}
+.page-back-btn:hover { color: var(--white); transform: translateX(-2px); }
+.page-back-btn svg { flex-shrink: 0; }
 .breadcrumb span { opacity: .4; }
 
 /* ── FOOTER ── */
