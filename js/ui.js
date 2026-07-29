@@ -8,7 +8,7 @@ const DinterUI = {
   </a>
   <nav>
     <div class="nav-dropdown">
-      <a href="#">La Empresa</a>
+      <a href="${base}nosotros.html">La Empresa</a>
       <div class="dropdown-menu">
         <a href="${base}nosotros.html">Acerca de nosotros</a>
         <a href="${base}como-llegar.html">Cómo llegar</a>
@@ -17,13 +17,13 @@ const DinterUI = {
     <div class="nav-dropdown">
       <a href="${base}productos.html">Productos</a>
       <div class="dropdown-menu">
-        <a href="${base}productos/colada-caliente.html">Colada caliente</a>
-        <a href="${base}productos/contadores.html">Contadores</a>
         <a href="${base}productos/controladores-temperatura.html">Controladores de temperatura</a>
-        <a href="${base}productos/dosificadores-agua.html">Dosificadores de agua</a>
-        <a href="${base}productos/sensores.html">Sensores</a>
         <a href="${base}productos/temporizadores.html">Temporizadores</a>
-        <a href="${base}productos/variador-velocidad.html">Variador de velocidad</a>
+        <a href="${base}productos/contadores.html">Contadores</a>
+        <a href="${base}productos/dosificadores-agua.html">Dosificadores de agua</a>
+        <a href="${base}productos/colada-caliente.html">Colada caliente</a>
+        <a href="${base}productos/variador-velocidad.html">Variador de Velocidad 24Vcc</a>
+        <a href="${base}productos/sensores.html">Sensores</a>
       </div>
     </div>
     <a href="${base}contacto.html" class="nav-cta">Contacto</a>
@@ -49,13 +49,13 @@ const DinterUI = {
   </div>
   <div class="drawer-section">
     <p class="drawer-section-label">Productos</p>
-    <a href="${base}productos/colada-caliente.html">Colada caliente</a>
-    <a href="${base}productos/contadores.html">Contadores</a>
     <a href="${base}productos/controladores-temperatura.html">Controladores de temperatura</a>
-    <a href="${base}productos/dosificadores-agua.html">Dosificadores de agua</a>
-    <a href="${base}productos/sensores.html">Sensores</a>
     <a href="${base}productos/temporizadores.html">Temporizadores</a>
-    <a href="${base}productos/variador-velocidad.html">Variador de velocidad</a>
+    <a href="${base}productos/contadores.html">Contadores</a>
+    <a href="${base}productos/dosificadores-agua.html">Dosificadores de agua</a>
+    <a href="${base}productos/colada-caliente.html">Colada caliente</a>
+    <a href="${base}productos/variador-velocidad.html">Variador de Velocidad 24Vcc</a>
+    <a href="${base}productos/sensores.html">Sensores</a>
   </div>
   <div class="drawer-cta">
     <a href="https://wa.me/541150021965" target="_blank">
@@ -72,12 +72,13 @@ const DinterUI = {
   <a href="${base}nosotros.html" ${active === 'nosotros' ? 'class="active"' : ''}>La empresa</a>
   <a href="${base}como-llegar.html" ${active === 'como-llegar' ? 'class="active"' : ''}>Cómo llegar</a>
   <div class="nav-strip-sep"></div>
-  <a href="${base}productos/contadores.html" ${active === 'contadores' ? 'class="active"' : ''}>Contadores</a>
   <a href="${base}productos/controladores-temperatura.html" ${active === 'controladores' ? 'class="active"' : ''}>Control. temperatura</a>
   <a href="${base}productos/temporizadores.html" ${active === 'temporizadores' ? 'class="active"' : ''}>Temporizadores</a>
+  <a href="${base}productos/contadores.html" ${active === 'contadores' ? 'class="active"' : ''}>Contadores</a>
   <a href="${base}productos/dosificadores-agua.html" ${active === 'dosificadores' ? 'class="active"' : ''}>Dosificadores</a>
+  <a href="${base}productos/colada-caliente.html" ${active === 'colada' ? 'class="active"' : ''}>Colada caliente</a>
+  <a href="${base}productos/variador-velocidad.html" ${active === 'variador' ? 'class="active"' : ''}>Variador 24Vcc</a>
   <a href="${base}productos/sensores.html" ${active === 'sensores' ? 'class="active"' : ''}>Sensores</a>
-  <a href="${base}productos/variador-velocidad.html" ${active === 'variador' ? 'class="active"' : ''}>Variador veloc.</a>
   <div class="nav-strip-sep"></div>
   <a href="${base}contacto.html" ${active === 'contacto' ? 'class="active"' : ''}>Contacto</a>
 </nav>`,
