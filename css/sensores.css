@@ -1,0 +1,23 @@
+/* DINTER – Estilos de las páginas de sensores */
+.sensor-layout { max-width: 860px; margin: 0 auto; padding: 56px 48px; }
+.sensor-img-wrap { background: var(--white); border: 1px solid var(--teal-border); border-radius: 14px; display: flex; align-items: center; justify-content: center; height: 240px; overflow: hidden; margin-bottom: 40px; }
+.sensor-img-wrap img { max-width: 100%; max-height: 100%; object-fit: contain; padding: 24px; }
+.sensor-intro { background: var(--teal-dark); color: var(--white); border-radius: 10px; padding: 20px 24px; margin-bottom: 36px; }
+.sensor-intro h3 { font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; margin-bottom: 6px; }
+.sensor-intro p { font-size: .88rem; line-height: 1.6; opacity: .85; }
+.variantes-title { font-family: var(--font-head); font-size: 1.2rem; font-weight: 700; color: var(--dark); margin-bottom: 20px; padding-bottom: 12px; border-bottom: 2px solid var(--teal-border); }
+.variante-card { background: var(--white); border: 1px solid var(--teal-border); border-radius: 10px; padding: 20px 24px; margin-bottom: 14px; }
+.variante-card h4 { font-family: var(--font-head); font-size: 1rem; font-weight: 700; color: var(--teal-dark); margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid var(--teal-border); }
+.variante-card ul { list-style: none; }
+.variante-card ul li { font-size: .88rem; color: var(--dark); padding: 4px 0; border-bottom: 1px solid var(--gray-2); display: flex; align-items: flex-start; gap: 8px; }
+.variante-card ul li:last-child { border-bottom: none; }
+.variante-card ul li::before { content: '·'; color: var(--teal); font-weight: 700; flex-shrink: 0; }
+.sensor-ctas { display: flex; gap: 12px; margin-top: 36px; flex-wrap: wrap; }
+.btn-cta-wa { display: inline-flex; align-items: center; gap: 8px; background: #25d366; color: var(--white); font-weight: 700; font-size: .9rem; text-decoration: none; padding: 13px 24px; border-radius: 8px; transition: background .2s; }
+.btn-cta-wa:hover { background: #1da851; }
+.btn-cta-mail { display: inline-flex; align-items: center; gap: 8px; background: var(--white); color: var(--teal-dark); border: 1px solid var(--teal-border); font-weight: 600; font-size: .9rem; text-decoration: none; padding: 13px 24px; border-radius: 8px; transition: background .2s; }
+.btn-cta-mail:hover { background: var(--teal-muted); }
+.back-link { display: inline-flex; align-items: center; gap: 6px; font-size: .82rem; font-weight: 600; color: var(--teal); text-decoration: none; margin-bottom: 32px; transition: gap .2s; }
+.back-link:hover { gap: 10px; }
+.sensor-note { background: var(--teal-muted); border: 1px solid var(--teal-border); border-radius: 8px; padding: 14px 18px; font-size: .84rem; color: var(--teal-dark); margin-top: 20px; line-height: 1.6; }
+@media (max-width: 600px) { .sensor-layout { padding: 32px 20px; } .sensor-ctas { flex-direction: column; } .btn-cta-wa, .btn-cta-mail { justify-content: center; } }

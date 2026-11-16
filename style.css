@@ -9,7 +9,7 @@
   --teal-border:#c2deda;
   --gray-1:     #f7f8f8;
   --gray-2:     #e9eceb;
-  --gray-3:     #9eaaa8;
+  --gray-3:     #5f6f6c;  /* antes #9eaaa8: no llegaba al contraste mínimo sobre blanco */
   --dark:       #1a2422;
   --white:      #ffffff;
   --font-head:  'Barlow Condensed', sans-serif;
@@ -105,7 +105,7 @@ footer {
 .footer-logo-wrap {
   display: inline-flex; align-items: center; justify-content: center;
   margin-bottom: 14px;
-  filter: drop-shadow(0 0 10px rgba(45,166,148,.25));
+  background: var(--white); border-radius: 8px; padding: 8px 12px;  /* el logo no se veía sobre el fondo oscuro */
 }
 .footer-brand p { font-size: .84rem; color: rgba(255,255,255,.45); line-height: 1.65; max-width: 220px; }
 .footer-col h4 {
@@ -286,4 +286,11 @@ footer {
   .product-img-area {
     height: 420px !important;
   }
+}
+
+/* ── Etiqueta "Próximamente" en el menú ── */
+.menu-soon {
+  display: inline-block; margin-left: 6px; padding: 1px 6px;
+  font-size: .62rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--teal-dark); background: var(--teal-muted); border-radius: 4px; vertical-align: middle;
 }

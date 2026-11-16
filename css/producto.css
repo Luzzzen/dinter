@@ -1,0 +1,37 @@
+/* DINTER – Estilos de las fichas de producto (antes repetidos en cada ficha) */
+.product-layout{display:grid;grid-template-columns:340px 1fr;grid-template-areas:"sidebar main" "actions main";row-gap:28px;column-gap:0;min-height:60vh}
+.product-sidebar{background:var(--white);border-right:1px solid var(--teal-border);padding:40px 32px;display:flex;flex-direction:column;gap:28px}
+.product-sidebar{grid-area:sidebar}
+.product-actions{grid-area:actions;background:var(--white);border-right:1px solid var(--teal-border);padding:0 32px 40px;display:flex;flex-direction:column;gap:8px}
+.product-model-badge{display:inline-block;background:var(--teal-dark);color:var(--white);font-family:var(--font-head);font-size:2rem;font-weight:700;padding:8px 20px;border-radius:8px}
+.product-title{font-family:var(--font-head);font-size:1.3rem;font-weight:600;color:var(--dark);line-height:1.3}
+.dims-box{background:var(--teal-muted);border:1px solid var(--teal-border);border-radius:10px;padding:16px 18px}
+.dims-box h4{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:10px}
+.dims-table{width:100%;border-collapse:collapse}
+.dims-table td{font-size:.82rem;padding:3px 0;color:var(--dark)}
+.dims-table td:first-child{color:var(--gray-3);font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;width:50%}
+.actions-title{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gray-3);margin-bottom:10px}
+.action-btn{display:flex;align-items:center;gap:10px;padding:11px 16px;border-radius:8px;text-decoration:none;font-weight:600;font-size:.87rem;margin-bottom:8px;transition:background .2s,transform .2s;border:1px solid transparent}
+.action-btn.wa{background:#25d366;color:var(--white)}
+.action-btn.wa:hover{background:#1da851;transform:translateY(-1px)}
+.action-btn.outline{background:var(--white);color:var(--teal-dark);border-color:var(--teal-border)}
+.action-btn.outline:hover{background:var(--teal-muted)}
+.back-link{display:inline-flex;align-items:center;gap:6px;font-size:.82rem;font-weight:600;color:var(--teal);text-decoration:none;margin-top:4px}
+.back-link:hover{gap:10px}
+.product-main{grid-area:main;padding:40px 48px;background:var(--gray-1)}
+.product-img-area{background:var(--white);border:1px solid var(--teal-border);border-radius:12px;height:280px;display:flex;align-items:center;justify-content:center;overflow:hidden;margin-bottom:32px;position:relative}
+.product-back-float{display:none;position:absolute;top:12px;left:12px;width:40px;height:40px;border-radius:50%;background:rgba(15,82,73,.85);color:#fff;align-items:center;justify-content:center;text-decoration:none;z-index:10;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+@media(max-width:960px){.product-back-float{display:flex}}
+.product-img-area img{max-width:100%;max-height:100%;object-fit:contain;padding:20px}
+.product-highlight{background:var(--teal-dark);color:var(--white);border-radius:10px;padding:20px 24px;margin-bottom:32px}
+.product-highlight h3{font-family:var(--font-head);font-size:1.1rem;font-weight:700;margin-bottom:8px}
+.product-highlight p{font-size:.88rem;line-height:1.6;opacity:.85}
+.specs-title{font-family:var(--font-head);font-size:1.2rem;font-weight:700;color:var(--dark);margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--teal-border)}
+.specs-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.spec-group{background:var(--white);border:1px solid var(--teal-border);border-radius:10px;padding:18px 20px}
+.spec-group h4{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--teal-border)}
+.spec-row{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding:5px 0;border-bottom:1px solid var(--gray-2);font-size:.84rem}
+.spec-row:last-child{border-bottom:none}
+.spec-row .spec-key{color:var(--gray-3);flex-shrink:0}
+.spec-row .spec-val{color:var(--dark);font-weight:500;text-align:right}
+@media(max-width:960px){.product-layout{grid-template-columns:1fr;grid-template-areas:"sidebar" "main" "actions";row-gap:0}.product-sidebar{border-right:none;border-bottom:1px solid var(--teal-border)}.product-actions{border-right:none;border-top:1px solid var(--teal-border);padding:24px 20px 32px}.product-main{padding:32px 20px}.specs-grid{grid-template-columns:1fr}}

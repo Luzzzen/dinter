@@ -1,9 +1,16 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-AR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dinter – Instrumentos de Medición y Control</title>
+  <meta name="description" content="Dinter fabrica en Argentina instrumentos de medición y control: controladores de temperatura, temporizadores, contadores, dosificadores de agua y sensores." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dinter" />
+  <meta property="og:title" content="Dinter – Instrumentos de Medición y Control" />
+  <meta property="og:description" content="Dinter fabrica en Argentina instrumentos de medición y control: controladores de temperatura, temporizadores, contadores, dosificadores de agua y sensores." />
+  <meta property="og:locale" content="es_AR" />
+  <meta name="theme-color" content="#0f5249" />
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
@@ -848,8 +855,14 @@
       .stat-num { font-size: 2rem; }
       .stat-label { font-size: .72rem; }
     }
+
+    /* ── Correcciones ── */
+    .visually-hidden { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+    iframe.empresa-map-canvas { border: 0; display: block; }
+    :root { --gray-3: #5f6f6c; }
+    .footer-logo-wrap { background: var(--white); border-radius: 8px; padding: 8px 12px; filter: none; }
+    .menu-soon { display: inline-block; margin-left: 6px; padding: 1px 6px; font-size: .62rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--teal-dark); background: var(--teal-muted); border-radius: 4px; vertical-align: middle; }
   </style>
-  <link rel="stylesheet" href="vendor/leaflet/leaflet.css" />
 </head>
 <body>
 
@@ -876,6 +889,8 @@
         <a href="productos/colada-caliente.html">Colada caliente</a>
         <a href="productos/variador-velocidad.html">Variador de Velocidad 24Vcc</a>
         <a href="productos/sensores.html">Sensores</a>
+        <a href="productos/amperimetros.html">Amperímetros <span class="menu-soon">Próximamente</span></a>
+        <a href="productos/humedad.html">Humedad <span class="menu-soon">Próximamente</span></a>
       </div>
     </div>
     <a href="contacto.html" class="nav-cta">Contacto</a>
@@ -906,9 +921,11 @@
     <a href="productos/colada-caliente.html">Colada caliente</a>
     <a href="productos/variador-velocidad.html">Variador de Velocidad 24Vcc</a>
     <a href="productos/sensores.html">Sensores</a>
+        <a href="productos/amperimetros.html">Amperímetros <span class="menu-soon">Próximamente</span></a>
+        <a href="productos/humedad.html">Humedad <span class="menu-soon">Próximamente</span></a>
   </div>
   <div class="drawer-cta">
-    <a href="https://wa.me/541150021965" target="_blank">
+    <a href="https://wa.me/541150021965" target="_blank" rel="noopener">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       Contactar por WhatsApp
     </a>
@@ -917,13 +934,14 @@
 
 <!-- HERO SLIDER -->
 <section class="hero" style="padding:0;">
+  <h1 class="visually-hidden">Dinter – Instrumentos de medición y control</h1>
   <div class="slides-track">
     <div class="slide active">
       <img src="banner1_618.jpg" alt="Controladores de temperatura Línea N" />
       <div class="slide-overlay"></div>
       <div class="slide-content">
         <p class="slide-label">Línea N</p>
-        <h1 class="slide-title">Controladores de <span>Temperatura</span></h1>
+        <h2 class="slide-title">Controladores de <span>Temperatura</span></h2>
         <a href="productos.html" class="slide-btn">Ver productos</a>
       </div>
     </div>
@@ -932,7 +950,7 @@
       <div class="slide-overlay"></div>
       <div class="slide-content">
         <p class="slide-label">Línea C</p>
-        <h1 class="slide-title"><span>Contadores</span> programables</h1>
+        <h2 class="slide-title"><span>Contadores</span> programables</h2>
         <a href="productos.html" class="slide-btn">Ver productos</a>
       </div>
     </div>
@@ -941,7 +959,7 @@
       <div class="slide-overlay"></div>
       <div class="slide-content">
         <p class="slide-label">Línea T</p>
-        <h1 class="slide-title"><span>Temporizadores</span> digitales</h1>
+        <h2 class="slide-title"><span>Temporizadores</span> digitales</h2>
         <a href="productos.html" class="slide-btn">Ver productos</a>
       </div>
     </div>
@@ -950,7 +968,7 @@
       <div class="slide-overlay"></div>
       <div class="slide-content">
         <p class="slide-label">Dosificadores de agua</p>
-        <h1 class="slide-title">Dosificadores <span>de agua</span></h1>
+        <h2 class="slide-title">Dosificadores <span>de agua</span></h2>
         <a href="productos.html" class="slide-btn">Ver productos</a>
       </div>
     </div>
@@ -1064,7 +1082,7 @@
     </a>
     <a href="productos/variador-velocidad.html" class="cat-card">
       <div class="cat-img">
-        <img src="imagenes/tl2pwm.jpg" alt="Variador de Velocidad 24Vcc" style="width:100%;height:100%;object-fit:cover;" onerror="this.parentElement.style.background='var(--teal-muted)'"  loading="lazy" />
+        <img src="imagenes/tl2pwm.png" alt="Variador de Velocidad 24Vcc" style="width:100%;height:100%;object-fit:cover;" onerror="this.parentElement.style.background='var(--teal-muted)'"  loading="lazy" />
       </div>
       <div class="cat-body">
         <span class="cat-tag">Variador de Velocidad 24Vcc</span>
@@ -1097,7 +1115,7 @@
     <p class="section-label">Nosotros</p>
     <h2 class="section-title">Fabricación <span>argentina</span>, respaldo técnico</h2>
     <p>Dinter diseña y fabrica instrumentos de medición y control en Argentina. Cada equipo es desarrollado con criterio industrial, pensado para resistir las exigencias del uso continuo en planta.</p>
-    <p>Brindamos soporte técnico, reparación y restauración a nuevo a lo largo de toda la vida útil del equipo. Todos nuestros productos incluyen un año de garantía.</p>
+    <p>Brindamos soporte técnico, reparación y restauración a nuevo a lo largo de toda la vida útil del equipo. Todos nuestros productos incluyen 12 meses de garantía.</p>
     <div class="stats">
       <div>
         <div class="stat-num" id="years-counter">—</div>
@@ -1108,14 +1126,14 @@
         <div class="stat-label">Modelos de productos</div>
       </div>
       <div>
-        <div class="stat-num">1</div>
-        <div class="stat-label">Año de garantía</div>
+        <div class="stat-num">12</div>
+        <div class="stat-label">Meses de garantía</div>
       </div>
     </div>
   </div>
   <div class="empresa-visual">
     <div class="empresa-bg-card"></div>
-    <div id="empresa-map" class="empresa-map-canvas"></div>
+    <iframe class="empresa-map-canvas" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3280.3528698889336!2d-58.600190399999995!3d-34.6962787!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc77d25de2101%3A0x637f9e74fbfd8013!2sPar%C3%ADs%201824%2C%20B1765%20Isidro%20Casanova%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1776787494683!5m2!1ses-419!2sar" title="Ubicación de Dinter en Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
     <a href="como-llegar.html" class="empresa-map-cta">Ver cómo llegar →</a>
     <div class="empresa-highlight">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -1134,7 +1152,7 @@
     <p>Contactanos por WhatsApp o teléfono. Respondemos en el día.</p>
   </div>
   <div class="contact-actions">
-    <a href="https://wa.me/541150021965" target="_blank" class="btn-wa">
+    <a href="https://wa.me/541150021965" target="_blank" rel="noopener" class="btn-wa">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       WhatsApp
     </a>
@@ -1166,7 +1184,7 @@
   </div>
   <div class="footer-col">
     <h4>Contacto</h4>
-    <a href="https://wa.me/541150021965" target="_blank" class="footer-contact-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp: 1150021965</a>
+    <a href="https://wa.me/541150021965" target="_blank" rel="noopener" class="footer-contact-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp: 1150021965</a>
     <a href="tel:+541144853764" class="footer-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg> Tel: 44853764</a>
     <a href="mailto:dinter111@hotmail.com" class="footer-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> dinter111@hotmail.com</a>
     <p class="footer-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;margin-top:2px"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> <span>París 1824, Isidro Casanova<br/>Buenos Aires</span></p>
@@ -1177,7 +1195,6 @@
   <p>Instrumentos de Medición y Control</p>
 </div>
 
-<script src="vendor/leaflet/leaflet.js"></script>
 <script>
   const setText = (id, value) => { const el = document.getElementById(id); if (el) el.textContent = value; };
 
@@ -1191,31 +1208,6 @@
     setText('years-counter', years + '+');
     setText('years-badge', years + '+');
   }
-
-  // Mapa interactivo (Leaflet + CartoDB Positron)
-  (function () {
-    const el = document.getElementById('empresa-map');
-    if (!el || typeof L === 'undefined') return;
-    const coords = [-34.6962787, -58.6001904];
-    const map = L.map(el, {
-      scrollWheelZoom: false,
-      attributionControl: true,
-    }).setView(coords, 15);
-
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions" target="_blank">CARTO</a>',
-      maxZoom: 19,
-      subdomains: 'abcd',
-    }).addTo(map);
-
-    const pinIcon = L.divIcon({
-      className: 'empresa-map-pin-wrap',
-      html: '<div class="empresa-map-pin"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><circle cx="12" cy="12" r="5"/></svg></div>',
-      iconSize: [32, 32],
-      iconAnchor: [16, 30],
-    });
-    L.marker(coords, { icon: pinIcon, keyboard: false }).addTo(map);
-  })();
 
   // Slider
   const slides   = document.querySelectorAll('.slide');
