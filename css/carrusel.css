@@ -1,5 +1,5 @@
 /* ── Carrusel del inicio ── */
-.hc { position: relative; color: #fff; overflow: hidden; --hc-time: 6500ms; background: linear-gradient(180deg, #0c463e 0%, #0f5249 55%, #136157 100%); }
+.hc { position: relative; padding: 0; color: #fff; overflow: hidden; --hc-time: 6500ms; background: linear-gradient(180deg, #0c463e 0%, #0f5249 55%, #136157 100%); }
 /* Pattern de cubos isométricos. Original de Josetxu (https://codepen.io/josetxu/pen/jOGzGee),
    publicado en Uiverse por FColombati. Licencia MIT. Adaptado: tamaño fijo, opacidad y desvanecido. */
 .hc::before { content: ""; position: absolute; inset: 0; --hc-pw: 112px; --hc-ph: 140px; opacity: .2;
@@ -12,9 +12,9 @@
     conic-gradient(from 0deg at 50% 50%, #fff0 0 60deg, #17a18c 0 157.5deg, #01685b 0 180.1deg, #128070 0 202.5deg, #159380 0 300deg, #fff0 0 360deg) 50%/var(--hc-pw) var(--hc-ph),
     conic-gradient(from 0deg at 50% 21.15%, #fff0 0 22.5deg, #159380 0 120deg, #38bba7 0 240deg, #17a18c 0 337.5deg, #fff0 0 360deg) 50%/var(--hc-pw) var(--hc-ph),
     linear-gradient(90deg, #128070 0 50%, #01685b 0 100%) 50%/var(--hc-pw) var(--hc-ph); }
-.hc-track { position: relative; max-width: 1280px; margin: 0 auto; height: clamp(440px, 46vw, 560px); }
+.hc-track { position: relative; height: clamp(440px, 46vw, 560px); }
 .hc, .hc * { box-sizing: border-box; }
-.hc-slide { position: absolute; inset: 0; display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); grid-template-rows: minmax(0, 1fr); align-items: stretch; gap: 24px; padding: 0 88px; opacity: 0; visibility: hidden; transition: opacity .5s ease, visibility .5s; }
+.hc-slide { position: absolute; inset: 0; display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); grid-template-rows: minmax(0, 1fr); align-items: stretch; gap: 24px; padding: 0 48px; opacity: 0; visibility: hidden; transition: opacity .5s ease, visibility .5s; }
 .hc-slide.is-active { opacity: 1; visibility: visible; }
 .hc-text { align-self: center; transform: translateY(14px); transition: transform .6s ease; padding-bottom: 40px; }
 .hc-slide.is-active .hc-text { transform: none; }
@@ -29,7 +29,7 @@
 .hc-btn:hover { background: #e8f4f2; }
 .hc-btn span { transition: transform .2s; }
 .hc-btn:hover span { transform: translateX(4px); }
-.hc-stage { position: relative; min-height: 0; display: flex; align-items: flex-end; justify-content: center; gap: 3%; padding: 34px 0 86px; }
+.hc-stage { position: relative; width: 100%; max-width: 760px; justify-self: center; min-height: 0; display: flex; align-items: flex-end; justify-content: center; gap: 3%; padding: 34px 0 86px; }
 .hc-stage::after { content: ""; position: absolute; left: 6%; right: 6%; bottom: 62px; height: 34px; background: radial-gradient(ellipse at center, rgba(0,0,0,.38) 0%, rgba(0,0,0,0) 70%); }
 .hc-img { position: relative; z-index: 1; height: auto; max-height: 100%; min-width: 0; flex: 0 0 auto; object-fit: contain; object-position: bottom; transform: translateY(18px) scale(.97); opacity: 0; transition: transform .7s cubic-bezier(.2,.7,.2,1), opacity .5s ease; }
 /* Anchos proporcionales al tamaño real de cada equipo (frente en mm), en % del escenario */
@@ -37,10 +37,10 @@
 .hc-slide.is-active .hc-img { transform: none; opacity: 1; }
 .hc-slide.is-active .hc-img:nth-child(2) { transition-delay: .08s; }
 .hc-slide.is-active .hc-img:nth-child(3) { transition-delay: .16s; }
-.hc-arrow { position: absolute; top: calc(50% - 46px); z-index: 5; width: 48px; height: 48px; display: grid; place-items: center; background: rgba(255,255,255,.1); color: #fff; border: 1px solid rgba(255,255,255,.3); border-radius: 50%; cursor: pointer; transition: background-color .15s; }
+.hc-arrow { position: absolute; bottom: 12px; z-index: 6; width: 44px; height: 44px; display: grid; place-items: center; background: rgba(255,255,255,.1); color: #fff; border: 1px solid rgba(255,255,255,.3); border-radius: 50%; cursor: pointer; transition: background-color .15s; }
 .hc-arrow:hover { background: rgba(255,255,255,.22); }
-.hc-arrow--prev { left: 20px; } .hc-arrow--next { right: 20px; }
-.hc-tabs { position: absolute; left: 0; right: 0; bottom: 0; z-index: 5; max-width: 1280px; margin: 0 auto; padding: 0 88px; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 14px; }
+.hc-arrow--prev { right: 104px; } .hc-arrow--next { right: 48px; }
+.hc-tabs { position: absolute; left: 0; right: 0; bottom: 0; z-index: 5; padding: 0 196px 0 48px; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 14px; }
 .hc-tab { position: relative; display: flex; align-items: baseline; gap: 8px; min-height: 52px; padding: 14px 0 12px; background: none; border: 0; color: rgba(255,255,255,.62); font: inherit; font-size: .8rem; font-weight: 500; text-align: left; cursor: pointer; transition: color .15s; }
 .hc-tab:hover, .hc-tab.is-active { color: #fff; }
 .hc-tab-n { font-size: .7rem; letter-spacing: .08em; opacity: .7; }
