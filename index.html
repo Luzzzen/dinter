@@ -142,220 +142,6 @@
 
     .nav-cta:hover { background: var(--teal-dark) !important; color: var(--white) !important; }
 
-    /* ── HERO SLIDER ── */
-    .hero {
-      position: relative;
-      height: 470px;
-      overflow: hidden;
-      background: var(--teal-dark);
-    }
-
-    .slides-track {
-      position: absolute;
-      inset: 0;
-    }
-
-    .slide {
-      position: absolute;
-      inset: 0;
-      opacity: 0;
-      transition: opacity .9s cubic-bezier(.4,0,.2,1);
-      display: flex;
-      align-items: center;
-    }
-
-    .slide::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(90deg, rgba(15,82,73,.6) 0%, rgba(15,82,73,.32) 42%, rgba(15,82,73,.08) 68%, rgba(15,82,73,.18) 100%);
-      z-index: 1;
-      pointer-events: none;
-    }
-
-    .slide.active { opacity: 1; }
-
-    .slide img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      transform: scale(1);
-      transition: transform 6s ease;
-    }
-
-    .slide.active img { transform: scale(1); }
-
-    .slide-overlay {
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(90deg, rgba(10,40,35,.82) 0%, rgba(10,40,35,.3) 55%, transparent 80%),
-        linear-gradient(0deg, rgba(10,40,35,.4) 0%, transparent 50%);
-    }
-
-    .slide-content {
-      position: relative;
-      z-index: 2;
-      padding: 0 72px;
-      margin-top: -25px;
-      max-width: 600px;
-    }
-
-    .slide-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-family: var(--font-body);
-      font-size: .72rem;
-      font-weight: 700;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-      color: var(--teal-light);
-      margin-bottom: 16px;
-      opacity: 0;
-      transform: translateY(12px);
-      transition: opacity .5s ease .1s, transform .5s ease .1s;
-    }
-
-    .slide-label::before {
-      content: '';
-      display: block;
-      width: 24px;
-      height: 2px;
-      background: var(--teal-light);
-      border-radius: 2px;
-    }
-
-    .slide-title {
-      font-family: var(--font-head);
-      font-size: clamp(2.2rem, 4.5vw, 3.6rem);
-      font-weight: 700;
-      color: var(--white);
-      line-height: 1.05;
-      margin-bottom: 28px;
-      opacity: 0;
-      transform: translateY(16px);
-      transition: opacity .5s ease .22s, transform .5s ease .22s;
-    }
-
-    .slide-title span { color: var(--teal-light); }
-
-    .slide-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: transparent;
-      color: var(--white);
-      font-family: var(--font-body);
-      font-weight: 600;
-      font-size: .88rem;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      text-decoration: none;
-      padding: 13px 28px;
-      border-radius: 6px;
-      border: 1.5px solid rgba(255,255,255,.5);
-      transition: background .25s, border-color .25s, gap .2s;
-      opacity: 0;
-      transform: translateY(12px);
-      transition: opacity .5s ease .34s, transform .5s ease .34s, background .2s, border-color .2s, gap .2s;
-    }
-
-    .slide-btn::after { content: '→'; }
-    .slide-btn:hover { background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.8); gap: 14px; }
-
-    .slide.active .slide-label,
-    .slide.active .slide-title,
-    .slide.active .slide-btn {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Barra de progreso */
-    .slider-progress {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      height: 3px;
-      background: var(--teal-light);
-      width: 0%;
-      z-index: 10;
-      transition: width linear;
-    }
-
-    /* Contador de slides */
-    .slide-counter {
-      position: absolute;
-      bottom: 28px;
-      right: 72px;
-      z-index: 10;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: rgba(255,255,255,.6);
-      font-family: var(--font-head);
-      font-size: .85rem;
-      font-weight: 600;
-      letter-spacing: .08em;
-    }
-
-    .slide-counter .current { color: var(--white); font-size: 1.1rem; }
-    .slide-counter .sep { width: 32px; height: 1px; background: rgba(255,255,255,.3); }
-
-    /* Dots */
-    .slider-dots {
-      position: absolute;
-      bottom: 32px;
-      left: 72px;
-      display: flex;
-      gap: 6px;
-      z-index: 10;
-    }
-
-    .dot {
-      width: 24px;
-      height: 3px;
-      border-radius: 2px;
-      background: rgba(255,255,255,.3);
-      cursor: pointer;
-      border: none;
-      padding: 0;
-      transition: background .3s, width .3s;
-    }
-
-    .dot.active { background: var(--white); width: 40px; }
-
-    /* Flechas */
-    .slider-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 10;
-      background: rgba(255,255,255,.08);
-      border: 1px solid rgba(255,255,255,.2);
-      color: var(--white);
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      font-size: 1rem;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background .2s, border-color .2s;
-      backdrop-filter: blur(8px);
-    }
-
-    .slider-arrow:hover { background: rgba(255,255,255,.2); border-color: rgba(255,255,255,.4); }
-    .slider-arrow.prev { left: 24px; }
-    .slider-arrow.next { right: 24px; }
-
-    /* Responsive del hero: ver bloque unificado al final de la hoja */
-
-
     /* ── MINI SLIDER EN CATEGORÍAS ── */
     .cat-img { position: relative; }
     .cat-slider { position: absolute; inset: 0; }
@@ -821,10 +607,6 @@
       nav { display: none; }
       .hamburger { display: flex; }
 
-      .hero { height: 460px; }
-      .slide-content { padding: 0 24px; }
-      .slider-dots { left: 24px; bottom: 24px; }
-      .slide-counter { right: 24px; bottom: 20px; }
 
       .empresa-section { grid-template-columns: 1fr; gap: 40px; }
       .empresa-visual { height: 280px; }
@@ -841,11 +623,6 @@
     }
 
     @media (max-width: 600px) {
-      .hero { height: 400px; }
-      .slide-content { padding: 0 20px; max-width: 100%; }
-      .slider-dots { left: 20px; }
-      .slide-counter { display: none; }
-      .slider-arrow { display: none; }
 
       .categories-grid { grid-template-columns: 1fr; gap: 16px; }
       .cat-img { height: 140px; }
@@ -863,6 +640,7 @@
     .footer-logo-wrap { background: var(--white); border-radius: 8px; padding: 8px 12px; filter: none; }
     .menu-soon { display: inline-block; margin-left: 6px; padding: 1px 6px; font-size: .62rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--teal-dark); background: var(--teal-muted); border-radius: 4px; vertical-align: middle; }
   </style>
+  <link rel="stylesheet" href="css/carrusel.css" />
 </head>
 <body>
 
@@ -932,65 +710,74 @@
   </div>
 </div>
 
-<!-- HERO SLIDER -->
-<section class="hero" style="padding:0;">
-  <h1 class="visually-hidden">Dinter – Instrumentos de medición y control</h1>
-  <div class="slides-track">
-    <div class="slide active">
-      <img src="banner1_618.jpg" alt="Controladores de temperatura Línea N" />
-      <div class="slide-overlay"></div>
-      <div class="slide-content">
-        <p class="slide-label">Línea N</p>
-        <h2 class="slide-title">Controladores de <span>Temperatura</span></h2>
-        <a href="productos.html" class="slide-btn">Ver productos</a>
+<!-- CARRUSEL -->
+<h1 class="visually-hidden">Dinter – Instrumentos de medición y control</h1>
+<section class="hc" aria-roledescription="carrusel" aria-label="Líneas de producto">
+  <div class="hc-track">
+    <div class="hc-slide is-active" role="group" aria-roledescription="diapositiva" aria-label="1 de 6">
+      <div class="hc-text">
+        <p class="hc-label">Línea N</p>
+        <h2 class="hc-title">Controladores de <span>temperatura</span></h2>
+        <p class="hc-desc">Control preciso de temperatura para procesos industriales, con PID y autosintonía.</p>
+        <ul class="hc-models" aria-label="Modelos"><li>NL-2</li><li>NP-2</li><li>NG-2</li><li>NH-2</li><li>NW-2</li><li>NF-2</li><li>NTT-2</li><li>NL-ECO</li><li>NG-ECO</li></ul>
+        <a class="hc-btn" href="productos/controladores-temperatura.html">Ver la línea <span aria-hidden="true">→</span></a>
       </div>
+      <div class="hc-stage"><img class="hc-img hc-w-ng-2" src="imagenes/carrusel/ng-2.webp" alt="Dinter NG-2"><img class="hc-img hc-w-np-2" src="imagenes/carrusel/np-2.webp" alt="Dinter NP-2"><img class="hc-img hc-w-nh-2" src="imagenes/carrusel/nh-2.webp" alt="Dinter NH-2"></div>
     </div>
-    <div class="slide">
-      <img src="banner2_618.jpg" alt="Contadores Línea C" loading="lazy" />
-      <div class="slide-overlay"></div>
-      <div class="slide-content">
-        <p class="slide-label">Línea C</p>
-        <h2 class="slide-title"><span>Contadores</span> programables</h2>
-        <a href="productos.html" class="slide-btn">Ver productos</a>
+    <div class="hc-slide" role="group" aria-roledescription="diapositiva" aria-label="2 de 6" aria-hidden="true">
+      <div class="hc-text">
+        <p class="hc-label">Línea T</p>
+        <h2 class="hc-title"><span>Temporizadores</span> digitales</h2>
+        <p class="hc-desc">Temporizadores digitales de alta precisión y múltiples funciones.</p>
+        <ul class="hc-models" aria-label="Modelos"><li>TL-2</li><li>TP-2</li><li>TG-2</li><li>TH-2</li><li>TW-2</li></ul>
+        <a class="hc-btn" href="productos/temporizadores.html">Ver la línea <span aria-hidden="true">→</span></a>
       </div>
+      <div class="hc-stage"><img class="hc-img hc-w-tg-2" src="imagenes/carrusel/tg-2.webp" alt="Dinter TG-2" loading="lazy"><img class="hc-img hc-w-tl-2" src="imagenes/carrusel/tl-2.webp" alt="Dinter TL-2" loading="lazy"><img class="hc-img hc-w-tw-2" src="imagenes/carrusel/tw-2.webp" alt="Dinter TW-2" loading="lazy"></div>
     </div>
-    <div class="slide">
-      <img src="banner3_618.jpg" alt="Temporizadores Línea T" loading="lazy" />
-      <div class="slide-overlay"></div>
-      <div class="slide-content">
-        <p class="slide-label">Línea T</p>
-        <h2 class="slide-title"><span>Temporizadores</span> digitales</h2>
-        <a href="productos.html" class="slide-btn">Ver productos</a>
+    <div class="hc-slide" role="group" aria-roledescription="diapositiva" aria-label="3 de 6" aria-hidden="true">
+      <div class="hc-text">
+        <p class="hc-label">Línea C</p>
+        <h2 class="hc-title"><span>Contadores</span> programables</h2>
+        <p class="hc-desc">Contadores programables por microprocesador para control industrial.</p>
+        <ul class="hc-models" aria-label="Modelos"><li>CL-2</li><li>CG-2</li><li>CH-2</li></ul>
+        <a class="hc-btn" href="productos/contadores.html">Ver la línea <span aria-hidden="true">→</span></a>
       </div>
+      <div class="hc-stage"><img class="hc-img hc-w-cg-2" src="imagenes/carrusel/cg-2.webp" alt="Dinter CG-2" loading="lazy"><img class="hc-img hc-w-cl-2" src="imagenes/carrusel/cl-2.webp" alt="Dinter CL-2" loading="lazy"><img class="hc-img hc-w-ch-2" src="imagenes/carrusel/ch-2.webp" alt="Dinter CH-2" loading="lazy"></div>
     </div>
-    <div class="slide">
-      <img src="banner4_618.jpg" alt="Dosificadores de agua" loading="lazy" />
-      <div class="slide-overlay"></div>
-      <div class="slide-content">
-        <p class="slide-label">Dosificadores de agua</p>
-        <h2 class="slide-title">Dosificadores <span>de agua</span></h2>
-        <a href="productos.html" class="slide-btn">Ver productos</a>
+    <div class="hc-slide" role="group" aria-roledescription="diapositiva" aria-label="4 de 6" aria-hidden="true">
+      <div class="hc-text">
+        <p class="hc-label">Dosificación</p>
+        <h2 class="hc-title">Dosificadores <span>de agua</span></h2>
+        <p class="hc-desc">Equipos de dosificación volumétrica para agua y fluidos.</p>
+        <ul class="hc-models" aria-label="Modelos"><li>LF-19</li></ul>
+        <a class="hc-btn" href="productos/dosificadores-agua.html">Ver la línea <span aria-hidden="true">→</span></a>
       </div>
+      <div class="hc-stage"><img class="hc-img hc-w-lf-19" src="imagenes/carrusel/lf-19.webp" alt="Dosificador de agua Dinter LF-19" loading="lazy"></div>
+    </div>
+    <div class="hc-slide" role="group" aria-roledescription="diapositiva" aria-label="5 de 6" aria-hidden="true">
+      <div class="hc-text">
+        <p class="hc-label">Colada caliente</p>
+        <h2 class="hc-title">Control para <span>colada caliente</span></h2>
+        <p class="hc-desc">Controlador PID especializado para colada caliente, con SSR y Soft-Start.</p>
+        <ul class="hc-models" aria-label="Modelos"><li>Ncol-2</li></ul>
+        <a class="hc-btn" href="productos/colada-caliente.html">Ver la línea <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="hc-stage"><img class="hc-img hc-w-ncol-2" src="imagenes/carrusel/ncol-2.webp" alt="Dinter Ncol-2" loading="lazy"></div>
+    </div>
+    <div class="hc-slide" role="group" aria-roledescription="diapositiva" aria-label="6 de 6" aria-hidden="true">
+      <div class="hc-text">
+        <p class="hc-label">Variadores</p>
+        <h2 class="hc-title">Variador de velocidad <span>24 Vcc</span></h2>
+        <p class="hc-desc">Controlador digital de velocidad para motores de corriente continua.</p>
+        <ul class="hc-models" aria-label="Modelos"><li>TL-2/PWM</li></ul>
+        <a class="hc-btn" href="productos/variador-velocidad.html">Ver la línea <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="hc-stage"><img class="hc-img hc-w-tl-2-pwm-a" src="imagenes/carrusel/tl-2-pwm-a.webp" alt="Control digital Dinter TL-2/PWM" loading="lazy"><img class="hc-img hc-w-tl-2-pwm-b" src="imagenes/carrusel/tl-2-pwm-b.webp" alt="Placa de potencia Dinter POT/PWM" loading="lazy"></div>
     </div>
   </div>
-
-  <button class="slider-arrow prev" aria-label="Anterior">&#8592;</button>
-  <button class="slider-arrow next" aria-label="Siguiente">&#8594;</button>
-
-  <div class="slider-dots">
-    <button class="dot active" aria-label="Slide 1"></button>
-    <button class="dot" aria-label="Slide 2"></button>
-    <button class="dot" aria-label="Slide 3"></button>
-    <button class="dot" aria-label="Slide 4"></button>
-  </div>
-
-  <div class="slide-counter">
-    <span class="current" id="slide-current">01</span>
-    <span class="sep"></span>
-    <span>04</span>
-  </div>
-
-  <div class="slider-progress" id="slider-progress"></div>
+  <button class="hc-arrow hc-arrow--prev" type="button" aria-label="Anterior"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+  <button class="hc-arrow hc-arrow--next" type="button" aria-label="Siguiente"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+  <div class="hc-tabs"><button class="hc-tab is-active" type="button" aria-label="Ir a Temperatura" aria-current="true"><span class="hc-tab-n">01</span><span class="hc-tab-t">Temperatura</span><span class="hc-tab-bar"><i></i></span></button><button class="hc-tab" type="button" aria-label="Ir a Temporizadores"><span class="hc-tab-n">02</span><span class="hc-tab-t">Temporizadores</span><span class="hc-tab-bar"><i></i></span></button><button class="hc-tab" type="button" aria-label="Ir a Contadores"><span class="hc-tab-n">03</span><span class="hc-tab-t">Contadores</span><span class="hc-tab-bar"><i></i></span></button><button class="hc-tab" type="button" aria-label="Ir a Dosificadores"><span class="hc-tab-n">04</span><span class="hc-tab-t">Dosificadores</span><span class="hc-tab-bar"><i></i></span></button><button class="hc-tab" type="button" aria-label="Ir a Colada caliente"><span class="hc-tab-n">05</span><span class="hc-tab-t">Colada caliente</span><span class="hc-tab-bar"><i></i></span></button><button class="hc-tab" type="button" aria-label="Ir a Variadores"><span class="hc-tab-n">06</span><span class="hc-tab-t">Variadores</span><span class="hc-tab-bar"><i></i></span></button></div>
 </section>
 
 <!-- PRODUCTOS -->
@@ -1209,54 +996,6 @@
     setText('years-badge', years + '+');
   }
 
-  // Slider
-  const slides   = document.querySelectorAll('.slide');
-  const dots     = document.querySelectorAll('.dot');
-  const progress = document.getElementById('slider-progress');
-  const counter  = document.getElementById('slide-current');
-  const DURATION = 4500;
-  let current = 0;
-  let timer, progressTimer;
-
-  function pad(n) { return n < 10 ? '0' + n : '' + n; }
-
-  function startProgress() {
-    progress.style.transition = 'none';
-    progress.style.width = '0%';
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        progress.style.transition = `width ${DURATION}ms linear`;
-        progress.style.width = '100%';
-      });
-    });
-  }
-
-  function goTo(n) {
-    slides[current].classList.remove('active');
-    dots[current].classList.remove('active');
-    current = (n + slides.length) % slides.length;
-    slides[current].classList.add('active');
-    dots[current].classList.add('active');
-    counter.textContent = pad(current + 1);
-    startProgress();
-  }
-
-  function autoPlay() {
-    timer = setInterval(() => goTo(current + 1), DURATION);
-  }
-
-  function resetTimer() {
-    clearInterval(timer);
-    autoPlay();
-  }
-
-  document.querySelector('.slider-arrow.prev').addEventListener('click', () => { goTo(current - 1); resetTimer(); });
-  document.querySelector('.slider-arrow.next').addEventListener('click', () => { goTo(current + 1); resetTimer(); });
-  dots.forEach((dot, i) => dot.addEventListener('click', () => { goTo(i); resetTimer(); }));
-
-  startProgress();
-  autoPlay();
-
   // Drawer mobile
   const btn     = document.getElementById('hamburger-btn');
   const overlay = document.getElementById('drawer-overlay');
@@ -1298,5 +1037,6 @@
   });
 </script>
 
+<script src="js/carrusel.js" defer></script>
 </body>
 </html>
