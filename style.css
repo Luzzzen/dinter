@@ -77,9 +77,9 @@ nav a:hover { background: var(--teal-muted); color: var(--teal-dark); }
 .page-hero h1 span { color: var(--teal-light); }
 .breadcrumb {
   margin-top: 16px; display: flex; align-items: center; gap: 8px;
-  font-size: .8rem; color: rgba(255,255,255,.5);
+  font-size: .8rem; color: rgba(255,255,255,.72);
 }
-.breadcrumb a { color: rgba(255,255,255,.6); text-decoration: none; transition: color .2s; }
+.breadcrumb a { color: rgba(255,255,255,.82); text-decoration: none; transition: color .2s; }
 .breadcrumb a:hover { color: var(--white); }
 .page-back-btn {
   display: inline-flex; align-items: center; gap: 6px;
@@ -102,13 +102,13 @@ footer {
   margin-bottom: 14px;
   background: var(--white); border-radius: 8px; padding: 8px 12px;  /* el logo no se veía sobre el fondo oscuro */
 }
-.footer-brand p { font-size: .84rem; color: rgba(255,255,255,.45); line-height: 1.65; max-width: 220px; }
+.footer-brand p { font-size: .84rem; color: rgba(255,255,255,.72); line-height: 1.65; max-width: 220px; }
 .footer-col h4 {
   font-size: .72rem; font-weight: 700; letter-spacing: .14em;
   text-transform: uppercase; color: var(--teal-light); margin-bottom: 16px;
 }
 .footer-col a, .footer-col p {
-  display: block; font-size: .84rem; color: rgba(255,255,255,.5);
+  display: block; font-size: .84rem; color: rgba(255,255,255,.78);
   text-decoration: none; margin-bottom: 8px; transition: color .2s; line-height: 1.5;
 }
 .footer-col a:hover { color: var(--white); }
@@ -118,7 +118,7 @@ footer {
   background: var(--dark); border-top: 1px solid rgba(255,255,255,.06);
   padding: 20px 48px; display: flex; justify-content: space-between; align-items: center;
 }
-.footer-bottom p { font-size: .78rem; color: rgba(255,255,255,.25); }
+.footer-bottom p { font-size: .78rem; color: rgba(255,255,255,.62); }
 
 /* ── CONTACT STRIP ── */
 .contact-strip {
