@@ -1,0 +1,27 @@
+/* Botones de acción con relieve de tecla (cotizar, descargar, llamar).
+   Inspirado en un botón de pruthivithejan publicado en Uiverse (licencia MIT), reescrito en CSS propio. */
+:root a.action-btn, :root a.btn-wa, :root a.btn-tel, :root a.btn-cta-wa, :root a.btn-cta-mail {
+  border: 4px solid transparent; border-radius: 12px; transform: none;
+  transition: box-shadow .12s, transform .12s, filter .12s; -webkit-tap-highlight-color: transparent; }
+:root a.action-btn { padding: 9px 14px; margin-bottom: 10px; }
+
+/* Principal: WhatsApp, en verde de la marca */
+:root a.action-btn.wa, :root a.btn-wa, :root a.btn-cta-wa { color: #fff;
+  background: linear-gradient(180deg, #16936a 0%, #1fae7e 100%) padding-box, linear-gradient(180deg, #37c796 0%, #12805b 100%) border-box;
+  box-shadow: 0 0 0 4px rgba(15,82,73,.09), 0 1px 3px rgba(8,45,40,.55); }
+
+/* Secundarios claros: mail, folleto, instructivo, conexionado (relieve más suave) */
+:root a.action-btn.outline, :root a.btn-cta-mail { color: #0f5249; border-width: 3px;
+  background: linear-gradient(180deg, #edf6f4 0%, #ffffff 100%) padding-box, linear-gradient(180deg, #ffffff 0%, #d5e6e2 100%) border-box;
+  box-shadow: 0 1px 2px rgba(8,45,40,.32); }
+
+/* Teléfono, sobre la franja verde */
+:root a.btn-tel { color: #fff;
+  background: linear-gradient(180deg, #0b4038 0%, #125c52 100%) padding-box, linear-gradient(180deg, #2a8576 0%, #072f29 100%) border-box;
+  box-shadow: 0 0 0 4px rgba(255,255,255,.06), 0 1px 3px rgba(0,0,0,.5); }
+:root .contact-strip a.btn-wa { box-shadow: 0 0 0 4px rgba(255,255,255,.08), 0 1px 3px rgba(0,0,0,.5); }
+
+:root a.action-btn:hover, :root a.btn-wa:hover, :root a.btn-tel:hover, :root a.btn-cta-wa:hover, :root a.btn-cta-mail:hover { filter: brightness(1.06); transform: none; }
+:root a.action-btn:active, :root a.btn-wa:active, :root a.btn-tel:active, :root a.btn-cta-wa:active, :root a.btn-cta-mail:active { transform: scale(.985); filter: brightness(.98); }
+:root a.action-btn:focus-visible, :root a.btn-wa:focus-visible, :root a.btn-tel:focus-visible, :root a.btn-cta-wa:focus-visible, :root a.btn-cta-mail:focus-visible { outline: 2px solid #37c796; outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { :root a.action-btn, :root a.btn-wa, :root a.btn-tel, :root a.btn-cta-wa, :root a.btn-cta-mail { transition: none; } }
