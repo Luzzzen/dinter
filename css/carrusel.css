@@ -16,8 +16,9 @@
 .hc-count { font-size: .9rem; font-weight: 500; letter-spacing: .04em; color: rgba(255,255,255,.72); }
 .hc-btn { display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 24px; background: #fff; color: #0f5249; font-weight: 600; font-size: .95rem; letter-spacing: .04em; text-transform: uppercase; text-decoration: none; border-radius: 6px; transition: background-color .15s; }
 .hc-btn:hover { background: #e8f4f2; }
-.hc-btn span { transition: transform .2s; }
-.hc-btn:hover span { transform: translateX(4px); }
+.hc-btn span[aria-hidden] { transition: transform .2s; }
+.hc-btn:hover span[aria-hidden] { transform: translateX(4px); }
+.hc-btn-s { display: none; }
 .hc-stage { position: relative; width: 100%; max-width: 1090px; justify-self: center; min-height: 0; display: flex; align-items: flex-end; justify-content: center;  padding: 34px 0 86px; }
 .hc-stage::after { content: ""; position: absolute; left: 6%; right: 6%; bottom: 62px; height: 34px; background: radial-gradient(ellipse at center, rgba(0,0,0,.38) 0%, rgba(0,0,0,0) 70%); }
 .hc-img { position: relative; z-index: 1; min-width: 0; flex: 0 0 auto; object-fit: contain; object-position: bottom; transform: translateX(26px); transition: transform .9s cubic-bezier(.2,.7,.2,1); }
@@ -58,6 +59,10 @@
   .hc-desc { font-size: 1rem; }
   .hc-stage { height: 200px; padding: 16px 0 22px; }
   .hc-cta { margin-top: 2px; padding-bottom: 6px; }
+  /* En mobile: botón a todo el ancho, en una sola línea y con texto corto que ya incluye la cantidad de modelos */
+  .hc-btn { flex: 1 1 100%; justify-content: space-between; white-space: nowrap; }
+  .hc-btn-l, .hc-count { display: none; }
+  .hc-btn-s { display: inline; }
   .hc-stage::after { bottom: 6px; height: 26px; }
   .hc-arrow { display: none; }
   .hc-tabs { position: static; padding: 6px 20px 22px; gap: 8px; }
