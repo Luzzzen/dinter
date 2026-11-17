@@ -25,3 +25,23 @@
 :root a.action-btn:active, :root a.btn-wa:active, :root a.btn-tel:active, :root a.btn-cta-wa:active, :root a.btn-cta-mail:active { transform: scale(.985); filter: brightness(.98); }
 :root a.action-btn:focus-visible, :root a.btn-wa:focus-visible, :root a.btn-tel:focus-visible, :root a.btn-cta-wa:focus-visible, :root a.btn-cta-mail:focus-visible { outline: 2px solid #37c796; outline-offset: 3px; }
 @media (prefers-reduced-motion: reduce) { :root a.action-btn, :root a.btn-wa, :root a.btn-tel, :root a.btn-cta-wa, :root a.btn-cta-mail { transition: none; } }
+
+/* Botones verdes del sitio: Contacto del menú, Ver cómo llegar, Ver catálogo completo, Enviar consulta */
+:root a.nav-cta, :root .drawer-cta a, :root a.empresa-map-cta, :root a.btn-key, :root .form-submit {
+  border: 4px solid transparent; border-radius: 12px; color: #fff !important; transform: none; cursor: pointer;
+  background: linear-gradient(180deg, #16936a 0%, #1fae7e 100%) padding-box, linear-gradient(180deg, #37c796 0%, #12805b 100%) border-box !important;
+  box-shadow: 0 0 0 4px rgba(15,82,73,.09), 0 1px 3px rgba(8,45,40,.55);
+  transition: box-shadow .12s, transform .12s, filter .12s; -webkit-tap-highlight-color: transparent; }
+:root a.nav-cta { padding: 5px 17px !important; }
+:root a.btn-key { display: inline-flex; align-items: center; gap: 10px; padding: 10px 24px; font-weight: 600; font-size: .95rem; letter-spacing: .02em; text-decoration: none; }
+:root a.btn-key span { transition: transform .2s; }
+:root a.btn-key:hover span { transform: translateX(4px); }
+/* Botón del banner: tecla clara sobre el verde */
+:root a.hc-btn { border: 4px solid transparent; border-radius: 12px; min-height: 50px; padding: 0 22px; color: #0f5249;
+  background: linear-gradient(180deg, #e6f3f0 0%, #ffffff 100%) padding-box, linear-gradient(180deg, #ffffff 0%, #bcd9d3 100%) border-box;
+  box-shadow: 0 0 0 4px rgba(255,255,255,.08), 0 1px 3px rgba(0,0,0,.5);
+  transition: box-shadow .12s, transform .12s, filter .12s; -webkit-tap-highlight-color: transparent; }
+:root a.nav-cta:hover, :root .drawer-cta a:hover, :root a.empresa-map-cta:hover, :root a.btn-key:hover, :root .form-submit:hover, :root a.hc-btn:hover { filter: brightness(1.06); transform: none; }
+:root a.nav-cta:active, :root .drawer-cta a:active, :root a.empresa-map-cta:active, :root a.btn-key:active, :root .form-submit:active, :root a.hc-btn:active { transform: scale(.985); filter: brightness(.98); }
+:root a.nav-cta:focus-visible, :root .drawer-cta a:focus-visible, :root a.empresa-map-cta:focus-visible, :root a.btn-key:focus-visible, :root .form-submit:focus-visible { outline: 2px solid #37c796; outline-offset: 3px; }
+@media (max-width: 900px) { :root a.hc-btn { font-size: .86rem; padding: 0 18px; } }

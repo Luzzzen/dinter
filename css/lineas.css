@@ -17,6 +17,7 @@ a.ln-card:hover { border-color: var(--teal); box-shadow: 0 6px 20px rgba(15,82,7
 .ln-more { margin-top: auto; padding-top: 12px; font-size: .86rem; font-weight: 600; color: var(--teal); }
 .ln-more::after { content: " →"; display: inline-block; margin-left: 4px; transition: transform .2s; }
 a.ln-card:hover .ln-more::after { transform: translateX(4px); }
+.ln-all { display: flex; justify-content: center; margin-top: 36px; }
 @media (max-width: 1000px) {
   .ln-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .ln-card, .ln-card:nth-child(-n+3) { grid-column: auto; }
@@ -26,6 +27,7 @@ a.ln-card:hover .ln-more::after { transform: translateX(4px); }
   /* En celular: carrusel horizontal que se desliza con el dedo; se asoman la tarjeta anterior y la siguiente */
   .products-section { padding-left: 0; padding-right: 0; }
   .products-header { flex-direction: column; align-items: flex-start; gap: 14px; padding: 0 20px; margin-bottom: 24px; }
+  .ln-all { margin-top: 14px; padding: 0 20px; }
   .ln-grid { display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 4px 11vw 18px; scroll-padding: 0 11vw; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
   .ln-grid::-webkit-scrollbar { display: none; }
   .ln-card, .ln-card:nth-child(-n+3), .ln-card:last-child { flex: 0 0 78vw; grid-column: auto; scroll-snap-align: center; }

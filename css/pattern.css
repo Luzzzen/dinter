@@ -12,7 +12,7 @@
     linear-gradient(90deg, #128070 0 50%, #01685b 0 100%) 50%/var(--dp-w, 112px) var(--dp-h, 140px); }
 
 /* Banners y cuadros verdes de todo el sitio: mismos cubos, ya mezclados con el verde de la marca */
-:root .page-hero, :root .contact-strip, :root .product-highlight, :root .sensor-intro, :root .stat-box:nth-child(2), :root .ln-img, :root .model-img {
+:root .page-hero, :root .contact-strip, :root .product-highlight, :root .sensor-intro, :root .stat-box:nth-child(2), :root .ln-img, :root .model-img, :root .product-model-badge {
   background: conic-gradient(from 0deg at 68.4% 85.35%, #fff0 0 60deg, #17675c 0 120deg, #105f54 0 202.5deg, #fff0 0 360deg) 50%/var(--dp-w, 112px) var(--dp-h, 140px),
     conic-gradient(from 0deg at 31.6% 85.35%, #fff0 0 157.5deg, #116256 0 240deg, #17675c 0 300deg, #fff0 0 360deg) 50%/var(--dp-w, 112px) var(--dp-h, 140px),
     conic-gradient(from 0deg at 81.35% 35.5%, #fff0 0 22.75deg, #105b51 0 157.25deg, #fff0 0 360deg) 50%/var(--dp-w, 112px) var(--dp-h, 140px),
@@ -23,3 +23,4 @@
 :root .contact-strip { --dp-w: 96px; --dp-h: 120px; }
 :root .product-highlight, :root .sensor-intro, :root .stat-box:nth-child(2) { --dp-w: 64px; --dp-h: 80px; }
 :root .ln-img, :root .model-img { --dp-w: 72px; --dp-h: 90px; }
+:root .product-model-badge { --dp-w: 44px; --dp-h: 55px; }
