@@ -30,3 +30,11 @@
   // Cerrar con Escape
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
 })();
+
+// Años en el mercado (se calcula solo, a partir del año de fundación)
+(function () {
+  var FUNDACION = 1996, anios = (new Date().getFullYear() - FUNDACION) + '+';
+  ['years-counter', 'years-badge', 'years-stat'].forEach(function (id) {
+    var el = document.getElementById(id); if (el) el.textContent = anios;
+  });
+})();

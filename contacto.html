@@ -2,6 +2,8 @@
 <html lang="es-AR">
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; frame-src https://www.google.com; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contacto – Dinter</title>
   <meta name="description" content="Contacto de Dinter: WhatsApp, teléfono, mail y dirección para pedir cotizaciones de instrumentos de medición y control." />
@@ -11,9 +13,7 @@
   <meta property="og:description" content="Contacto de Dinter: WhatsApp, teléfono, mail y dirección para pedir cotizaciones de instrumentos de medición y control." />
   <meta property="og:locale" content="es_AR" />
   <meta name="theme-color" content="#0f5249" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/fuentes.css" />
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
@@ -317,7 +317,7 @@
       <label>Mensaje</label>
       <textarea placeholder="Contanos tu consulta o el modelo que te interesa..."></textarea>
     </div>
-    <button class="form-submit" onclick="sendMail()">Enviar consulta</button>
+    <button class="form-submit" type="button">Enviar consulta</button>
     <p class="form-note">Al enviar, se abrirá tu cliente de correo con el mensaje listo.</p>
   </div>
 
@@ -387,17 +387,6 @@
 </div>
 
 <script src="js/ui.js"></script>
-<script>
-
-  function sendMail() {
-    const nombre   = document.querySelector('input[type="text"]').value;
-    const mail     = document.querySelector('input[type="email"]').value;
-    const producto = document.querySelector('select').value;
-    const mensaje  = document.querySelector('textarea').value;
-    const subject  = encodeURIComponent('Consulta desde la web de Dinter' + (producto ? ' – ' + producto : ''));
-    const body     = encodeURIComponent(`Nombre: ${nombre}\nMail: ${mail}\nProducto: ${producto}\n\n${mensaje}`);
-    window.location.href = `mailto:dinter111@hotmail.com?subject=${subject}&body=${body}`;
-  }
-</script>
+<script src="js/contacto.js" defer></script>
 </body>
 </html>

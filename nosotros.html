@@ -2,6 +2,8 @@
 <html lang="es-AR">
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; frame-src https://www.google.com; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Acerca de nosotros – Dinter</title>
   <meta name="description" content="Dinter diseña y fabrica instrumentos de medición y control en Argentina, con soporte técnico, reparación y 12 meses de garantía." />
@@ -11,9 +13,7 @@
   <meta property="og:description" content="Dinter diseña y fabrica instrumentos de medición y control en Argentina, con soporte técnico, reparación y 12 meses de garantía." />
   <meta property="og:locale" content="es_AR" />
   <meta name="theme-color" content="#0f5249" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/fuentes.css" />
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
@@ -322,14 +322,5 @@
 </div>
 
 <script src="js/ui.js"></script>
-<script>
-
-  // Años en el mercado
-  const FOUNDING_YEAR = 1996;
-  if (FOUNDING_YEAR) {
-    const y = new Date().getFullYear() - FOUNDING_YEAR;
-    document.getElementById('years-stat').textContent = y + '+';
-  }
-</script>
 </body>
 </html>

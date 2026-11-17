@@ -2,6 +2,8 @@
 <html lang="es-AR">
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; frame-src https://www.google.com; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sensores – Dinter</title>
   <meta name="description" content="Sensores Dinter. Instrumentos de medición y control fabricados en Argentina, con 12 meses de garantía." />
@@ -15,11 +17,10 @@
   <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
   <link rel="manifest" href="../site.webmanifest" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/fuentes.css" />
   <link rel="stylesheet" href="../style.css" />
   <link rel="stylesheet" href="../css/pattern.css" />
+  <link rel="stylesheet" href="../css/modelos.css" />
   <style>
     .sensors-index { padding: 64px 48px; background: var(--gray-1); }
     .sensors-intro { max-width: 600px; margin-bottom: 48px; }
@@ -27,29 +28,7 @@
     .sensors-intro h2 { font-family: var(--font-head); font-size: clamp(1.6rem,3vw,2.2rem); font-weight: 700; color: var(--dark); margin-bottom: 12px; }
     .sensors-intro h2 span { color: var(--teal); }
     .sensors-intro p { font-size: .95rem; color: var(--gray-3); line-height: 1.7; }
-    .sensors-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px,1fr)); gap: 24px; }
-    .sensor-card {
-      background: var(--white); border: 1px solid var(--teal-border);
-      border-radius: 12px; overflow: hidden; text-decoration: none;
-      color: inherit; display: flex; flex-direction: column;
-      transition: box-shadow .25s, transform .25s;
-    }
-    .sensor-card:hover { box-shadow: 0 8px 32px rgba(26,122,110,.15); transform: translateY(-4px); }
-    .sensor-card-img {
-      height: 200px; background: var(--teal-muted);
-      display: flex; align-items: center; justify-content: center; overflow: hidden;
-    }
-    .sensor-card-img img { max-width: 100%; max-height: 100%; object-fit: contain; padding: 20px; transition: transform .4s ease; }
-    .sensor-card:hover .sensor-card-img img { transform: scale(1.04); }
-    .sensor-card-body { padding: 22px 24px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
-    .sensor-card-badge { font-size: .7rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--teal); }
-    .sensor-card-name { font-family: var(--font-head); font-size: 1.5rem; font-weight: 700; color: var(--dark); line-height: 1; }
-    .sensor-card-desc { font-size: .85rem; color: var(--gray-3); line-height: 1.55; margin-top: 4px; }
-    .sensor-card-cta { margin-top: auto; padding-top: 16px; font-size: .82rem; font-weight: 600; color: var(--teal); display: flex; align-items: center; gap: 6px; }
-    .sensor-card-cta::after { content: "→"; transition: transform .2s; }
-    .sensor-card:hover .sensor-card-cta::after { transform: translateX(4px); }
     @media (max-width: 900px) { .sensors-index { padding: 48px 20px; } }
-    @media (max-width: 600px) { .sensors-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -151,41 +130,41 @@
     <h2>Sensores de <span>temperatura</span></h2>
     <p>Termocuplas tipo J, tipo K y termorresistencias Pt-100 para uso industrial. Fabricados con distintas configuraciones según la aplicación.</p>
   </div>
-  <div class="sensors-grid">
+  <div class="models-grid">
 
-    <a href="sensores/tipoj.html" class="sensor-card">
-      <div class="sensor-card-img">
-        <img src="../imagenes/tipoj.jpg" alt="Termocupla Tipo J" onerror="this.style.display='none'" />
+    <a href="sensores/tipoj.html" class="model-card">
+      <div class="model-img">
+        <img src="../imagenes/tipoj.webp" alt="Termocupla Tipo J" />
       </div>
-      <div class="sensor-card-body">
-        <span class="sensor-card-badge">Termocupla</span>
-        <span class="sensor-card-name">Tipo J</span>
-        <span class="sensor-card-desc">Fe/Co · Rango 0 a +750 °C · 4 variantes disponibles</span>
-        <span class="sensor-card-cta">Ver variantes</span>
+      <div class="model-body">
+        <span class="model-tag">Termocupla</span>
+        <span class="model-name">Tipo J</span>
+        <span class="model-desc">Fe/Co · Rango 0 a +750 °C · 4 variantes disponibles</span>
+        <span class="model-cta">Ver variantes</span>
       </div>
     </a>
 
-    <a href="sensores/tipok.html" class="sensor-card">
-      <div class="sensor-card-img">
-        <img src="../imagenes/tipok.jpg" alt="Termocupla Tipo K" onerror="this.style.display='none'" />
+    <a href="sensores/tipok.html" class="model-card">
+      <div class="model-img">
+        <img src="../imagenes/tipok.webp" alt="Termocupla Tipo K" />
       </div>
-      <div class="sensor-card-body">
-        <span class="sensor-card-badge">Termocupla</span>
-        <span class="sensor-card-name">Tipo K</span>
-        <span class="sensor-card-desc">Ni/Cr–Ni/Al · Rango 0 a +1.200 °C · Para hornos de mufla</span>
-        <span class="sensor-card-cta">Ver variantes</span>
+      <div class="model-body">
+        <span class="model-tag">Termocupla</span>
+        <span class="model-name">Tipo K</span>
+        <span class="model-desc">Ni/Cr–Ni/Al · Rango 0 a +1.200 °C · Para hornos de mufla</span>
+        <span class="model-cta">Ver variantes</span>
       </div>
     </a>
 
-    <a href="sensores/pt100.html" class="sensor-card">
-      <div class="sensor-card-img">
-        <img src="../imagenes/pt100.jpg" alt="Termorresistencia Pt-100" onerror="this.style.display='none'" />
+    <a href="sensores/pt100.html" class="model-card">
+      <div class="model-img">
+        <img src="../imagenes/pt100.webp" alt="Termorresistencia Pt-100" />
       </div>
-      <div class="sensor-card-body">
-        <span class="sensor-card-badge">Termorresistencia</span>
-        <span class="sensor-card-name">Pt-100</span>
-        <span class="sensor-card-desc">Platino 100 Ω · Rango –50 a +650 °C · 2 variantes disponibles</span>
-        <span class="sensor-card-cta">Ver variantes</span>
+      <div class="model-body">
+        <span class="model-tag">Termorresistencia</span>
+        <span class="model-name">Pt-100</span>
+        <span class="model-desc">Platino 100 Ω · Rango –50 a +650 °C · 2 variantes disponibles</span>
+        <span class="model-cta">Ver variantes</span>
       </div>
     </a>
 

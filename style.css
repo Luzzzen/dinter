@@ -66,11 +66,6 @@ nav a:hover { background: var(--teal-muted); color: var(--teal-dark); }
   padding: 56px 48px 48px;
   position: relative; overflow: hidden;
 }
-.page-hero::after {
-  content: ''; position: absolute; right: -60px; top: -60px;
-  width: 320px; height: 320px; border-radius: 50%;
-  border: 60px solid rgba(255,255,255,.04);
-}
 .page-hero-label {
   font-size: .72rem; font-weight: 700; letter-spacing: .18em;
   text-transform: uppercase; color: var(--teal-light); margin-bottom: 10px;

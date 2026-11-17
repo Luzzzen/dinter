@@ -2,6 +2,8 @@
 <html lang="es-AR">
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; frame-src https://www.google.com; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dinter – Instrumentos de Medición y Control</title>
   <meta name="description" content="Dinter fabrica en Argentina instrumentos de medición y control: controladores de temperatura, temporizadores, contadores, dosificadores de agua y sensores." />
@@ -15,9 +17,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
   <link rel="manifest" href="site.webmanifest" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/fuentes.css" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -631,7 +631,7 @@
         <ul class="hc-models" aria-label="Modelos"><li>NL-2</li><li>NP-2</li><li>NG-2</li><li>NH-2</li><li>NW-2</li><li>NF-2</li><li>NTT-2</li><li>NL-ECO</li><li>NG-ECO</li></ul>
         <a class="hc-btn" href="productos/controladores-temperatura.html">Ver la línea <span aria-hidden="true">→</span></a>
       </div>
-      <div class="hc-stage"><img class="hc-img hc-w-ng-2" src="imagenes/carrusel/ng-2.webp" alt="Dinter NG-2"><img class="hc-img hc-w-np-2" src="imagenes/carrusel/np-2.webp" alt="Dinter NP-2"><img class="hc-img hc-w-nh-2" src="imagenes/carrusel/nh-2.webp" alt="Dinter NH-2"></div>
+      <div class="hc-stage"><img class="hc-img hc-w-ng-2" src="imagenes/ng2.webp" alt="Dinter NG-2"><img class="hc-img hc-w-np-2" src="imagenes/np2.webp" alt="Dinter NP-2"><img class="hc-img hc-w-nh-2" src="imagenes/nh2.webp" alt="Dinter NH-2"></div>
     </div>
     <div class="hc-slide" role="group" aria-roledescription="diapositiva" aria-label="2 de 6" aria-hidden="true">
       <div class="hc-text">
@@ -641,7 +641,7 @@
         <ul class="hc-models" aria-label="Modelos"><li>TL-2</li><li>TP-2</li><li>TG-2</li><li>TH-2</li><li>TW-2</li></ul>
         <a class="hc-btn" href="productos/temporizadores.html">Ver la línea <span aria-hidden="true">→</span></a>
       </div>
-      <div class="hc-stage"><img class="hc-img hc-w-tg-2" src="imagenes/carrusel/tg-2.webp" alt="Dinter TG-2" decoding="async"><img class="hc-img hc-w-tl-2" src="imagenes/carrusel/tl-2.webp" alt="Dinter TL-2" decoding="async"><img class="hc-img hc-w-tw-2" src="imagenes/carrusel/tw-2.webp" alt="Dinter TW-2" decoding="async"></div>
+      <div class="hc-stage"><img class="hc-img hc-w-tg-2" src="imagenes/tg2.webp" alt="Dinter TG-2" decoding="async"><img class="hc-img hc-w-tl-2" src="imagenes/tl2.webp" alt="Dinter TL-2" decoding="async"><img class="hc-img hc-w-tw-2" src="imagenes/tw2.webp" alt="Dinter TW-2" decoding="async"></div>
     </div>
     <div class="hc-slide" role="group" aria-roledescription="diapositiva" aria-label="3 de 6" aria-hidden="true">
       <div class="hc-text">
@@ -651,7 +651,7 @@
         <ul class="hc-models" aria-label="Modelos"><li>CL-2</li><li>CG-2</li><li>CH-2</li></ul>
         <a class="hc-btn" href="productos/contadores.html">Ver la línea <span aria-hidden="true">→</span></a>
       </div>
-      <div class="hc-stage"><img class="hc-img hc-w-cg-2" src="imagenes/carrusel/cg-2.webp" alt="Dinter CG-2" decoding="async"><img class="hc-img hc-w-cl-2" src="imagenes/carrusel/cl-2.webp" alt="Dinter CL-2" decoding="async"><img class="hc-img hc-w-ch-2" src="imagenes/carrusel/ch-2.webp" alt="Dinter CH-2" decoding="async"></div>
+      <div class="hc-stage"><img class="hc-img hc-w-cg-2" src="imagenes/cg2.webp" alt="Dinter CG-2" decoding="async"><img class="hc-img hc-w-cl-2" src="imagenes/cl2.webp" alt="Dinter CL-2" decoding="async"><img class="hc-img hc-w-ch-2" src="imagenes/ch2.webp" alt="Dinter CH-2" decoding="async"></div>
     </div>
     <div class="hc-slide" role="group" aria-roledescription="diapositiva" aria-label="4 de 6" aria-hidden="true">
       <div class="hc-text">
@@ -661,7 +661,7 @@
         <ul class="hc-models" aria-label="Modelos"><li>LF-19</li></ul>
         <a class="hc-btn" href="productos/dosificadores-agua.html">Ver la línea <span aria-hidden="true">→</span></a>
       </div>
-      <div class="hc-stage"><img class="hc-img hc-w-lf-19" src="imagenes/carrusel/lf-19.webp" alt="Dosificador de agua Dinter LF-19" decoding="async"></div>
+      <div class="hc-stage"><img class="hc-img hc-w-lf-19" src="imagenes/lf19.webp" alt="Dosificador de agua Dinter LF-19" decoding="async"></div>
     </div>
     <div class="hc-slide" role="group" aria-roledescription="diapositiva" aria-label="5 de 6" aria-hidden="true">
       <div class="hc-text">
@@ -671,7 +671,7 @@
         <ul class="hc-models" aria-label="Modelos"><li>Ncol-2</li></ul>
         <a class="hc-btn" href="productos/colada-caliente.html">Ver la línea <span aria-hidden="true">→</span></a>
       </div>
-      <div class="hc-stage"><img class="hc-img hc-w-ncol-2" src="imagenes/carrusel/ncol-2.webp" alt="Dinter Ncol-2" decoding="async"></div>
+      <div class="hc-stage"><img class="hc-img hc-w-ncol-2" src="imagenes/ncol2.webp" alt="Dinter Ncol-2" decoding="async"></div>
     </div>
     <div class="hc-slide" role="group" aria-roledescription="diapositiva" aria-label="6 de 6" aria-hidden="true">
       <div class="hc-text">
@@ -681,7 +681,7 @@
         <ul class="hc-models" aria-label="Modelos"><li>TL-2/PWM</li></ul>
         <a class="hc-btn" href="productos/variador-velocidad.html">Ver la línea <span aria-hidden="true">→</span></a>
       </div>
-      <div class="hc-stage"><img class="hc-img hc-w-tl-2-pwm-a" src="imagenes/carrusel/tl-2-pwm-a.webp" alt="Control digital Dinter TL-2/PWM" decoding="async"><img class="hc-img hc-w-tl-2-pwm-b" src="imagenes/carrusel/tl-2-pwm-b.webp" alt="Placa de potencia Dinter POT/PWM" decoding="async"></div>
+      <div class="hc-stage"><img class="hc-img hc-w-tl-2-pwm-a" src="imagenes/tl2pwm.webp" alt="Control digital Dinter TL-2/PWM" decoding="async"><img class="hc-img hc-w-tl-2-pwm-b" src="imagenes/tl2pwm-placa.webp" alt="Placa de potencia Dinter POT/PWM" decoding="async"></div>
     </div>
   </div>
   <button class="hc-arrow hc-arrow--prev" type="button" aria-label="Anterior"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
@@ -700,7 +700,7 @@
   </div>
   <div class="ln-grid">
     <a href="productos/controladores-temperatura.html" class="ln-card">
-      <span class="ln-img"><img src="imagenes/lineas/np-2.webp" alt="" loading="lazy" /></span>
+      <span class="ln-img"><img src="imagenes/np2.webp" alt="" loading="lazy" /></span>
       <span class="ln-body">
         <span class="ln-tag">Línea N</span>
         <span class="ln-name">Controladores de temperatura</span>
@@ -710,7 +710,7 @@
       </span>
     </a>
     <a href="productos/temporizadores.html" class="ln-card">
-      <span class="ln-img"><img src="imagenes/lineas/tl-2.webp" alt="" loading="lazy" /></span>
+      <span class="ln-img"><img src="imagenes/tl2.webp" alt="" loading="lazy" /></span>
       <span class="ln-body">
         <span class="ln-tag">Línea T</span>
         <span class="ln-name">Temporizadores</span>
@@ -720,7 +720,7 @@
       </span>
     </a>
     <a href="productos/contadores.html" class="ln-card">
-      <span class="ln-img"><img src="imagenes/lineas/ch-2.webp" alt="" loading="lazy" /></span>
+      <span class="ln-img"><img src="imagenes/ch2.webp" alt="" loading="lazy" /></span>
       <span class="ln-body">
         <span class="ln-tag">Línea C</span>
         <span class="ln-name">Contadores</span>
@@ -730,7 +730,7 @@
       </span>
     </a>
     <a href="productos/dosificadores-agua.html" class="ln-card">
-      <span class="ln-img"><img src="imagenes/lineas/lf-19.webp" alt="" loading="lazy" /></span>
+      <span class="ln-img"><img src="imagenes/lf19.webp" alt="" loading="lazy" /></span>
       <span class="ln-body">
         <span class="ln-tag">Dosificación</span>
         <span class="ln-name">Dosificadores de agua</span>
@@ -740,7 +740,7 @@
       </span>
     </a>
     <a href="productos/colada-caliente.html" class="ln-card">
-      <span class="ln-img"><img src="imagenes/lineas/ncol-2.webp" alt="" loading="lazy" /></span>
+      <span class="ln-img"><img src="imagenes/ncol2.webp" alt="" loading="lazy" /></span>
       <span class="ln-body">
         <span class="ln-tag">Colada caliente</span>
         <span class="ln-name">Colada caliente</span>
@@ -750,7 +750,7 @@
       </span>
     </a>
     <a href="productos/variador-velocidad.html" class="ln-card">
-      <span class="ln-img"><img src="imagenes/lineas/tl-2-pwm-a.webp" alt="" loading="lazy" /></span>
+      <span class="ln-img"><img src="imagenes/tl2pwm.webp" alt="" loading="lazy" /></span>
       <span class="ln-body">
         <span class="ln-tag">Variadores</span>
         <span class="ln-name">Variador de velocidad 24 Vcc</span>
@@ -760,7 +760,7 @@
       </span>
     </a>
     <a href="productos/sensores.html" class="ln-card">
-      <span class="ln-img"><img src="imagenes/lineas/sensores.webp" alt="" loading="lazy" /></span>
+      <span class="ln-img"><img src="imagenes/pt100.webp" alt="" loading="lazy" /></span>
       <span class="ln-body">
         <span class="ln-tag">Sensores</span>
         <span class="ln-name">Sensores</span>
@@ -853,38 +853,11 @@
   </div>
 </footer>
 <div class="footer-bottom">
-  <p>© <span id="year"></span> Dinter. Todos los derechos reservados.</p>
+  <p>© <span class="year"></span> Dinter. Todos los derechos reservados.</p>
   <p>Instrumentos de Medición y Control</p>
 </div>
 
-<script>
-  const setText = (id, value) => { const el = document.getElementById(id); if (el) el.textContent = value; };
-
-  // Año dinámico
-  setText('year', new Date().getFullYear());
-
-  // Años en el mercado
-  const FOUNDING_YEAR = 1996;
-  if (FOUNDING_YEAR) {
-    const years = new Date().getFullYear() - FOUNDING_YEAR;
-    setText('years-counter', years + '+');
-    setText('years-badge', years + '+');
-  }
-
-  // Drawer mobile
-  const btn     = document.getElementById('hamburger-btn');
-  const overlay = document.getElementById('drawer-overlay');
-  const drawer  = document.getElementById('drawer');
-  const close   = document.getElementById('drawer-close');
-
-  function openDrawer()  { btn.classList.add('open'); overlay.classList.add('open'); drawer.classList.add('open'); document.body.style.overflow = 'hidden'; }
-  function closeDrawer() { btn.classList.remove('open'); overlay.classList.remove('open'); drawer.classList.remove('open'); document.body.style.overflow = ''; }
-
-  btn.addEventListener('click', openDrawer);
-  close.addEventListener('click', closeDrawer);
-  overlay.addEventListener('click', closeDrawer);
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
-</script>
+<script src="js/ui.js" defer></script>
 
 <script src="js/carrusel.js" defer></script>
 </body>
