@@ -3,7 +3,7 @@
 .hc::before { -webkit-mask-image: linear-gradient(90deg, rgba(0,0,0,.25) 0%, rgba(0,0,0,.45) 40%, #000 100%); mask-image: linear-gradient(90deg, rgba(0,0,0,.25) 0%, rgba(0,0,0,.45) 40%, #000 100%); }
 .hc-track { position: relative; display: grid; height: clamp(440px, 46vw, 560px); }
 .hc, .hc * { box-sizing: border-box; }
-.hc-slide { grid-area: 1 / 1; min-height: 0; display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); grid-template-rows: minmax(0, 1fr); align-items: stretch; gap: 24px; padding: 0 48px; opacity: 0; visibility: hidden; transition: opacity .7s ease, visibility 0s linear .7s; }
+.hc-slide { grid-area: 1 / 1; min-height: 0; display: grid; grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr); grid-template-rows: minmax(0, 1fr); align-items: stretch; gap: 24px; padding: 0 48px; opacity: 0; visibility: hidden; transition: opacity .7s ease, visibility 0s linear .7s; }
 .hc-slide.is-active { opacity: 1; visibility: visible; transition: opacity .7s ease, visibility 0s; }
 .hc-text { align-self: center; transform: translateY(10px); transition: transform .8s cubic-bezier(.2,.7,.2,1); padding-bottom: 40px; }
 .hc-slide.is-active .hc-text { transform: none; }
@@ -18,11 +18,15 @@
 .hc-btn:hover { background: #e8f4f2; }
 .hc-btn span { transition: transform .2s; }
 .hc-btn:hover span { transform: translateX(4px); }
-.hc-stage { position: relative; width: 100%; max-width: 760px; justify-self: center; min-height: 0; display: flex; align-items: flex-end; justify-content: center; gap: 3%; padding: 34px 0 86px; }
+.hc-stage { position: relative; width: 100%; max-width: 1090px; justify-self: center; min-height: 0; display: flex; align-items: flex-end; justify-content: center;  padding: 34px 0 86px; }
 .hc-stage::after { content: ""; position: absolute; left: 6%; right: 6%; bottom: 62px; height: 34px; background: radial-gradient(ellipse at center, rgba(0,0,0,.38) 0%, rgba(0,0,0,0) 70%); }
-.hc-img { position: relative; z-index: 1; height: auto; max-height: 100%; min-width: 0; flex: 0 0 auto; object-fit: contain; object-position: bottom; transform: translateX(26px); transition: transform .9s cubic-bezier(.2,.7,.2,1); }
-/* Anchos proporcionales al tamaño real de cada equipo (frente en mm), en % del escenario */
-.hc-w-cg-2 { width: 26.6%; } .hc-w-ch-2 { width: 40.5%; } .hc-w-cl-2 { width: 26.9%; } .hc-w-lf-19 { width: 78%; } .hc-w-ncol-2 { width: 36%; } .hc-w-ng-2 { width: 23.4%; } .hc-w-nh-2 { width: 36.7%; } .hc-w-np-2 { width: 33.9%; } .hc-w-tg-2 { width: 30.9%; } .hc-w-tl-2 { width: 29.3%; } .hc-w-tl-2-pwm-a { width: 31.8%; } .hc-w-tl-2-pwm-b { width: 62.2%; } .hc-w-tw-2 { width: 33.8%; } 
+.hc-img { position: relative; z-index: 1; min-width: 0; flex: 0 0 auto; object-fit: contain; object-position: bottom; transform: translateX(26px); transition: transform .9s cubic-bezier(.2,.7,.2,1); }
+/* Todos los equipos a la misma escala en todas las diapositivas: la altura de cada foto sale del alto real del frente.
+   --hc-u es la altura de un equipo de 96 mm: la mayor que entra en el escenario, de alto y de ancho (2.47 = diapositiva más ancha). */
+.hc-stage { container-type: size; }
+.hc-img { --hc-u: min(100cqh, calc(100cqw / 2.47)); height: calc(var(--hc-u) * var(--r, 1)); width: auto; max-width: 100%; }
+.hc-img + .hc-img { margin-left: calc(var(--hc-u) * .07); }
+.hc-w-ng-2 { --r: 1; } .hc-w-tg-2 { --r: 1; } .hc-w-cg-2 { --r: 1; } .hc-w-ncol-2 { --r: 1; } .hc-w-np-2 { --r: 0.78; } .hc-w-nh-2 { --r: 0.52; } .hc-w-tl-2 { --r: 0.52; } .hc-w-cl-2 { --r: 0.52; } .hc-w-ch-2 { --r: 0.52; } .hc-w-tw-2 { --r: 0.37; } .hc-w-lf-19 { --r: 1; } .hc-w-tl-2-pwm-a { --r: 0.68; } .hc-w-tl-2-pwm-b { --r: 0.6; }
 .hc-slide.is-active .hc-img { transform: none; }
 .hc-slide.is-active .hc-img:nth-child(2) { transition-delay: .08s; }
 .hc-slide.is-active .hc-img:nth-child(3) { transition-delay: .16s; }
