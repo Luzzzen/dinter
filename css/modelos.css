@@ -1,0 +1,28 @@
+/* ── Tarjetas de modelos (páginas de cada línea y catálogo completo) ── */
+.models-section { padding: 64px 48px; background: var(--gray-1); }
+.models-section + .models-section { padding-top: 0; }
+.models-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 20px; margin-top: 32px; }
+.model-card { background: var(--white); border: 1px solid var(--teal-border); border-radius: 12px; overflow: hidden; text-decoration: none; color: inherit; display: flex; flex-direction: column; transition: border-color .15s, box-shadow .15s; }
+.model-card:hover { border-color: var(--teal); box-shadow: 0 6px 20px rgba(15,82,73,.12); }
+.model-img { height: 220px; display: grid; place-items: center; padding: 22px; }
+.model-img img { max-width: 100%; max-height: 176px; width: auto; height: auto; object-fit: contain; filter: drop-shadow(0 10px 12px rgba(0,0,0,.35)); }
+.model-body { padding: 20px 22px 22px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.model-tag { font-size: .7rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--teal); }
+.model-name { font-family: var(--font-head); font-size: 1.6rem; font-weight: 700; color: var(--dark); line-height: 1; }
+.model-desc { font-size: .88rem; color: var(--gray-3); line-height: 1.5; margin-top: 4px; }
+.model-specs { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 6px; }
+.spec-pill { background: var(--teal-muted); color: var(--teal-dark); font-size: .72rem; font-weight: 600; padding: 2px 8px; border-radius: 4px; }
+.model-cta { margin-top: auto; padding-top: 14px; font-size: .84rem; font-weight: 600; color: var(--teal); }
+.model-cta::after { content: " →"; display: inline-block; margin-left: 4px; transition: transform .2s; }
+.model-card:hover .model-cta::after { transform: translateX(4px); }
+.section-label { font-size: .75rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--teal); margin-bottom: 8px; }
+.section-title { font-family: var(--font-head); font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 700; color: var(--dark); line-height: 1.1; }
+.section-title span { color: var(--teal); }
+/* Catálogo completo */
+.catalog-intro { max-width: 46rem; margin-top: 14px; color: var(--gray-3); line-height: 1.6; }
+.catalog-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-top: 40px; border-top: 1px solid var(--teal-border); }
+.catalog-link { font-size: .86rem; font-weight: 600; color: var(--teal); text-decoration: none; border-bottom: 1px solid var(--teal-border); padding-bottom: 2px; }
+.catalog-link:hover { color: var(--teal-dark); border-color: var(--teal-dark); }
+.catalog-count { font-weight: 400; color: var(--gray-3); font-size: .9rem; margin-left: 10px; letter-spacing: 0; }
+@media (max-width: 900px) { .models-section { padding: 48px 20px; } }
+@media (max-width: 600px) { .models-grid { grid-template-columns: minmax(0, 1fr); } .model-img { height: 200px; } }

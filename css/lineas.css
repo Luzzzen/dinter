@@ -3,9 +3,9 @@
 .ln-card { grid-column: span 3; display: flex; flex-direction: column; background: var(--white); border: 1px solid var(--teal-border); border-radius: 12px; overflow: hidden; text-decoration: none; color: inherit; transition: border-color .15s, box-shadow .15s; }
 .ln-card:nth-child(-n+3) { grid-column: span 4; }
 a.ln-card:hover { border-color: var(--teal); box-shadow: 0 6px 20px rgba(15,82,73,.12); }
-.ln-img { position: relative; overflow: hidden; height: 210px; display: grid; place-items: center; padding: 22px; background: linear-gradient(180deg, #0c463e 0%, #136157 100%); --dp-w: 72px; --dp-h: 90px; }
+.ln-img { height: 210px; display: grid; place-items: center; padding: 22px; }
 .ln-card:nth-child(-n+3) .ln-img { height: 240px; }
-.ln-img img { position: relative; z-index: 1; max-width: 100%; max-height: 166px; width: auto; height: auto; object-fit: contain; filter: drop-shadow(0 10px 12px rgba(0,0,0,.35)); }
+.ln-img img { max-width: 100%; max-height: 166px; width: auto; height: auto; object-fit: contain; filter: drop-shadow(0 10px 12px rgba(0,0,0,.35)); }
 .ln-card:nth-child(-n+3) .ln-img img { max-height: 196px; }
 .ln-body { display: flex; flex-direction: column; gap: 8px; padding: 22px 24px 24px; flex: 1; }
 .ln-tag { font-size: .72rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--teal); }

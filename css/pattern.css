@@ -1,13 +1,25 @@
 /* Pattern de cubos isométricos. Original de Josetxu (https://codepen.io/josetxu/pen/jOGzGee),
-   publicado en Uiverse por FColombati. Licencia MIT. Adaptado: tamaño fijo y opacidad. */
-.hc::before, .ln-img::before, .contact-strip::before { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .2;
-  background:
-    conic-gradient(from 0deg at 68.4% 85.35%, #fff0 0 60deg, #38bba7 0 120deg, #159380 0 202.5deg, #fff0 0 360deg) 50%/var(--dp-w, 112px) var(--dp-h, 140px),
+   publicado en Uiverse por FColombati. Licencia MIT. Adaptado: tamaño fijo y colores atenuados. */
+
+/* Banner del inicio: capa propia, para poder desvanecerla hacia el texto */
+.hc::before { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .2;
+  background: conic-gradient(from 0deg at 68.4% 85.35%, #fff0 0 60deg, #38bba7 0 120deg, #159380 0 202.5deg, #fff0 0 360deg) 50%/var(--dp-w, 112px) var(--dp-h, 140px),
     conic-gradient(from 0deg at 31.6% 85.35%, #fff0 0 157.5deg, #17a18c 0 240deg, #38bba7 0 300deg, #fff0 0 360deg) 50%/var(--dp-w, 112px) var(--dp-h, 140px),
     conic-gradient(from 0deg at 81.35% 35.5%, #fff0 0 22.75deg, #128070 0 157.25deg, #fff0 0 360deg) 50%/var(--dp-w, 112px) var(--dp-h, 140px),
     conic-gradient(from 0deg at 18.65% 35.5%, #fff0 0 202.75deg, #01685b 0 337.25deg, #fff0 0 360deg) 50%/var(--dp-w, 112px) var(--dp-h, 140px),
     conic-gradient(from 0deg at 50% 50%, #fff0 0 60deg, #17a18c 0 157.5deg, #01685b 0 180.1deg, #128070 0 202.5deg, #159380 0 300deg, #fff0 0 360deg) 50%/var(--dp-w, 112px) var(--dp-h, 140px),
     conic-gradient(from 0deg at 50% 21.15%, #fff0 0 22.5deg, #159380 0 120deg, #38bba7 0 240deg, #17a18c 0 337.5deg, #fff0 0 360deg) 50%/var(--dp-w, 112px) var(--dp-h, 140px),
     linear-gradient(90deg, #128070 0 50%, #01685b 0 100%) 50%/var(--dp-w, 112px) var(--dp-h, 140px); }
-.contact-strip { position: relative; overflow: hidden; --dp-w: 96px; --dp-h: 120px; }
-.contact-strip > * { position: relative; z-index: 1; }
+
+/* Banners y cuadros verdes de todo el sitio: mismos cubos, ya mezclados con el verde de la marca */
+:root .page-hero, :root .contact-strip, :root .product-highlight, :root .sensor-intro, :root .stat-box:nth-child(2), :root .ln-img, :root .model-img {
+  background: conic-gradient(from 0deg at 68.4% 85.35%, #fff0 0 60deg, #17675c 0 120deg, #105f54 0 202.5deg, #fff0 0 360deg) 50%/var(--dp-w, 112px) var(--dp-h, 140px),
+    conic-gradient(from 0deg at 31.6% 85.35%, #fff0 0 157.5deg, #116256 0 240deg, #17675c 0 300deg, #fff0 0 360deg) 50%/var(--dp-w, 112px) var(--dp-h, 140px),
+    conic-gradient(from 0deg at 81.35% 35.5%, #fff0 0 22.75deg, #105b51 0 157.25deg, #fff0 0 360deg) 50%/var(--dp-w, 112px) var(--dp-h, 140px),
+    conic-gradient(from 0deg at 18.65% 35.5%, #fff0 0 202.75deg, #0c564d 0 337.25deg, #fff0 0 360deg) 50%/var(--dp-w, 112px) var(--dp-h, 140px),
+    conic-gradient(from 0deg at 50% 50%, #fff0 0 60deg, #116256 0 157.5deg, #0c564d 0 180.1deg, #105b51 0 202.5deg, #105f54 0 300deg, #fff0 0 360deg) 50%/var(--dp-w, 112px) var(--dp-h, 140px),
+    conic-gradient(from 0deg at 50% 21.15%, #fff0 0 22.5deg, #105f54 0 120deg, #17675c 0 240deg, #116256 0 337.5deg, #fff0 0 360deg) 50%/var(--dp-w, 112px) var(--dp-h, 140px),
+    linear-gradient(90deg, #105b51 0 50%, #0c564d 0 100%) 50%/var(--dp-w, 112px) var(--dp-h, 140px); }
+:root .contact-strip { --dp-w: 96px; --dp-h: 120px; }
+:root .product-highlight, :root .sensor-intro, :root .stat-box:nth-child(2) { --dp-w: 64px; --dp-h: 80px; }
+:root .ln-img, :root .model-img { --dp-w: 72px; --dp-h: 90px; }

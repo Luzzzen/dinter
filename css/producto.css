@@ -35,3 +35,5 @@
 .spec-row .spec-key{color:var(--gray-3);flex-shrink:0}
 .spec-row .spec-val{color:var(--dark);font-weight:500;text-align:right}
 @media(max-width:960px){.product-layout{grid-template-columns:1fr;grid-template-areas:"sidebar" "main" "actions";row-gap:0}.product-sidebar{border-right:none;border-bottom:1px solid var(--teal-border)}.product-actions{border-right:none;border-top:1px solid var(--teal-border);padding:24px 20px 32px}.product-main{padding:32px 20px}.specs-grid{grid-template-columns:1fr}}
+.product-img-area img.duo{max-width:46%;padding:14px}
+@media(min-width:961px){.product-layout{grid-template-rows:auto 1fr}}
