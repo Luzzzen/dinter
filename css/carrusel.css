@@ -49,10 +49,15 @@
   .hc-track { height: auto; }
   .hc::before { --dp-w: 80px; --dp-h: 100px; opacity: .16; -webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,.2) 0%, rgba(0,0,0,.4) 45%, #000 100%); mask-image: linear-gradient(180deg, rgba(0,0,0,.2) 0%, rgba(0,0,0,.4) 45%, #000 100%); }
   .hc-slide { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto auto; align-content: space-between; gap: 0; padding: 32px 20px 0; }
-  .hc-text { align-self: start; transform: none; padding-bottom: 0; }
+  /* En mobile el botón va debajo de la foto: .hc-text se "disuelve" y sus hijos se ordenan dentro del grid de la diapositiva */
+  .hc-slide { grid-template-rows: auto auto auto minmax(0, 1fr) auto; }
+  .hc-text { display: contents; }
+  .hc-label, .hc-title, .hc-desc { grid-column: 1; }
+  .hc-stage { grid-row: 4; align-self: end; }
+  .hc-cta { grid-row: 5; }
   .hc-desc { font-size: 1rem; }
   .hc-stage { height: 200px; padding: 16px 0 22px; }
-  .hc-cta { margin-top: 20px; }
+  .hc-cta { margin-top: 2px; padding-bottom: 6px; }
   .hc-stage::after { bottom: 6px; height: 26px; }
   .hc-arrow { display: none; }
   .hc-tabs { position: static; padding: 6px 20px 22px; gap: 8px; }
