@@ -1,0 +1,13 @@
+/* Pattern de cubos isométricos. Original de Josetxu (https://codepen.io/josetxu/pen/jOGzGee),
+   publicado en Uiverse por FColombati. Licencia MIT. Adaptado: tamaño fijo y opacidad. */
+.hc::before, .ln-img::before, .contact-strip::before { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .2;
+  background:
+    conic-gradient(from 0deg at 68.4% 85.35%, #fff0 0 60deg, #38bba7 0 120deg, #159380 0 202.5deg, #fff0 0 360deg) 50%/var(--dp-w, 112px) var(--dp-h, 140px),
+    conic-gradient(from 0deg at 31.6% 85.35%, #fff0 0 157.5deg, #17a18c 0 240deg, #38bba7 0 300deg, #fff0 0 360deg) 50%/var(--dp-w, 112px) var(--dp-h, 140px),
+    conic-gradient(from 0deg at 81.35% 35.5%, #fff0 0 22.75deg, #128070 0 157.25deg, #fff0 0 360deg) 50%/var(--dp-w, 112px) var(--dp-h, 140px),
+    conic-gradient(from 0deg at 18.65% 35.5%, #fff0 0 202.75deg, #01685b 0 337.25deg, #fff0 0 360deg) 50%/var(--dp-w, 112px) var(--dp-h, 140px),
+    conic-gradient(from 0deg at 50% 50%, #fff0 0 60deg, #17a18c 0 157.5deg, #01685b 0 180.1deg, #128070 0 202.5deg, #159380 0 300deg, #fff0 0 360deg) 50%/var(--dp-w, 112px) var(--dp-h, 140px),
+    conic-gradient(from 0deg at 50% 21.15%, #fff0 0 22.5deg, #159380 0 120deg, #38bba7 0 240deg, #17a18c 0 337.5deg, #fff0 0 360deg) 50%/var(--dp-w, 112px) var(--dp-h, 140px),
+    linear-gradient(90deg, #128070 0 50%, #01685b 0 100%) 50%/var(--dp-w, 112px) var(--dp-h, 140px); }
+.contact-strip { position: relative; overflow: hidden; --dp-w: 96px; --dp-h: 120px; }
+.contact-strip > * { position: relative; z-index: 1; }
