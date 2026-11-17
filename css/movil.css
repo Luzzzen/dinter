@@ -1,0 +1,11 @@
+/* Ajustes para pantallas chicas: mismo margen lateral (20px) en todas las secciones */
+@media (max-width: 900px) {
+  :root .empresa-section { padding: 56px 20px; }
+  :root .products-section { padding-top: 56px; padding-bottom: 40px; }
+  :root .empresa-text p { line-height: 1.65; }
+  :root footer { gap: 28px 20px; padding: 36px 20px 32px; }
+  :root .footer-bottom { align-items: flex-start; text-align: left; }
+  /* Botones de la franja: sin aro exterior, que en celular se veía como doble borde */
+  :root .contact-strip a.btn-wa, :root .contact-strip a.btn-tel { border-width: 3px; box-shadow: 0 1px 3px rgba(0,0,0,.5); }
+}
+@media (min-width: 641px) and (max-width: 900px) { :root .products-section { padding-left: 20px; padding-right: 20px; } }

@@ -10,8 +10,9 @@
 .model-tag { font-size: .7rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--teal); }
 .model-name { font-family: var(--font-head); font-size: 1.6rem; font-weight: 700; color: var(--dark); line-height: 1; }
 .model-desc { font-size: .88rem; color: var(--gray-3); line-height: 1.5; margin-top: 4px; }
-.model-specs { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 6px; }
-.spec-pill { background: var(--teal-muted); color: var(--teal-dark); font-size: .72rem; font-weight: 600; padding: 2px 8px; border-radius: 4px; }
+.model-specs { margin-top: 8px; font-size: .8rem; font-weight: 600; line-height: 1.6; color: var(--teal-dark); }
+.spec-pill { display: inline-block; white-space: nowrap; }
+.spec-pill:not(:last-child)::after { content: "·"; margin: 0 0 0 7px; padding-right: 7px; color: var(--teal); font-weight: 400; }
 .model-cta { margin-top: auto; padding-top: 14px; font-size: .84rem; font-weight: 600; color: var(--teal); }
 .model-cta::after { content: " →"; display: inline-block; margin-left: 4px; transition: transform .2s; }
 .model-card:hover .model-cta::after { transform: translateX(4px); }
@@ -26,3 +27,34 @@
 .catalog-count { font-weight: 400; color: var(--gray-3); font-size: .9rem; margin-left: 10px; letter-spacing: 0; }
 @media (max-width: 900px) { .models-section { padding: 48px 20px; } }
 @media (max-width: 600px) { .models-grid { grid-template-columns: minmax(0, 1fr); } .model-img { height: 200px; } }
+
+/* ── Catálogo completo: tarjeta compacta ──
+   Con mouse: se ve la foto y el modelo; al pasar por encima sube el panel con el detalle.
+   (Idea tomada de una tarjeta de Javierrocadev publicada en Uiverse, licencia MIT.)
+   En pantallas táctiles no hay "pasar por encima": queda la tarjeta compacta fija. */
+.catalog .models-grid { grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); }
+.catalog .model-desc { display: none; }
+.catalog .model-img { height: 190px; }
+.catalog .model-img img { max-height: 150px; }
+.catalog .model-body { padding: 14px 18px 16px; gap: 2px; }
+.catalog .model-name { font-size: 1.45rem; }
+.catalog .model-cta { padding-top: 10px; }
+@media (hover: hover) and (min-width: 901px) {
+  .catalog .model-card { position: relative; height: 310px; display: block; }
+  .catalog .model-img { height: calc(100% - 72px); }
+  .catalog .model-body { position: absolute; left: 0; right: 0; bottom: 0; background: var(--white); border-top: 1px solid var(--teal-border); transform: translateY(calc(100% - 72px)); transition: transform .45s cubic-bezier(.2,.7,.2,1); }
+  .catalog .model-desc { display: block; margin-top: 20px; }
+  .catalog .model-card:hover .model-body, .catalog .model-card:focus-visible .model-body { transform: none; }
+}
+@media (max-width: 600px) {
+  .catalog .models-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 22px; }
+  .catalog .model-img { height: 130px; padding: 14px; }
+  .catalog .model-img img { max-height: 102px; }
+  .catalog .model-body { padding: 12px 12px 14px; }
+  .catalog .model-tag { font-size: .62rem; }
+  .catalog .model-name { font-size: 1.2rem; }
+  .catalog .model-specs { font-size: .72rem; margin-top: 4px; }
+  .catalog .model-cta { display: none; }
+  .catalog-head { padding-top: 28px; }
+}
+@media (prefers-reduced-motion: reduce) { .catalog .model-body { transition: none; } }

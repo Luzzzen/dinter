@@ -474,9 +474,8 @@
       transform: translateX(100%);
       transition: transform .3s cubic-bezier(.4,0,.2,1);
       display: flex; flex-direction: column; overflow-y: auto;
-      box-shadow: -4px 0 32px rgba(15,82,73,.15);
     }
-    .drawer.open { transform: translateX(0); }
+    .drawer.open { transform: translateX(0); box-shadow: -4px 0 32px rgba(15,82,73,.15); }
     .drawer-header {
       display: flex; align-items: center; justify-content: space-between;
       padding: 16px 20px; border-bottom: 1px solid var(--teal-border);
@@ -549,6 +548,7 @@
   </style>
   <link rel="stylesheet" href="css/pattern.css" />
   <link rel="stylesheet" href="css/botones.css" />
+  <link rel="stylesheet" href="css/movil.css" />
   <link rel="stylesheet" href="css/carrusel.css" />
   <link rel="stylesheet" href="css/lineas.css" />
 </head>
@@ -629,8 +629,7 @@
         <p class="hc-label">Línea N</p>
         <h2 class="hc-title">Controladores de <span>temperatura</span></h2>
         <p class="hc-desc">Control preciso de temperatura para procesos industriales, con PID y autosintonía.</p>
-        <ul class="hc-models" aria-label="Modelos"><li>NL-2</li><li>NP-2</li><li>NG-2</li><li>NH-2</li><li>NW-2</li><li>NF-2</li><li>NTT-2</li><li>NL-ECO</li><li>NG-ECO</li></ul>
-        <a class="hc-btn" href="productos/controladores-temperatura.html">Ver la línea <span aria-hidden="true">→</span></a>
+        <div class="hc-cta"><a class="hc-btn" href="productos/controladores-temperatura.html">Ver la línea <span aria-hidden="true">→</span></a><span class="hc-count">9 modelos</span></div>
       </div>
       <div class="hc-stage"><img class="hc-img hc-w-ng-2" src="imagenes/ng2.webp" alt="Dinter NG-2"><img class="hc-img hc-w-np-2" src="imagenes/np2.webp" alt="Dinter NP-2"><img class="hc-img hc-w-nh-2" src="imagenes/nh2.webp" alt="Dinter NH-2"></div>
     </div>
@@ -639,8 +638,7 @@
         <p class="hc-label">Línea T</p>
         <h2 class="hc-title"><span>Temporizadores</span> digitales</h2>
         <p class="hc-desc">Temporizadores digitales de alta precisión y múltiples funciones.</p>
-        <ul class="hc-models" aria-label="Modelos"><li>TL-2</li><li>TP-2</li><li>TG-2</li><li>TH-2</li><li>TW-2</li></ul>
-        <a class="hc-btn" href="productos/temporizadores.html">Ver la línea <span aria-hidden="true">→</span></a>
+        <div class="hc-cta"><a class="hc-btn" href="productos/temporizadores.html">Ver la línea <span aria-hidden="true">→</span></a><span class="hc-count">5 modelos</span></div>
       </div>
       <div class="hc-stage"><img class="hc-img hc-w-tg-2" src="imagenes/tg2.webp" alt="Dinter TG-2" decoding="async"><img class="hc-img hc-w-tl-2" src="imagenes/tl2.webp" alt="Dinter TL-2" decoding="async"><img class="hc-img hc-w-tw-2" src="imagenes/tw2.webp" alt="Dinter TW-2" decoding="async"></div>
     </div>
@@ -649,8 +647,7 @@
         <p class="hc-label">Línea C</p>
         <h2 class="hc-title"><span>Contadores</span> programables</h2>
         <p class="hc-desc">Contadores programables por microprocesador para control industrial.</p>
-        <ul class="hc-models" aria-label="Modelos"><li>CL-2</li><li>CG-2</li><li>CH-2</li></ul>
-        <a class="hc-btn" href="productos/contadores.html">Ver la línea <span aria-hidden="true">→</span></a>
+        <div class="hc-cta"><a class="hc-btn" href="productos/contadores.html">Ver la línea <span aria-hidden="true">→</span></a><span class="hc-count">3 modelos</span></div>
       </div>
       <div class="hc-stage"><img class="hc-img hc-w-cg-2" src="imagenes/cg2.webp" alt="Dinter CG-2" decoding="async"><img class="hc-img hc-w-cl-2" src="imagenes/cl2.webp" alt="Dinter CL-2" decoding="async"><img class="hc-img hc-w-ch-2" src="imagenes/ch2.webp" alt="Dinter CH-2" decoding="async"></div>
     </div>
@@ -659,8 +656,7 @@
         <p class="hc-label">Dosificación</p>
         <h2 class="hc-title">Dosificadores <span>de agua</span></h2>
         <p class="hc-desc">Equipos de dosificación volumétrica para agua y fluidos.</p>
-        <ul class="hc-models" aria-label="Modelos"><li>LF-19</li></ul>
-        <a class="hc-btn" href="productos/dosificadores-agua.html">Ver la línea <span aria-hidden="true">→</span></a>
+        <div class="hc-cta"><a class="hc-btn" href="productos/dosificadores-agua.html">Ver la línea <span aria-hidden="true">→</span></a><span class="hc-count">Modelo LF-19</span></div>
       </div>
       <div class="hc-stage"><img class="hc-img hc-w-lf-19" src="imagenes/lf19.webp" alt="Dosificador de agua Dinter LF-19" decoding="async"></div>
     </div>
@@ -669,8 +665,7 @@
         <p class="hc-label">Colada caliente</p>
         <h2 class="hc-title">Control para <span>colada caliente</span></h2>
         <p class="hc-desc">Controlador PID especializado para colada caliente, con SSR y Soft-Start.</p>
-        <ul class="hc-models" aria-label="Modelos"><li>Ncol-2</li></ul>
-        <a class="hc-btn" href="productos/colada-caliente.html">Ver la línea <span aria-hidden="true">→</span></a>
+        <div class="hc-cta"><a class="hc-btn" href="productos/colada-caliente.html">Ver la línea <span aria-hidden="true">→</span></a><span class="hc-count">Modelo Ncol-2</span></div>
       </div>
       <div class="hc-stage"><img class="hc-img hc-w-ncol-2" src="imagenes/ncol2.webp" alt="Dinter Ncol-2" decoding="async"></div>
     </div>
@@ -679,8 +674,7 @@
         <p class="hc-label">Variadores</p>
         <h2 class="hc-title">Variador de velocidad <span>24 Vcc</span></h2>
         <p class="hc-desc">Controlador digital de velocidad para motores de corriente continua.</p>
-        <ul class="hc-models" aria-label="Modelos"><li>TL-2/PWM</li></ul>
-        <a class="hc-btn" href="productos/variador-velocidad.html">Ver la línea <span aria-hidden="true">→</span></a>
+        <div class="hc-cta"><a class="hc-btn" href="productos/variador-velocidad.html">Ver la línea <span aria-hidden="true">→</span></a><span class="hc-count">Modelo TL-2/PWM</span></div>
       </div>
       <div class="hc-stage"><img class="hc-img hc-w-tl-2-pwm-a" src="imagenes/tl2pwm.webp" alt="Control digital Dinter TL-2/PWM" decoding="async"><img class="hc-img hc-w-tl-2-pwm-b" src="imagenes/tl2pwm-placa.webp" alt="Placa de potencia Dinter POT/PWM" decoding="async"></div>
     </div>
@@ -821,7 +815,7 @@
     </a>
     <a href="tel:+541144853764" class="btn-tel">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
-      44853764
+      4485-3764
     </a>
   </div>
 </div>
@@ -840,15 +834,15 @@
   <div class="footer-col">
     <h4>Productos</h4>
     <a href="productos/contadores.html">Contadores</a>
-    <a href="productos/controladores-temperatura.html">Controladores de temp.</a>
+    <a href="productos/controladores-temperatura.html">Controladores de temperatura</a>
     <a href="productos/temporizadores.html">Temporizadores</a>
     <a href="productos/dosificadores-agua.html">Dosificadores de agua</a>
     <a href="productos.html">Ver todos →</a>
   </div>
   <div class="footer-col">
     <h4>Contacto</h4>
-    <a href="https://wa.me/541150021965" target="_blank" rel="noopener" class="footer-contact-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp: 1150021965</a>
-    <a href="tel:+541144853764" class="footer-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg> Tel: 44853764</a>
+    <a href="https://wa.me/541150021965" target="_blank" rel="noopener" class="footer-contact-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp: 11 5002-1965</a>
+    <a href="tel:+541144853764" class="footer-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg> Tel: 4485-3764</a>
     <a href="mailto:dinter111@hotmail.com" class="footer-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> dinter111@hotmail.com</a>
     <p class="footer-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;margin-top:2px"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> <span>París 1824, Isidro Casanova<br/>Buenos Aires</span></p>
   </div>
