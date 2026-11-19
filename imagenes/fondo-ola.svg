@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 560" preserveAspectRatio="none">
+  <!-- Cintas del banner del inicio: retoman el barrido curvo de la web anterior de Dinter -->
+  <path d="M0 560V380C320 300 640 450 960 300C1180 196 1330 170 1440 150V560Z" fill="#e2efec"/>
+  <path d="M0 418C320 338 640 488 960 338C1180 234 1330 208 1440 188" fill="none" stroke="#fff" stroke-width="14"/>
+  <path d="M0 560V450C340 380 680 500 1000 370C1200 288 1340 262 1440 250V560Z" fill="#c9e3dd"/>
+  <path d="M0 482C340 412 680 532 1000 402C1200 320 1340 294 1440 282" fill="none" stroke="#fff" stroke-width="6"/>
+  <path d="M0 560V510C360 460 720 560 1040 450C1220 388 1350 370 1440 362V560Z" fill="#a9d3ca"/>
+</svg>

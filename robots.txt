@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://luzzzen.github.io/dinter/sitemap.xml

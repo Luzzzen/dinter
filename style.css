@@ -17,6 +17,7 @@
 }
 
 html { scroll-behavior: smooth; }
+img { height: auto; }  /* las imágenes llevan width/height reales: esto conserva la proporción */
 body { font-family: var(--font-body); color: var(--dark); background: var(--white); overflow-x: hidden; }
 
 /* ── HEADER ── */
@@ -31,15 +32,15 @@ header {
 .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
 .logo img { height: 48px; width: auto; }
 
-nav { display: flex; align-items: center; gap: 8px; }
-nav a {
+header nav { display: flex; align-items: center; gap: 8px; }
+header nav a {
   font-family: var(--font-body); font-weight: 500; font-size: .9rem;
   letter-spacing: .04em; text-transform: uppercase;
   color: var(--dark); text-decoration: none;
   padding: 8px 16px; border-radius: 4px;
   transition: background .2s, color .2s;
 }
-nav a:hover { background: var(--teal-muted); color: var(--teal-dark); }
+header nav a:hover { background: var(--teal-muted); color: var(--teal-dark); }
 
 .nav-dropdown { position: relative; }
 .nav-dropdown > a::after { content: ' ▾'; font-size: .7rem; opacity: .6; }
@@ -49,7 +50,7 @@ nav a:hover { background: var(--teal-muted); color: var(--teal-dark); }
   border-radius: 8px; min-width: 240px;
   box-shadow: 0 8px 32px rgba(15,82,73,.12); overflow: hidden; z-index: 200;
 }
-.nav-dropdown:hover .dropdown-menu { display: block; }
+.nav-dropdown:hover .dropdown-menu, .nav-dropdown:focus-within .dropdown-menu { display: block; }
 .dropdown-menu a {
   display: block; padding: 10px 18px; border-radius: 0;
   font-size: .88rem; color: var(--dark);
@@ -96,14 +97,14 @@ footer {
   background: var(--dark); padding: 48px;
   display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px;
 }
-.footer-brand img { height: 52px; display: block; }
+.footer-brand img { height: 52px; width: auto; display: block; }
 .footer-logo-wrap {
   display: inline-flex; align-items: center; justify-content: center;
   margin-bottom: 14px;
   background: var(--white); border-radius: 8px; padding: 8px 12px;  /* el logo no se veía sobre el fondo oscuro */
 }
 .footer-brand p { font-size: .84rem; color: rgba(255,255,255,.72); line-height: 1.65; max-width: 220px; }
-.footer-col h4 {
+.footer-col h2 {
   font-size: .72rem; font-weight: 700; letter-spacing: .14em;
   text-transform: uppercase; color: var(--teal-light); margin-bottom: 16px;
 }
@@ -170,8 +171,9 @@ footer {
   white-space: nowrap;
   transition: color .2s, border-color .2s;
   flex-shrink: 0;
+  border-radius: 4px;
 }
-.nav-strip a:hover { color: var(--teal); }
+.nav-strip a:hover { color: var(--teal); background: var(--teal-muted); }
 .nav-strip a.active { color: var(--teal-dark); border-bottom-color: var(--teal); }
 .nav-strip-sep { width: 1px; height: 18px; background: var(--teal-border); flex-shrink: 0; margin: 0 4px; }
 
@@ -211,16 +213,17 @@ footer {
   width: 280px; background: var(--white);
   z-index: 200;
   transform: translateX(100%);
-  transition: transform .3s cubic-bezier(.4,0,.2,1);
+  visibility: hidden;
+  transition: transform .3s cubic-bezier(.4,0,.2,1), visibility 0s linear .3s;
   display: flex; flex-direction: column;
   overflow-y: auto;
 }
-.drawer.open { transform: translateX(0); box-shadow: -4px 0 32px rgba(15,82,73,.15); }
+.drawer.open { visibility: visible; transition: transform .3s cubic-bezier(.4,0,.2,1), visibility 0s; transform: translateX(0); box-shadow: -4px 0 32px rgba(15,82,73,.15); }
 .drawer-header {
   display: flex; align-items: center; justify-content: space-between;
   padding: 16px 20px; border-bottom: 1px solid var(--teal-border);
 }
-.drawer-header img { height: 40px; }
+.drawer-header img { height: 40px; width: auto; }
 .drawer-close {
   background: none; border: none; cursor: pointer;
   color: var(--gray-3); font-size: 1.4rem; line-height: 1;
@@ -252,24 +255,15 @@ footer {
 @media (max-width: 900px) {
   header { padding: 0 20px; }
   .page-hero { padding: 40px 20px 32px; }
-  .nav-strip { padding: 0 16px; }
   footer { grid-template-columns: 1fr 1fr; padding: 40px 20px; }
   .footer-bottom { padding: 16px 20px; flex-direction: column; gap: 6px; text-align: center; }
   .contact-strip { flex-direction: column; align-items: center; text-align: center; padding: 48px 20px; }
   .contact-actions { width: 100%; justify-content: center; flex-wrap: wrap; }
-  .empresa-visual { height: 220px; }
-  .empresa-highlight {
-    bottom: -12px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: calc(100% - 40px);
-    text-align: center;
-    align-items: center;
-  }
 }
 @media (max-width: 900px) {
   .hamburger { display: flex; }
-  nav { display: none; }
+  header nav { display: none; }
+  nav.nav-strip { display: none; }  /* en las fichas la tira va abajo y en celular sobra: ya está el menú */
 }
 @media (max-width: 600px) {
   footer { grid-template-columns: 1fr; }
@@ -288,3 +282,6 @@ footer {
   font-size: .62rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
   color: var(--teal-dark); background: var(--teal-muted); border-radius: 4px; vertical-align: middle;
 }
+
+/* ── Foco visible con teclado en el menú ── */
+header nav a:focus-visible, .dropdown-menu a:focus-visible, .drawer a:focus-visible, .drawer-close:focus-visible, .hamburger:focus-visible, .nav-strip a:focus-visible, .breadcrumb a:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }

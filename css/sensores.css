@@ -3,11 +3,11 @@
 .sensor-img-wrap { background: var(--white); border: 1px solid var(--teal-border); border-radius: 14px; display: flex; align-items: center; justify-content: center; height: 240px; overflow: hidden; margin-bottom: 40px; }
 .sensor-img-wrap img { max-width: 100%; max-height: 100%; object-fit: contain; padding: 24px; }
 .sensor-intro { background: var(--teal-dark); color: var(--white); border-radius: 10px; padding: 20px 24px; margin-bottom: 36px; }
-.sensor-intro h3 { font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; margin-bottom: 6px; }
+.sensor-intro h2 { font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; margin-bottom: 6px; }
 .sensor-intro p { font-size: .88rem; line-height: 1.6; opacity: .85; }
 .variantes-title { font-family: var(--font-head); font-size: 1.2rem; font-weight: 700; color: var(--dark); margin-bottom: 20px; padding-bottom: 12px; border-bottom: 2px solid var(--teal-border); }
 .variante-card { background: var(--white); border: 1px solid var(--teal-border); border-radius: 10px; padding: 20px 24px; margin-bottom: 14px; }
-.variante-card h4 { font-family: var(--font-head); font-size: 1rem; font-weight: 700; color: var(--teal-dark); margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid var(--teal-border); }
+.variante-card h3 { font-family: var(--font-head); font-size: 1rem; font-weight: 700; color: var(--teal-dark); margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid var(--teal-border); }
 .variante-card ul { list-style: none; }
 .variante-card ul li { font-size: .88rem; color: var(--dark); padding: 4px 0; border-bottom: 1px solid var(--gray-2); display: flex; align-items: flex-start; gap: 8px; }
 .variante-card ul li:last-child { border-bottom: none; }
@@ -21,3 +21,4 @@
 .back-link:hover { gap: 10px; }
 .sensor-note { background: var(--teal-muted); border: 1px solid var(--teal-border); border-radius: 8px; padding: 14px 18px; font-size: .84rem; color: var(--teal-dark); margin-top: 20px; line-height: 1.6; }
 @media (max-width: 600px) { .sensor-layout { padding: 32px 20px; } .sensor-ctas { flex-direction: column; } .btn-cta-wa, .btn-cta-mail { justify-content: center; } }
+.sensor-img-wrap img { width: auto; }

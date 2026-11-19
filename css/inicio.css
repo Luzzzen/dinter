@@ -1,0 +1,176 @@
+/* DINTER – Estilos propios del inicio (el resto viene de style.css) */
+/* ── CATEGORÍAS ── */
+.section-label {
+  font-family: var(--font-body);
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 10px;
+}
+
+.section-title {
+  font-family: var(--font-head);
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 700;
+  color: var(--dark);
+  line-height: 1.15;
+}
+
+.section-title span { color: var(--teal); }
+
+section { padding: 80px 48px; }
+
+.products-section { background: var(--gray-1); padding: 80px 48px; }
+
+.products-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 48px;
+}
+
+.empresa-map-canvas {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  z-index: 1;
+  background: var(--teal-muted);
+}
+.empresa-map-cta {
+  position: absolute;
+  bottom: 16px; right: 16px;
+  z-index: 400;
+  background: var(--teal-dark);
+  color: var(--white);
+  text-decoration: none;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  padding: 10px 18px;
+  border-radius: 30px;
+  box-shadow: 0 4px 14px rgba(0,0,0,.25);
+  transition: background .2s;
+}
+.empresa-map-cta:hover { background: var(--teal); }
+.empresa-map-pin {
+  width: 32px; height: 32px; border-radius: 50% 50% 50% 0;
+  background: var(--teal-dark); border: 3px solid var(--white);
+  transform: rotate(-45deg);
+  box-shadow: 0 2px 8px rgba(0,0,0,.35);
+  display: flex; align-items: center; justify-content: center;
+}
+.empresa-map-pin svg { transform: rotate(45deg); }
+
+/* ── EMPRESA ── */
+.empresa-section {
+  background: var(--white);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  padding: 80px 48px;
+}
+
+.empresa-text { max-width: 500px; }
+.empresa-text .section-title { margin-bottom: 20px; }
+
+.empresa-text p {
+  font-size: .97rem;
+  line-height: 1.75;
+  color: #4a5a57;
+  margin-bottom: 16px;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 36px;
+  padding-top: 36px;
+  border-top: 1px solid var(--teal-border);
+}
+
+.stat-num {
+  font-family: var(--font-head);
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: var(--teal);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: .8rem;
+  font-weight: 500;
+  color: var(--gray-3);
+  margin-top: 4px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+.empresa-visual {
+  position: relative;
+  height: 420px;
+}
+
+.empresa-bg-card {
+  position: absolute;
+  inset: 0;
+  background: var(--teal-muted);
+  border-radius: 16px;
+  border: 1px solid var(--teal-border);
+}
+
+.empresa-highlight {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  z-index: 400;
+  background: var(--teal-dark);
+  color: var(--white);
+  border-radius: 12px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 8px 24px rgba(15,82,73,.3);
+  max-width: calc(100% - 32px);
+}
+
+.empresa-highlight svg { flex-shrink: 0; opacity: .85; }
+
+.empresa-highlight strong {
+  font-family: var(--font-head);
+  font-size: .92rem;
+  font-weight: 700;
+  display: block;
+}
+
+.empresa-highlight span {
+  font-size: .74rem;
+  opacity: .75;
+  display: block;
+}
+
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  section { padding: 56px 20px; }
+  .empresa-section { grid-template-columns: 1fr; gap: 40px; }
+  .empresa-visual { height: 280px; }
+  .empresa-highlight { padding: 8px 12px; gap: 6px; top: 12px; bottom: auto; left: auto; right: 12px; max-width: calc(100% - 70px); }
+  .empresa-highlight svg { width: 14px; height: 14px; }
+  .empresa-highlight strong { font-size: .76rem; }
+  .empresa-highlight span { font-size: .64rem; }
+}
+@media (max-width: 600px) {
+  .stats { gap: 14px; }
+  .stat-num { font-size: 2rem; }
+  .stat-label { font-size: .72rem; }
+}
+
+.visually-hidden { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+iframe.empresa-map-canvas { border: 0; display: block; width: 100%; height: 100%; }

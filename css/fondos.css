@@ -1,0 +1,18 @@
+/* DINTER – Fondos del sitio
+   Banner del inicio: fondo claro con las cintas curvas (imagenes/fondo-ola.svg).
+   Franjas y cuadros verdes: verde de la marca liso.
+   Fotos de producto en tarjetas: gris verdoso claro, para que los equipos negros se recorten bien. */
+
+.hc::before { content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: url("../imagenes/fondo-ola.svg") center bottom / 100% 100% no-repeat; }
+
+:root .page-hero, :root .contact-strip, :root .product-highlight, :root .sensor-intro,
+:root .stat-box:nth-child(2), :root .product-model-badge { background: var(--teal-dark); }
+
+:root .ln-img, :root .model-img { background: linear-gradient(180deg, #f5f8f7 0%, #e7eeec 100%); border-bottom: 1px solid #dbe7e4; }
+:root .ln-img img, :root .model-img img { filter: drop-shadow(0 12px 14px rgba(15,40,36,.28)); }
+
+/* En celular se muestra la parte derecha de las cintas, que es donde suben */
+@media (max-width: 900px) {
+  .hc::before { background-size: 1150px 100%; background-position: right bottom; }
+}
