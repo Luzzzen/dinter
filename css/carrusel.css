@@ -60,7 +60,12 @@
   .hc-stage { grid-row: 4; align-self: end; }
   .hc-cta { grid-row: 5; }
   .hc-desc { font-size: 1rem; }
-  .hc-stage { height: 200px; padding: 16px 0 22px; }
+  /* La foto ocupa todo el alto libre de la diapositiva: así las de poco texto no dejan un hueco */
+  .hc-stage { height: auto; min-height: 200px; align-self: stretch; padding: 16px 0 22px; }
+  /* Un solo equipo: que crezca hasta llenar el espacio (ancho o alto, lo que llegue primero) */
+  .hc-stage > .hc-img:only-child { --hc-u: auto; height: auto; width: auto; max-width: 100%; max-height: 100%; }
+  /* Variador: dos fotos que suman 1,58 unidades de ancho (no 2,47 como las de tres equipos) */
+  .hc-stage:has(.hc-w-tl-2-pwm-a) .hc-img { --hc-u: min(calc(100cqh / .68), calc(100cqw / 1.6)); }
   .hc-cta { margin-top: 2px; padding-bottom: 6px; }
   /* En mobile: botón a todo el ancho, en una sola línea y con texto corto que ya incluye la cantidad de modelos */
   .hc-btn { flex: 1 1 100%; justify-content: space-between; white-space: nowrap; }
