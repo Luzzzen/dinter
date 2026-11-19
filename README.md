@@ -19,3 +19,7 @@ Reemplazar `https://luzzzen.github.io/dinter/` por la dirección nueva en:
 4. `sitemap.xml` y `robots.txt`.
 
 Con dominio propio `robots.txt` empieza a funcionar: en `luzzzen.github.io/dinter/` los buscadores no lo leen porque no está en la raíz del dominio.
+
+## Después de cada cambio
+
+Los CSS y JS se cargan con un número de versión (`style.css?v=20261119b`). Al subir cambios, buscá y reemplazá ese número en todo el proyecto por uno nuevo (por ejemplo, la fecha del día): así los navegadores bajan los archivos nuevos en vez de usar los que tenían guardados.
